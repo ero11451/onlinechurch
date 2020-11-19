@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.448" height="31.18" viewBox="0 0 32.448 31.18">
+    <defs>
+        <style>
+            .cls-1{fill:#d8dce1}.cls-2{fill:#ff4f19}.cls-3{fill:#fff}.cls-4{fill:#5c546a}.cls-5{fill:#ffd200}.cls-6{fill:#ff9600}
+        </style>
+    </defs>
+    <g id="calendar" transform="translate(0 -10)">
+        <g id="Group_507" data-name="Group 507" transform="translate(0 17.858)">
+            <path id="Path_1440" d="M0 134v20.787a2.538 2.538 0 0 0 2.535 2.535h27.378a2.538 2.538 0 0 0 2.535-2.535V134z" class="cls-1" data-name="Path 1440" transform="translate(0 -134)"/>
+        </g>
+        <g id="Group_508" data-name="Group 508" transform="translate(0 10.76)">
+            <path id="Path_1441" d="M29.913 22H2.535A2.538 2.538 0 0 0 0 24.535V29.1h32.448v-4.565A2.538 2.538 0 0 0 29.913 22zM4.056 27.07a1.521 1.521 0 1 1 1.521-1.521 1.521 1.521 0 0 1-1.521 1.521zm24.336 0a1.521 1.521 0 1 1 1.521-1.521 1.521 1.521 0 0 1-1.521 1.521z" class="cls-2" data-name="Path 1441" transform="translate(0 -22)"/>
+        </g>
+        <g id="Group_524" data-name="Group 524" transform="translate(4.056 22.421)">
+            <g id="Group_509" data-name="Group 509" transform="translate(10.14)">
+                <path id="Path_1442" d="M226.028 206a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1442" transform="translate(-224 -206)"/>
+            </g>
+            <g id="Group_510" data-name="Group 510" transform="translate(5.07)">
+                <path id="Path_1443" d="M146.028 206a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1443" transform="translate(-144 -206)"/>
+            </g>
+            <g id="Group_511" data-name="Group 511">
+                <path id="Path_1444" d="M66.028 206a2.028 2.028 0 1 0 2.028 2.028A2.03 2.03 0 0 0 66.028 206z" class="cls-3" data-name="Path 1444" transform="translate(-64 -206)"/>
+            </g>
+            <g id="Group_512" data-name="Group 512" transform="translate(15.21)">
+                <path id="Path_1445" d="M306.028 206a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1445" transform="translate(-304 -206)"/>
+            </g>
+            <g id="Group_513" data-name="Group 513" transform="translate(20.28)">
+                <path id="Path_1446" d="M386.028 210.056a2.028 2.028 0 1 0-2.028-2.028 2.03 2.03 0 0 0 2.028 2.028z" class="cls-3" data-name="Path 1446" transform="translate(-384 -206)"/>
+            </g>
+            <g id="Group_514" data-name="Group 514" transform="translate(10.14 5.07)">
+                <path id="Path_1447" d="M226.028 286a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1447" transform="translate(-224 -286)"/>
+            </g>
+            <g id="Group_515" data-name="Group 515" transform="translate(5.07 5.07)">
+                <path id="Path_1448" d="M146.028 286a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1448" transform="translate(-144 -286)"/>
+            </g>
+            <g id="Group_516" data-name="Group 516" transform="translate(0 5.07)">
+                <path id="Path_1449" d="M66.028 286a2.028 2.028 0 1 0 2.028 2.028A2.03 2.03 0 0 0 66.028 286z" class="cls-3" data-name="Path 1449" transform="translate(-64 -286)"/>
+            </g>
+            <g id="Group_517" data-name="Group 517" transform="translate(15.21 5.07)">
+                <path id="Path_1450" d="M306.028 286a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1450" transform="translate(-304 -286)"/>
+            </g>
+            <g id="Group_518" data-name="Group 518" transform="translate(20.28 5.07)">
+                <path id="Path_1451" d="M386.028 286a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1451" transform="translate(-384 -286)"/>
+            </g>
+            <g id="Group_519" data-name="Group 519" transform="translate(10.14 10.14)">
+                <path id="Path_1452" d="M226.028 366a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1452" transform="translate(-224 -366)"/>
+            </g>
+            <g id="Group_520" data-name="Group 520" transform="translate(5.07 10.14)">
+                <path id="Path_1453" d="M146.028 366a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1453" transform="translate(-144 -366)"/>
+            </g>
+            <g id="Group_521" data-name="Group 521" transform="translate(0 10.14)">
+                <path id="Path_1454" d="M66.028 366a2.028 2.028 0 1 0 2.028 2.028A2.03 2.03 0 0 0 66.028 366z" class="cls-3" data-name="Path 1454" transform="translate(-64 -366)"/>
+            </g>
+            <g id="Group_522" data-name="Group 522" transform="translate(15.21 10.14)">
+                <path id="Path_1455" d="M306.028 366a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1455" transform="translate(-304 -366)"/>
+            </g>
+            <g id="Group_523" data-name="Group 523" transform="translate(20.28 10.14)">
+                <path id="Path_1456" d="M386.028 366a2.028 2.028 0 1 0 2.028 2.028 2.03 2.03 0 0 0-2.028-2.028z" class="cls-3" data-name="Path 1456" transform="translate(-384 -366)"/>
+            </g>
+        </g>
+        <g id="Group_526" data-name="Group 526" transform="translate(3.295 10)">
+            <g id="Group_525" data-name="Group 525">
+                <path id="Path_1457" d="M52.76 15.07a.761.761 0 0 1-.76-.76v-3.55a.76.76 0 0 1 1.521 0v3.549a.761.761 0 0 1-.761.761z" class="cls-4" data-name="Path 1457" transform="translate(-52 -10)"/>
+            </g>
+        </g>
+        <g id="Group_528" data-name="Group 528" transform="translate(27.631 10)">
+            <g id="Group_527" data-name="Group 527">
+                <path id="Path_1458" d="M436.76 15.07a.761.761 0 0 1-.76-.76v-3.55a.76.76 0 0 1 1.521 0v3.549a.761.761 0 0 1-.761.761z" class="cls-4" data-name="Path 1458" transform="translate(-436 -10)"/>
+            </g>
+        </g>
+        <g id="Group_529" data-name="Group 529" transform="translate(4.056 22.421)">
+            <circle id="Ellipse_331" cx="2.028" cy="2.028" r="2.028" class="cls-5" data-name="Ellipse 331"/>
+        </g>
+        <g id="Group_530" data-name="Group 530" transform="translate(14.196 32.561)">
+            <circle id="Ellipse_332" cx="2.028" cy="2.028" r="2.028" class="cls-6" data-name="Ellipse 332"/>
+        </g>
+        <g id="Group_531" data-name="Group 531" transform="translate(19.266 27.491)">
+            <circle id="Ellipse_333" cx="2.028" cy="2.028" r="2.028" class="cls-2" data-name="Ellipse 333"/>
+        </g>
+    </g>
+</svg>

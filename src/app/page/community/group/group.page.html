@@ -1,0 +1,131 @@
+<br><br>
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="primary">  
+    <ion-segment-button value="0">  
+      <small>General</small>  
+    </ion-segment-button>  
+    <ion-segment-button value="1">  
+      <small>My friend</small>  
+    </ion-segment-button>  
+    <ion-segment-button value="2">  
+      <small>Find friends</small>  
+    </ion-segment-button>  
+  </ion-segment>  
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
+    <ion-slide>
+
+  
+<ion-list class="my-card animate fast fadeIn">
+  <div class="slider" style="width: 350px;">  
+    <div class=" slide "  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
+      <div class="text-center">
+        <ion-avatar style="height: 50px;width: 50px;margin-left: 10px;border: blue 2px solid;">
+          <img src="assets/images/profileimage.jpg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+        </ion-avatar>
+         <small> osamuyi</small>
+      </div>
+      </div>
+    </div>
+  <ion-row class="mt-2"> 
+    <ion-col size="2">
+        <ion-avatar>
+           <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
+        </ion-avatar>      
+    </ion-col>
+    <ion-col size="9">
+        <ion-label class="card-name " > 
+         <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
+         <small>2 days ago <strong class="text-dark">Usa</strong></small>  
+      </ion-label>
+      <small class="text-primary text-sm" slot="end" >Follow</small>
+     <div>
+        <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset="">
+        <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
+     </div>
+  <div class= "my-card-footer pt-2 pb-2">
+    <div class="animated fast fadeInDown">
+      <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
+        <small > 129 </small> 
+    </div>
+    
+      <div class="animated  fadeInDown">
+        <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
+          <small >23</small>
+      </div>
+      <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
+        <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
+        <small > 12  </small>
+      </div>
+   </div>
+    </ion-col>
+
+    </ion-row>
+</ion-list>
+    </ion-slide>  
+    <ion-slide>
+      <ion-list lines="none" style="width: 100%;">
+        <ion-list class="my-card animate fast fadeIn">
+     
+          <ion-row > 
+            <ion-col size="2">
+                <ion-avatar>
+                   <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
+                </ion-avatar>      
+            </ion-col>
+            <ion-col size="9">
+                <ion-label class="card-name " > 
+                 <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
+                 <small>2 days ago <strong class="text-dark">Usa</strong></small>  
+              </ion-label>
+              <small class="text-primary text-sm "  >Follow</small>
+             <div>
+                <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset="">
+                <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
+             </div>
+          <div class= "my-card-footer pt-2 pb-2">
+            <div class="animated fast fadeInDown">
+              <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
+                <small > 129 </small> 
+            </div>
+            
+              <div class="animated  fadeInDown">
+                <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
+                  <small >23</small>
+              </div>
+              <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
+                <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
+                <small > 12  </small>
+              </div>
+           </div>
+            </ion-col>
+        
+            </ion-row>
+        </ion-list>
+      </ion-list>
+ 
+    </ion-slide>  
+    <ion-slide >
+       <ion-list style="width: 100%;">
+      <ion-searchbar ></ion-searchbar>
+        <ion-item>
+        <ion-avatar slot="start">
+        <img style="width: 60px;height: 60px;" src="assets/images/profileimage.jpg">
+        </ion-avatar>  <ion-label class="card-name " > 
+          <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
+          <small>2 days ago <strong class="text-dark">Usa</strong></small>  
+       </ion-label>
+       <button class="btn btn-primary btn-sm" slot="end" type="button">follow</button>
+        </ion-item>   
+      </ion-list>
+
+    </ion-slide>  
+  </ion-slides>   
+  
+<!-- feature profile will go in here  -->
+
+<ion-fab vertical="bottom" [routerLink]="['/makepost']" routerLinkActive="router-link-active"  horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

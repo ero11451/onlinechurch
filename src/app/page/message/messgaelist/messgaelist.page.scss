@@ -1,0 +1,37 @@
+.hearder-icon{
+    height: 20px;
+    width: 20px;
+  }
+  *{
+    padding: 0px;
+    margin: 0px;
+  }
+  .text-bold{
+    font-weight: bolder;
+  }
+  .slider {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    overflow-x: auto;
+  }
+  .slide {
+    flex-shrink: 0;
+    height: 100%;
+    margin: 10px;
+    img{
+      height: 150px;
+    }
+  }
+  
+  .nav-link:active{
+    border: none;
+    background-color: green;
+  }
+  .nav-link{
+    border: none;
+    margin-left: 50px;
+  }
+  .nav{
+    border: none;
+  }

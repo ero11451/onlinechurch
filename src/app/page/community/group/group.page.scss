@@ -1,0 +1,81 @@
+// :root {  
+// 	--ion-safe-area-top: 20px;  
+// 	--ion-safe-area-bottom: 22px;  
+//   }  
+  ion-slide {  
+	height: 100% !important;  
+	width: 100% !important;
+
+  }  
+
+.slider {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	overflow-x: auto;
+  }
+  .slide {
+	flex-shrink: 0;
+	height: 100%;
+	margin: 10px;
+	
+  }
+.my-card{
+	text-align: left;
+	.content{
+	  overflow: hidden;
+	  color:black;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 1.4;
+	  letter-spacing: normal;
+	  text-align: left;
+	  height: fit-content;
+	 }
+	.my-card-footer{
+	   display: grid;
+	   grid-template-columns: auto auto auto;
+	   color: #0074e4;
+	 img{
+		margin-right: 5%;
+		color: #0074e4;
+		height: 15px;
+		width: 15px;
+	  }
+	  font-size: medium;
+   
+	 } 
+   .card-name{
+	  text-align: left;
+      font-weight: bolder;
+
+	  small{ 
+		opacity: 0.5;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.26;
+		letter-spacing: normal;
+		text-align: left;
+		color: #222222;
+		text-align: left;
+	  }
+	}
+   .my-card-footer{
+	 border-top:#fdfdfd 1px solid;
+	 border-bottom: 2px solid#fdfdfd;
+   }
+  }
+  .text-bold{
+	  font-weight: 900;
+  }
+  .post-user-image{
+	  height: 40px;
+	  width: 40px;
+	  margin-left: 10px;
+  }
+  .post-image{
+	border-radius: 5px;
+	 height:200px;
+	 width: 100%;
+	object-fit: cover;
+  }

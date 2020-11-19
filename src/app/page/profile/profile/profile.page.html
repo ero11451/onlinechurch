@@ -1,0 +1,113 @@
+
+<ion-header  class="ion-no-border ion-no-padding " no-border color="primary" >
+  <ion-item  lines="none"> 
+      <ion-avatar slot="start" style="height: 30px;width: 30px;">
+        <img src="assets/images/profileimage.jpg">
+        </ion-avatar> 
+    <ion-label      class="name  animated fast fadeInLeft text-bold"> 
+      <small style="margin-left: 8px; font-weight: bolder;" class="text-primary">
+        Hi john
+      </small>
+ </ion-label>
+ 
+   <!-- <ion-img class="hearder-icon" (click)="menu()"src="assets/images/about.svg"></ion-img> -->
+   
+   </ion-item>
+</ion-header>
+
+<ion-content>
+  <ion-row >
+    <ion-col size="4.5" class="text-center">
+      <ion-thumbnail class="profile-image ml-3 faster animated slideInLeft">
+        <img src="assets/images/profileimage.jpg"  alt="">
+       
+      </ion-thumbnail>
+      </ion-col>
+    <ion-col size="7"  class="ion-no-padding ion-no-margin animated faster slideInLeft">
+      <div class="mt-2">
+          <p class='text-bold'>Ero osamuyi</p>
+          <small class="text-muted">erosam@gmail.com</small>
+        </div>
+      <ion-row  class="">
+        <ion-col size="6">
+          <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="border-right">
+           <p class="text-primary text-bold">54</p>
+           <small class="text-muted">Followers</small>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="ml-2">
+            <p class="text-primary text-bold">299</p>
+            <small class="text-muted">Following</small>
+          </div>
+       </ion-col>
+      </ion-row>
+          <small 
+          class="text-primary  mt-3"
+          [routerLink]="['/editprofile']" routerLinkActive="router-link-active" 
+          >Edit </small>
+    </ion-col>
+  </ion-row>
+<ion-list lines='none'>
+  <div class=" m-3">
+      <app-mywallet ></app-mywallet> 
+  </div>
+  <ion-item>
+    <small class="text-bold">My detail</small>
+    <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
+  </ion-item>
+ <ion-item>
+   <small class="text-bold">Truncations history</small>
+   <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
+ </ion-item>
+
+ <ion-item data-target="#my-post" data-toggle="collapse" aria-expanded="false" aria-controls="my-post">
+  <small class="text-bold">My post</small>
+  <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
+</ion-item>
+</ion-list>
+
+
+<ion-list id="my-post" class="my-card animate fast collapse fadeIn">
+  <!-- <ion-item lines=none>
+    <p class="text-bold"> Top Post</p>
+    <small class="text-primary" slot="end"> See more</small>
+ </ion-item> -->
+  <ion-row > 
+    <ion-col size="2">
+        <ion-avatar>
+           <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
+        </ion-avatar>      
+    </ion-col>
+    <ion-col size="9">
+       <div class="card-headr">
+        <ion-label class="card-name " > 
+            <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
+            <small>2 days ago</small>             
+        </ion-label>
+         <small style="float: right;" class=" text-primary ">Delete</small>
+         
+       </div>
+       <div>
+        <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset="">
+        <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
+     </div>
+  <div class= "my-card-footer pt-2 pb-2">
+    <div class="animated fast fadeInDown">
+      <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
+        <small > 129 </small> 
+    </div>
+      <div class="animated  fadeInDown">
+        <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
+          <small >23</small>
+      </div>
+      <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
+        <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
+        <small > 12  </small>
+      </div>
+   </div>
+    </ion-col>
+
+    </ion-row>
+</ion-list>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="content">  
+    <ion-header class="ion-no-border ">  
+      <ion-item lines="none">
+             <ion-avatar style="height: 40px;width: 40px;">
+          <img src="../assets/images/profileimage.jpg"  />
+        </ion-avatar>   
+        <ion-label class="ml-2">
+           <small class="text-primary mt-2 text-bold">Hi ero osamuyi</small><br>
+
+           <small class=" mt-2 text-bold text-muted">N000</small>
+         </ion-label> 
+           
+      </ion-item>
+   
+   
+    </ion-header>  
+    <ion-content>  
+      <ion-list *ngFor="let pages of navigate">  
+        <ion-menu-toggle auto-hide="true">  
+          <ion-item [routerLink]="pages.url" class="text-bold" lines=none routerDirection="forward">  
+            <ion-img class="icon" [src]="pages.icon" slot="start"></ion-img>  
+             {{pages.title}}    
+          </ion-item>  
+        </ion-menu-toggle>  
+      </ion-list>  
+    </ion-content>  
+  </ion-menu>  
+  <ion-router-outlet  Id="content"></ion-router-outlet>
+</ion-app>

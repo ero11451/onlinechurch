@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <div slot="end" class="mr-2 mt-2">
+      <small class="text-muted">Balance</small>
+      <p class='text-bold'>N120000</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="bg">
+  <ion-item lines="none">
+    <p class="text-bold">Store</p>
+    <small class="text-muted" slot="end"><ion-icon name="search"></ion-icon></small>
+  </ion-item>
+  <ion-segment   (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="primary">  
+    <ion-segment-button value="0">  
+      <small>General</small>  
+    </ion-segment-button>  
+    <ion-segment-button value="1">  
+      <small>Merchandise</small>  
+    </ion-segment-button>  
+    <ion-segment-button value="2">  
+      <small>Books</small>  
+    </ion-segment-button>  
+  </ion-segment>  
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
+    <ion-slide>
+      <ion-row class="ion-margin">
+        <ion-col size="6">
+
+          <ion-card [routerLink]="['/productdetail']" routerLinkActive="router-link-active"  class="product-card">
+           <small class="off">30%</small>
+          <img class="productimage" src="assets/images/profileimage.jpg" alt="" srcset="">
+        <div class="text-center">
+              <p class="title mt-2">laptop bad</p>
+             <p class="price">N24409</p> 
+    
+          </div>
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      </ion-slide>
+      <ion-slide>
+      </ion-slide>
+      <ion-slide>
+      </ion-slide> 
+  </ion-slides>
+ 
+</ion-content>

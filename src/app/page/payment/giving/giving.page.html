@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title><small>Giving</small></ion-title> -->
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-padding">
+    <!-- <div class="ion-text-lft">
+     <img  src="assets/images/credit.svg" style="height: 130px;width: 130px; margin-bottom: 10px;">
+    </div> -->
+
+      <div >
+        <p  style="margin-bottom: -2px;font-size: 40px; font-weight: bolder;width: 50%;">
+          Give and be blessed
+        </p>
+        <small class="text-muted text-bold">
+          All you have to do be removed from your wallet
+        </small>
+      </div> 
+<br>
+<br>
+    <app-mywallet></app-mywallet>
+    <br>
+    <ion-item>
+    <ion-label position="floating">
+     <small> Propose Of Giving   </small></ion-label>
+    <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label position="floating">
+     <small> Amount  </small></ion-label>
+    <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label position="floating"> <small> Payer Point </small></ion-label>
+    <ion-input></ion-input>
+    </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar class="p-3">
+      <ion-button expand="full" >Submit</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,213 @@
+
+<ion-header  class="ion-no-border  " no-border color="primary" >
+  <ion-item  lines="none">  
+  
+   </ion-item>
+</ion-header>
+
+
+<ion-content>
+   <ion-list>
+  <div class="m-3">
+    <app-mywallet ></app-mywallet> 
+   </div>
+ 
+   <!--   <ion-card class='m-2'>
+     <ion-item lines="none">
+<div>
+    <small>ero osamuyi</small>
+   <p>Happy birthday</p>
+  <small>
+  Keep close to Nature's heart... and break clear away, once in awhile,
+   and Wash your spirit clean.
+      
+  </small>    
+   </div>
+
+ 
+
+     </ion-item>
+   </ion-card> -->
+   <ion-list class="my-card animate fast fadeIn">
+    <!-- <ion-item lines=none>
+      <p class="text-bold"> Top Post</p>
+      <small class="text-primary" slot="end"> See more</small>
+   </ion-item> -->
+    <ion-row > 
+      <ion-col size="2">
+          <ion-avatar>
+             <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
+          </ion-avatar>      
+      </ion-col>
+      <ion-col size="9">
+          <ion-label class="card-name " > 
+           <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
+           <small>Usa</small>  
+        </ion-label>
+        <!-- <small class="text-primary text-sm" slot="end" >Follow</small> -->
+       <div>
+          <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
+          <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
+       </div>
+    <div class= "my-card-footer pt-2 pb-2">
+      <div class="animated fast fadeInDown">
+        <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
+          <small > 129 </small> 
+      </div>
+        <div class="animated  fadeInDown">
+          <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
+            <small >23</small>
+        </div>
+        <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
+          <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
+          <small > 12  </small>
+        </div>
+     </div>
+      </ion-col>
+  
+      </ion-row>
+</ion-list>
+
+
+<ion-item class="m-2" lines="none" style="
+border: solid 1px#e0e0e0;
+margin: 10px;
+border-radius: 2px;
+--ion-item-background: linear-gradient(2deg, #fefeff 29%, #f8f9fe 96%);">      
+  <div class="mt-3 mb-3">
+      <small class="text-muted ">Give</small>
+      <p class="bold mb-1 mt-1" >Online payment</p>
+    
+      <button
+       routerLink="/feature-profile" 
+       routerLinkActive="active"
+       class="btn btn-sm btn-primary p-1 mt-2 mb-2 pl-2 pr-2" 
+       size="small">
+        Get started
+      </button> 
+  </div>
+      <img 
+      slot="end"
+       class="img-fluid rounded "
+       style="height: 100px;"
+       src="../../../assets/images/payment.svg" alt="" srcset="">  
+  </ion-item>
+  <ion-item lines=none>
+    <ion-avatar slot="start">
+      <img src="assets/icon/map.svg" />
+    </ion-avatar>
+    <ion-label class="ml-2">
+      <small class="text-muted" style="font-size: 10px;">Church name</small>
+      <p class="text-primary text-bold">Find church</p>
+    </ion-label>
+  </ion-item>
+  <div class="container-image" style="width: 100%;height: 200px;background-color: lightgrey;">
+  <img style="width: 100%;height: 200px; object-fit: cover;" src="assets/images/GoogleMapTA@3x.jpg"  alt="" srcset="">
+  <div class="centered">
+    <small class="text-dark">
+       see map 
+  </small>
+  <!-- <small class="text-danger">Play</small>  -->
+   </div>
+  </div>
+    <ion-card class="m-3">
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-label >
+            <small class="text-muted" style="font-size: 10px;">Daily Devotional</small>
+        <p class="text-primary text-bold">
+          living a life of destiny
+        </p>
+          </ion-label>
+            <small slot="end" style="font-size: 10px;">2/20/2020</small>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content class="pl-3 pr-3 pb-3">
+        <small>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, explicabo!
+        </small>
+      </ion-card-content>
+    </ion-card>
+   <ion-row class="ion-padding">
+     <ion-col  size="6" *ngFor="let item of list">
+       <ion-card class=" service-card" (click)="togoPage(item.page)" class={{item.animation}}>
+       <ion-item lines = none class=" ion-no-margin">
+        <img class="icon" src={{item.icon}}>
+        <div>
+            <small class="title"> {{item.title}}</small>
+        </div>
+      </ion-item>   
+       </ion-card>
+     </ion-col>
+   </ion-row>
+   <ion-item lines=none>
+      <small class="text-bold"> Messages</small>
+      <small class="text-primary" slot="end"> See more</small>
+   </ion-item>
+ 
+   <div class="slider">  
+    <div class=" slide"  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
+      <div class="container-image">
+        <img src="assets/images/profileimage.jpg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+        <div class="bottom-left ion-text-start">
+           <small>
+            Lorem ipsum dolor sit amet consectetur 
+         </small>
+         <!-- <small class="text-danger">Play</small>  -->
+          </div>
+          <div class="top-right">
+            <ion-icon name="menu" (click)="saveMessage()"></ion-icon>
+        </div>
+      </div>
+        </div>
+      </div>
+   </ion-list>
+   <ion-list class="my-card mt-1 animate fast fadeIn">
+    <!-- <ion-item lines=none>
+      <p class="text-bold"> Top Post</p>
+      <small class="text-primary" slot="end"> See more</small>
+   </ion-item> -->
+    <ion-row > 
+      <ion-col size="2">
+          <ion-avatar>
+             <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
+          </ion-avatar>      
+      </ion-col>
+      <ion-col size="9">
+          <ion-label class="card-name " > 
+           <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
+           <small>Usa</small>  
+        </ion-label>
+        <!-- <small class="text-primary text-sm" slot="end" >Follow</small> -->
+       <div>
+          <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
+          <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
+       </div>
+    <div class= "my-card-footer pt-2 pb-2">
+      <div class="animated fast fadeInDown">
+        <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
+          <small > 129 </small> 
+      </div>
+        <div class="animated  fadeInDown">
+          <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
+            <small >23</small>
+        </div>
+        <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
+          <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
+          <small > 12  </small>
+        </div>
+     </div>
+      </ion-col>
+  
+      </ion-row>
+</ion-list>
+
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content
+    pullingIcon="arrow-dropdown"
+    pullingText="Pull to refresh"
+    refreshingSpinner="bubbles"
+    refreshingText="Refreshing...">
+  </ion-refresher-content>
+</ion-refresher>
+</ion-content>

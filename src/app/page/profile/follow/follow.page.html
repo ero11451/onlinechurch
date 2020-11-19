@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="primary">  
+    <ion-segment-button value="0">  
+      <small>Following</small>  
+    </ion-segment-button>  
+    <ion-segment-button value="1">  
+      <small>Follower</small>  
+    </ion-segment-button>  
+  </ion-segment>  
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
+    <ion-slide>
+     <ion-list lines="none" style="width: 100%;">
+     <ion-item>
+       <ion-avatar>
+         <img  style="width: 50px;height: 50px;"src="assets/images/profileimage.jpg" />
+       </ion-avatar>
+     <ion-label class="ml-2">
+       <p class="text-bold text-dark" style="margin-bottom: -5px;">
+         ero osamuyi
+       </p>
+       <small class="text-bold text-muted">
+         london
+       </small>
+     </ion-label>
+       <button class="btn btn-primary  btn-sm btn-outline" type="button">Follow</button>
+     </ion-item>
+     </ion-list>
+    </ion-slide>  
+    <ion-slide>
+      <ion-list lines="none" style="width: 100%;">
+        <ion-item>
+          <ion-avatar>
+            <img  style="width: 50px;height: 50px;"src="assets/images/profileimage.jpg" />
+          </ion-avatar>
+        <ion-label class="ml-2">
+          <p class="text-bold text-dark" style="margin-bottom: -5px;">
+            ero osamuyi
+          </p>
+          <small class="text-bold text-muted">
+            london
+          </small>
+        </ion-label>
+          <button class="btn btn-primary  btn-sm btn-outline" type="button">Follow</button>
+        </ion-item>
+        </ion-list>
+    </ion-slide>  
+ 
+  </ion-slides>   
+  
+</ion-content>

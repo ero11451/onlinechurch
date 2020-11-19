@@ -1,0 +1,34 @@
+
+.product-card{
+
+    border-radius: 5px;
+    width: 96%;
+    height: 220px;
+    margin: 1%;
+    padding: 5px;
+     
+    .productimage{
+     height: 100px;
+     width: 96%;
+     object-fit: contain;
+    }
+    .off{
+        background-color: cyan;
+        font-size: 10px;
+        float: left;
+        margin: 10px 0px 10px 0px;
+        border-radius: 5px;
+        padding: 3px 5px;
+        font-weight: 800;
+    }
+    .title{
+
+        font-weight: bold;
+    }
+    .price{
+        font-weight: bolder;
+    }
+}
+.bg{
+   background: lightslategray !important;
+}

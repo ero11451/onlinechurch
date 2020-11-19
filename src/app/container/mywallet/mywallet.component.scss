@@ -1,0 +1,27 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.wallet-card{
+  padding: 2% 0% 2% 0%;
+  border-radius: 4px;
+  box-shadow: 1px 2px #b9b9bd;
+  
+  ion-icon{
+      font-size: 40px;
+  }
+  .subtitle{
+  }
+  .title{
+      font-weight: bold;
+      font-size: 15px;
+  }
+
+  img{
+      height: 30px;
+      width: 30px;
+  }
+}
+.text-bold{
+    font-weight: bolder;
+}
