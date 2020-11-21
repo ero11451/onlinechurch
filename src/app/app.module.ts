@@ -12,6 +12,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+import { environment } from 'src/environments/environment';
+import * as firebase from 'firebase';
+
+firebase.default.initializeApp(environment.firebaseConfig);
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,6 +28,7 @@ import { AppComponent } from './app.component';
     HttpClientModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
+    AngularFireAuthModule,
     MenuPageModule
   ],
   providers: [

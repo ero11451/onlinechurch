@@ -16,6 +16,7 @@ import {
   Environment
 } from '@ionic-native/google-maps';
 import { Subscription } from 'rxjs';
+import firebase from 'firebase';
 
 declare var google: any;
 let map: any;
@@ -60,36 +61,36 @@ export class LocationPage implements OnInit {
   zones = [];
 
   constructor() {
-    // firebase.database().ref('zones/').on('value', resp => {
-    //   this.zones = [];
-    //   this.zones = snapshotToArray(resp);
-    //   for (const donor of this.zones) {
-    //     this.createMarkers(donor);
-    //   }
-    // });
-    // this.initMap();
+    firebase.database().ref('zones/').on('value', resp => {
+      this.zones = [];
+      this.zones = snapshotToArray(resp);
+      for (const donor of this.zones) {
+        this.createMarkers(donor);
+      }
+    });
+    this.initMap();
   }
 
   ngOnInit() {
 
-    // firebase.database().ref('zones/').on('value', resp => {
-    //   this.zones = [];
-    //   this.zones = snapshotToArray(resp);
-    //   for (const donor of this.zones) {
-    //     this.createMarkers(donor);
-    //   }
-    // });
+    firebase.database().ref('zones/').on('value', resp => {
+      this.zones = [];
+      this.zones = snapshotToArray(resp);
+      for (const donor of this.zones) {
+        this.createMarkers(donor);
+      }
+    });
   }
 
   ngAfterViewInit() {
-    //  this.initMap();
-    //  firebase.database().ref('zones/').on('value', resp => {
-    //       this.zones = [];
-    //       this.zones = snapshotToArray(resp);
-    //       for (const donor of this.zones) {
-    //         this.createMarkers(donor);
-    //       }
-    //     });
+     this.initMap();
+     firebase.database().ref('zones/').on('value', resp => {
+          this.zones = [];
+          this.zones = snapshotToArray(resp);
+          for (const donor of this.zones) {
+            this.createMarkers(donor);
+          }
+        });
   }
 
   initMap() {
@@ -120,8 +121,8 @@ export class LocationPage implements OnInit {
         console.log(marker.getPosition().lat());
         console.log(marker.getPosition().lng());
         infowindow.setPosition(event.latLng);
-        infowindow.setContent('<h2>Add Miracle assembly cell location</h2>' +
-        '<h3><a href="/add-zone/' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">Add here</a></h3>');
+        infowindow.setContent('<h2>Church Location</h2>' +
+        '<h3><a href="/tabs/home' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">Add here</a></h3>');
         infowindow.open(map, marker);
       });
     }, (error) => {

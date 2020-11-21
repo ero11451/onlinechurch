@@ -11,7 +11,30 @@
   <div class="m-3">
     <app-mywallet ></app-mywallet> 
    </div>
- 
+   <!-- <ion-item lines=none>
+    <small class="text-bold"> Messages</small>
+    <small class="text-primary" slot="end"> See more</small>
+ </ion-item> -->
+
+ <div class="slider">  
+  <div class=" slide"  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
+    <div class="container-image">
+      <img src="assets/images/profileimage.jpg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+      <div class="bottom-left ion-text-start">
+         <small>
+          Lorem ipsum dolor sit amet consectetur 
+       </small>
+       <!-- <small class="text-danger">Play</small>  -->
+        </div>
+
+        <!-- <div class="top-right"> 
+          <ion-icon name="menu" (click)="saveMessage()"></ion-icon>
+      </div>
+    -->
+    </div>
+      </div>
+    </div>
+    <br>
    <!--   <ion-card class='m-2'>
      <ion-item lines="none">
 <div>
@@ -110,7 +133,7 @@ border-radius: 2px;
   <!-- <small class="text-danger">Play</small>  -->
    </div>
   </div>
-    <ion-card class="m-3">
+    <ion-card class="m-3" [routerLink]="['/devotion']" routerLinkActive="router-link-active" >
       <ion-card-header>
         <ion-item lines="none">
           <ion-label >
@@ -140,27 +163,7 @@ border-radius: 2px;
        </ion-card>
      </ion-col>
    </ion-row>
-   <ion-item lines=none>
-      <small class="text-bold"> Messages</small>
-      <small class="text-primary" slot="end"> See more</small>
-   </ion-item>
  
-   <div class="slider">  
-    <div class=" slide"  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
-      <div class="container-image">
-        <img src="assets/images/profileimage.jpg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
-        <div class="bottom-left ion-text-start">
-           <small>
-            Lorem ipsum dolor sit amet consectetur 
-         </small>
-         <!-- <small class="text-danger">Play</small>  -->
-          </div>
-          <div class="top-right">
-            <ion-icon name="menu" (click)="saveMessage()"></ion-icon>
-        </div>
-      </div>
-        </div>
-      </div>
    </ion-list>
    <ion-list class="my-card mt-1 animate fast fadeIn">
     <!-- <ion-item lines=none>

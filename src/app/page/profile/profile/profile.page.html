@@ -17,45 +17,64 @@
 
 <ion-content>
   <ion-row >
-    <ion-col size="4.5" class="text-center">
-      <ion-thumbnail class="profile-image ml-3 faster animated slideInLeft">
+    <ion-col size="4" class="text-center">
+      <ion-avatar class="profile-image ml-3 faster animated slideInLeft">
         <img src="assets/images/profileimage.jpg"  alt="">
        
-      </ion-thumbnail>
+      </ion-avatar>
       </ion-col>
     <ion-col size="7"  class="ion-no-padding ion-no-margin animated faster slideInLeft">
       <div class="mt-2">
           <p class='text-bold'>Ero osamuyi</p>
           <small class="text-muted">erosam@gmail.com</small>
         </div>
-      <ion-row  class="">
-        <ion-col size="6">
-          <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="border-right">
-           <p class="text-primary text-bold">54</p>
-           <small class="text-muted">Followers</small>
-          </div>
-        </ion-col>
-        <ion-col size="6">
-          <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="ml-2">
-            <p class="text-primary text-bold">299</p>
-            <small class="text-muted">Following</small>
-          </div>
-       </ion-col>
-      </ion-row>
+    
           <small 
-          class="text-primary  mt-3"
-          [routerLink]="['/editprofile']" routerLinkActive="router-link-active" 
+          class="btn-primary btn-sm btn pl-3 pr-3 mt-2"
+          [routerLink]="['/edit']" routerLinkActive="router-link-active" 
           >Edit </small>
     </ion-col>
   </ion-row>
+  <br>
+  <ion-row  class="">
+    <ion-col size="4" class="text-center">
+      <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="border-right">
+       <p class="text-primary text-bold">54</p>
+       <small class="text-muted">Post</small>
+      </div>
+    </ion-col>
+    <ion-col  class="text-center" size="4">
+      <div  [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="border-right">
+       <p class="text-primary text-bold">54</p>
+       <small class="text-muted">Followers</small>
+      </div>
+    </ion-col>
+    <ion-col  class="text-center" size="4">
+      <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="ml-2">
+        <p class="text-primary text-bold">299</p>
+        <small class="text-muted">Following</small>
+      </div>
+   </ion-col>
+  </ion-row>
+  <br>
 <ion-list lines='none'>
   <div class=" m-3">
       <app-mywallet ></app-mywallet> 
   </div>
-  <ion-item>
+
+<ion-item>
+  <div>
+    <p class="text-bold">About Me</p>
+    <small class="text-muted">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, earum.
+    </small>
+  </div>
+</ion-item>
+  <!-- <ion-item> 
     <small class="text-bold">My detail</small>
     <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
   </ion-item>
+-->
  <ion-item>
    <small class="text-bold">Truncations history</small>
    <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
