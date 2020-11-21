@@ -1,18 +1,9 @@
 <ion-app>
   <ion-menu side="start" menuId="first" contentId="content">  
-    <ion-header class="ion-no-border ">  
-      <ion-item lines="none">
-             <ion-avatar style="height: 40px;width: 40px;">
-          <img src="../assets/images/profileimage.jpg"  />
-        </ion-avatar>   
-        <ion-label class="ml-2">
-           <small class="text-primary mt-2 text-bold">Hi ero osamuyi</small><br>
-
-           <small class=" mt-2 text-bold text-muted">N000</small>
-         </ion-label> 
-           
-      </ion-item>
-   
+    <ion-header class="ion-no-border " stty>  
+    <ion-thumbnail class="m-3">
+      <img src="assets/icon/favicon.png" />
+    </ion-thumbnail>
    
     </ion-header>  
     <ion-content>  
@@ -24,7 +15,25 @@
           </ion-item>  
         </ion-menu-toggle>  
       </ion-list>  
+
     </ion-content>  
+    <ion-footer class="ion-no-border">
+      <ion-toolbar>
+        <ion-item lines="none">
+          <ion-avatar style="height: 40px;width: 40px;">
+       <img src="assets/images/profileimage.jpg"  />
+     </ion-avatar>   
+     <ion-label class="ml-2">
+        <small class="text-primary mt-2 text-bold">Hi ero osamuyi</small><br>
+
+        <!-- <small class=" mt-2 text-bold text-muted">N000</small> -->
+      </ion-label> 
+        
+   </ion-item>
+
+      </ion-toolbar>
+    </ion-footer>
   </ion-menu>  
+
   <ion-router-outlet  Id="content"></ion-router-outlet>
 </ion-app>

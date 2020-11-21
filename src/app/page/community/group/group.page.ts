@@ -22,6 +22,6 @@ export class GroupPage implements OnInit {
     this.segment = await this.slider.getActiveIndex();  
   }  
   onSearchChange($event){
-    
   }
+  
 }

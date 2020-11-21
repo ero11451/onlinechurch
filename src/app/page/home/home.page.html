@@ -24,17 +24,28 @@
          <small>
           Lorem ipsum dolor sit amet consectetur 
        </small>
-       <!-- <small class="text-danger">Play</small>  -->
         </div>
-
-        <!-- <div class="top-right"> 
-          <ion-icon name="menu" (click)="saveMessage()"></ion-icon>
-      </div>
-    -->
     </div>
       </div>
     </div>
     <br>
+    <ion-item lines=none>
+      <ion-avatar slot="start">
+        <img src="assets/icon/map.svg" />
+      </ion-avatar>
+      <ion-label class="ml-2">
+        <small class="text-muted" style="font-size: 10px;">Church name</small>
+        <p class="text-primary text-bold">Find church</p>
+      </ion-label>
+    </ion-item>
+    <div class="container-image" style="width: 100%;height: 200px;background-color: lightgrey;">
+    <img style="width: 100%;height: 200px; object-fit: cover;" src="assets/images/GoogleMapTA@3x.jpg"  alt="" srcset="">
+    <div class="centered">
+      <small class="text-dark">
+         see map 
+    </small>
+     </div>
+    </div>
    <!--   <ion-card class='m-2'>
      <ion-item lines="none">
 <div>
@@ -51,6 +62,30 @@
 
      </ion-item>
    </ion-card> -->
+   <ion-item class="m-2" lines="none" style="
+border: solid 1px#e0e0e0;
+margin: 10px;
+border-radius: 2px;
+--ion-item-background: linear-gradient(2deg, #fefeff 29%, #f8f9fe 96%);">      
+  <div class="mt-3 mb-3">
+      <small class="text-muted ">Give</small>
+      <p class="bold mb-1 mt-1" >Online payment</p>
+    
+      <button
+       routerLink="/feature-profile" 
+       routerLinkActive="active"
+       class="btn btn-sm btn-primary p-1 mt-2 mb-2 pl-2 pr-2" 
+       size="small">
+        Get started
+      </button> 
+  </div>
+      <img 
+      slot="end"
+       class="img-fluid rounded "
+       style="height: 100px;"
+       src="../../../assets/images/payment.svg" alt="" srcset="">  
+  </ion-item>
+
    <ion-list class="my-card animate fast fadeIn">
     <!-- <ion-item lines=none>
       <p class="text-bold"> Top Post</p>
@@ -92,47 +127,7 @@
 </ion-list>
 
 
-<ion-item class="m-2" lines="none" style="
-border: solid 1px#e0e0e0;
-margin: 10px;
-border-radius: 2px;
---ion-item-background: linear-gradient(2deg, #fefeff 29%, #f8f9fe 96%);">      
-  <div class="mt-3 mb-3">
-      <small class="text-muted ">Give</small>
-      <p class="bold mb-1 mt-1" >Online payment</p>
-    
-      <button
-       routerLink="/feature-profile" 
-       routerLinkActive="active"
-       class="btn btn-sm btn-primary p-1 mt-2 mb-2 pl-2 pr-2" 
-       size="small">
-        Get started
-      </button> 
-  </div>
-      <img 
-      slot="end"
-       class="img-fluid rounded "
-       style="height: 100px;"
-       src="../../../assets/images/payment.svg" alt="" srcset="">  
-  </ion-item>
-  <ion-item lines=none>
-    <ion-avatar slot="start">
-      <img src="assets/icon/map.svg" />
-    </ion-avatar>
-    <ion-label class="ml-2">
-      <small class="text-muted" style="font-size: 10px;">Church name</small>
-      <p class="text-primary text-bold">Find church</p>
-    </ion-label>
-  </ion-item>
-  <div class="container-image" style="width: 100%;height: 200px;background-color: lightgrey;">
-  <img style="width: 100%;height: 200px; object-fit: cover;" src="assets/images/GoogleMapTA@3x.jpg"  alt="" srcset="">
-  <div class="centered">
-    <small class="text-dark">
-       see map 
-  </small>
-  <!-- <small class="text-danger">Play</small>  -->
-   </div>
-  </div>
+
     <ion-card class="m-3" [routerLink]="['/devotion']" routerLinkActive="router-link-active" >
       <ion-card-header>
         <ion-item lines="none">

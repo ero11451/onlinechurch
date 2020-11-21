@@ -44,21 +44,21 @@ export class AppComponent {
       url:'bible'
     }, 
     {
-      icon: "assets/icon/bible.svg",
-      title: 'Buy card',
+      icon: "assets/icon/gift-card.svg",
+      title: 'Gift card',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
       url: 'celebrationcard'
     },
     {
-      icon: "assets/icon/bible.svg",
+      icon: "assets/icon/settings.svg",
       title: 'setting',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
       url:'setting'
     },
     {
-      icon: "assets/icon/bible.svg",
+      icon: "assets/icon/market.svg",
       title: 'Market',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
@@ -86,7 +86,7 @@ export class AppComponent {
       url:'giving'
     },
     {
-      icon: "assets/icon/giving.svg",
+      icon: "assets/icon/logout.svg",
       title: 'Logout',
       subtitle: 'Meet and get in oup',
       animation: 'animate__animated animate__bounceIn animate__fast',
