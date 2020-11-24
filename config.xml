@@ -11,6 +11,10 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashReloadOnOrientationChange" value="true" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
@@ -98,6 +102,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <preference name="android-minSdkVersion" value="22" />
     <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="(AIzaSyBguGGLaEvvXyW7xsSiJBJy2KthMFctRH4)" />
     <preference name="GOOGLE_MAPS_IOS_API_KEY" value="(AIzaSyBguGGLaEvvXyW7xsSiJBJy2KthMFctRH4)" />
 </widget>

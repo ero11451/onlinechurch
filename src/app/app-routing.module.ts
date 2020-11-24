@@ -123,7 +123,7 @@ const routes: Routes = [
   },
   {
     path: 'celebrationcard',
-    loadChildren: () => import('./page/celebrationcard/celebrationcard.module').then( m => m.CelebrationcardPageModule)
+    loadChildren: () => import('./page/payment/celebrationcard/celebrationcard.module').then( m => m.CelebrationcardPageModule)
   },
   {
     path: 'subscription',
@@ -137,6 +137,19 @@ const routes: Routes = [
     path: 'servicemenu',
     loadChildren: () => import('./page/mainservice/servicemenu/servicemenu.module').then(m => m.ServicemenuPageModule)
   },
+  {
+    path: 'searchproduct',
+    loadChildren: () => import('./page/marketplace/searchproduct/searchproduct.module').then( m => m.SearchproductPageModule)
+  },
+  {
+    path: 'follow',
+    loadChildren: () => import('./page/profile/follow/follow.module').then( m => m.FollowPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./page/profile/follow/follow.module').then( m => m.FollowPageModule)
+  },
+  
 ];
 @NgModule({
   imports: [

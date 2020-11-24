@@ -1,16 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
 
   <ion-list lines=none> 
-    <ion-item class="service-card animate__animated animate__bounceIn animate__faster"> 
-      <img class="img-fluid " src="../../../assets//images//wallet.svg" alt="" srcset="">
-      <ion-label style="margin-left: 10px;">
-          <ion-card-subtitle class="subtitle">My account Balance</ion-card-subtitle>
-          <ion-title class="title">N000</ion-title>  
-       </ion-label>
-    </ion-item>  
-  
-       <ion-button  expand="block" [routerLink]="['/founding']" routerLinkActive="router-link-active"  class="ion-margin" style="margin: 13px;">
-         Found Wallet
-       </ion-button>
+    <ion-card class="top-box" color="primary">
+      <ion-item color="primary" class="ion-no-padding ion-no-margin">
+        <div>
+          <small>
+        Wallet balance
+      </small>
+   <h1 class="title text-left mt-2 mb-2">
+      $0000
+   </h1>
+  <div class="text-left">
+       <button  [routerLink]="['/founding']" routerLinkActive="router-link-active"  
+     class="btn btn-primary pl-3 btn-round pr-3 mr-2 p-1" >
+     Give
+   </button> 
+       <button  [routerLink]="['/founding']"
+         class="btn btn-primary btn-round pl-3 pr-3 p-1" >
+         Found 
+       </button>   
+   
+  </div>
+     
+        </div>
       
+        <img style="height: 50px;width: 50px;"slot="end" src="../../../../assets/images/wallet (2).svg" alt="" srcset="">
+      </ion-item>
+  
+     
+    </ion-card>
+
+    <ion-card color="secondary" class="top-box">
+      <small>
+        Subcription
+    </small>
+    <ion-card-title class="text-bold text-left mt-1 mb-1 ">
+      No subcription
+   </ion-card-title>
+   <div class="text-left">
+    <button  [routerLink]="['/founding']" routerLinkActive="router-link-active"  
+  class="btn btn-primary pl-3 pr-3 mr-2 p-1" >
+  Upgrade
+</button> 
+
+
+</div>
+    </ion-card>
+      <ion-item>
+        <ion-label>
+          <small> Trascation history</small>
+         
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <div>
+            <small class="text-muted">
+            Credit
+          </small>
+          <p>
+          2000
+          </p>       
+        </div>
+        <ion-icon slot="end" name="checkmark-circle-outline" color="success"></ion-icon>
+      </ion-item>
   </ion-list>
  
+</ion-content>

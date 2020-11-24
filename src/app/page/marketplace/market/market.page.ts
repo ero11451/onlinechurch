@@ -19,6 +19,6 @@ export class MarketPage implements OnInit {
   }
 
   async slideChanged() {
-    this.segment = await this.slider.getActiveIndex();  
-  }  
+    this.segment = await this.slider.getActiveIndex();
+  }
 }

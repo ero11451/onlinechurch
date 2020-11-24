@@ -9,7 +9,8 @@
 
 <ion-content>
   <div class="text-center">
-     <ion-spinner *ngIf="!book"></ion-spinner>
+    
+     <ion-spinner name='crescent' color="primary" *ngIf="!book"></ion-spinner>
   </div>
   <ion-grid *ngIf="book">
     <div *ngFor="let chapter of book?.chapters; let ctp = index">

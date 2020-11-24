@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+      <ion-back-button defaultHref="tabs/community"></ion-back-button>
     </ion-buttons>
     <ion-title>
       <small>Post</small>
@@ -12,44 +12,34 @@
 <ion-content>
 
   <ion-list class="m-2">
-  
-    
-    <!-- <small class="text-muted">
-      Kindly fill the relevant fields
-    </small> -->
-  
-  <!-- <ion-item>
-  <ion-label position="floating" class="ion-no-padding"> 
-    <small class="text-muted"> 
-    Post Title
-    </small> </ion-label>
-  <ion-input></ion-input>
-  </ion-item> -->
-  <ion-item>
+
+  <ion-item lines="none">
   <ion-label position="floating" class="ion-no-padding"> 
    <small class="text-muted">
      What on your mind
    </small>
   
   </ion-label>
-  <ion-textarea></ion-textarea>
+
+  <ion-textarea ></ion-textarea>
   </ion-item>  
   <ion-row class="mt-4">
-    <ion-col size="5">
+    <ion-col size="3">
        <button class="upload-btn">
-        <img src="assets/image/cloud-storage-uploading-option.svg">
+        <img src="assets/images/defaultimage.png">
       </button>
     </ion-col>
-    <ion-col size="7">
+    <ion-col size="9">
       <button class="btn-image-uploade mb-2" fill="outline" size="small" >
         <ion-icon name="images" class="m-2"></ion-icon>
         <div>
           <small class="text-bold">Image or Gif</small><br>
           <small style="font-size: 10px;">PNG, JPG,GIF</small>
         </div>
+        <!-- <input style="display: non" type="file" name="file">   -->
       </button>  
       
-      <input style="display: none" type="file" name="file">       
+          
     </ion-col>
   </ion-row>
   </ion-list>

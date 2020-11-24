@@ -1,26 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon slot="end" class="ion-margin" name="close" (click)="close()" ></ion-icon>
-    <ion-title><small class="text-primary">  Setting </small> </ion-title>
+ 
+    <!-- <ion-icon slot="end" class="ion-margin" name="close" (click)="close()" ></ion-icon> -->
+    <ion-title>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="tabs/home"></ion-back-button>
+      </ion-buttons>     
+      <small class="text-primary">  Setting </small> </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
 <ion-list lines=none>
   <ion-item>
-    <img src="assets//images//notification.svg" class="icon" alt="" srcset="">
+    <img src="assets/images/notification.svg" class="icon" alt="" srcset="">
 
   <ion-label> <small>  Notification</small></ion-label>
   <ion-toggle color="primary"></ion-toggle>
   </ion-item>
   <ion-item>
-    <img src="assets//images//notification.svg" class="icon" alt="" srcset="">
+    <img src="assets/images/notification.svg" class="icon" alt="" srcset="">
 
   <ion-label> <small> Schedule Notification</small></ion-label>
   <ion-datetime slot="end" display-format="MMM DD, YYYY HH:mm"></ion-datetime>
  
   </ion-item>
   <ion-item>
-    <img src="assets//images//location.svg" class="icon" alt="" srcset="">
+    <img src="assets/images/location.svg" class="icon" alt="" srcset="">
   <ion-label>
     <small> location </small>
    </ion-label>

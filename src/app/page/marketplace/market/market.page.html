@@ -1,19 +1,23 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref=""></ion-back-button>
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
     </ion-buttons>
     <div slot="end" class="mr-2 mt-2">
       <small class="text-muted">Balance</small>
-      <p class='text-bold'>N120000</p>
+      <p class='text-bold'>N00.0</p>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="bg">
   <ion-item lines="none">
-    <p class="text-bold">Store</p>
-    <small class="text-muted" slot="end"><ion-icon name="search"></ion-icon></small>
+    <p class="text-bold">Church Store</p>
+    <small slot="end">
+    <ion-icon name="search"
+    [routerLink]="['/searchproduct']" 
+     color="primary"></ion-icon>
+    </small>
   </ion-item>
   <ion-segment   (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="primary">  
     <ion-segment-button value="0">  
@@ -37,9 +41,9 @@
             <small slot="end"> <ion-icon  name="heart"></ion-icon></small>
             
           </ion-item>
-          <img class="productimage" src="assets/images/profileimage.jpg" alt="" srcset="">
-        <div class="text-center">
-              <p class="title mt-2">laptop bad</p>
+          <img class="productimage" src="assets/images/defaultimage.png"  alt="" srcset="">
+        <div class="text-left p-2">
+              <p class="title ">men's shoes fashion</p>
              <p class="price">N24409</p> 
     
           </div>

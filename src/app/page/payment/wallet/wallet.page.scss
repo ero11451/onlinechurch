@@ -2,30 +2,17 @@
     padding: 0px;
     margin: 0px;
 }
-.service-card{
-    padding: 3%;
-    margin: 3%;
-    border-radius: 4px;
-    box-shadow: 1px 2px #b9b9bd;
-    ion-icon{
+.top-box{
+    margin: 2%;
+    padding: 5%;
+    .title{
+        font-weight: bolder;
         font-size: 40px;
     }
-    .subtitle{
-        color: rgb(100, 100, 241);
+    .btn-round{
+        border-radius: 30px;
     }
-    .title{
-        color: rgb(24, 24, 196);
+    .text-bold{
         font-weight: bold;
-        font-size: 15px;
     }
-
-    img{
-        height: 40px;
-        width: 40px;
-    }
-}
-.no-data-img{
-    height: 80%;
-    width: 80%;
-    
 }

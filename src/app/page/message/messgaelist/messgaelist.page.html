@@ -54,71 +54,71 @@
   <ion-list>
     <ion-item lines='none'>
       <ion-label>
-       <small class="font-weight-bold">
+       <p class="font-weight-bold text-dark">
         Spiritual
-    </small>     
+       </p>     
       </ion-label>
     </ion-item>
 
   <div class="ion-padding" class="slider">
     <div  class="slide" *ngFor="let item of [1,1,1,1,1,1,1]">
-      <ion-card  style="width: 150px;">
-         <img src="assets/images/profileimage.jpg" style="height: 100px; object-fit: cover;" alt="" srcset="">
-         <ion-card-content>
-            <p class="m-2" style="line-height: 16px;">
-            Lorem ipsum, dolor sit amet
-            kldkldfklk consectetur 
-          </p>         
-         </ion-card-content>
+      <div [routerLink]="['/subscription']"  style="width: 150px;">
+        <ion-card  style="width: 150px;">
+         <img src="assets/images/defaultimage.png"  style="height: 100px; object-fit: cover;" alt="" srcset="">
+        
       </ion-card>
+      <small class="mt-2 text-muted" style="line-height: 16px;">
+        title of the message there is no message for now
+          </small>       
+      </div>
     </div>
   </div>    
   </ion-list>
   <ion-list>
     <ion-item lines='none'>
       <ion-label>
-       <small class="font-weight-bold">
+       <p class="font-weight-bold text-dark">
       Relationship
-    </small>     
+    </p>     
       </ion-label>
     </ion-item>
 
-  <div class="ion-padding" class="slider">
-    <div  class="slide" *ngFor="let item of [1,1,1,1,1,1,1]">
-      <ion-card style="width: 150px;">
-         <img src="assets/images/profileimage.jpg" style="height: 100px; object-fit: cover;" alt="" srcset="">
-         <ion-card-content>
-          <p class="m-2" style="line-height: 16px;">
-          Lorem ipsum, dolor sit amet
-          kldkldfklk consectetur 
-        </p>         
-       </ion-card-content>
-      </ion-card>
-    </div>
-  </div>    
+    <div class="ion-padding" class="slider">
+      <div  class="slide" *ngFor="let item of [1,1,1,1,1,1,1]">
+        <div [routerLink]="['/subscription']" routerLinkActive="router-link-active"  style="width: 150px;">
+          <ion-card  style="width: 150px;">
+           <img src="assets/images/defaultimage.png"  style="height: 100px; object-fit: cover;" alt="" srcset="">
+          
+        </ion-card>
+        <small class="mt-2 text-muted" style="line-height: 16px;">
+          title of the message there is no message for now
+            </small>       
+        </div>
+      </div>
+    </div>      
   </ion-list>
 
   <ion-list>
     <ion-item lines='none'>
       <ion-label>
-       <small class="font-weight-bold">
+       <p class="font-weight-bold text-dark">
         Money
-    </small>     
+    </p>     
       </ion-label>
     </ion-item>
 
-  <div class="ion-padding" class="slider">
-    <div  class="slide" *ngFor="let item of [1,1,1,1,1,1,1]">
-      <ion-card style="width: 150px;">
-         <img src="assets/images/profileimage.jpg" style="height: 100px; object-fit: cover;" alt="" srcset="">
-         <ion-card-content>
-          <p class="m-2" style="line-height: 16px;">
-          Lorem ipsum, dolor sit amet
-          kldkldfklk consectetur 
-        </p>         
-       </ion-card-content>
-      </ion-card>
-    </div>
-  </div>    
+    <div class="ion-padding" class="slider">
+      <div  class="slide" *ngFor="let item of [1,1,1,1,1,1,1]">
+        <div [routerLink]="['/subscription']"  style="width: 150px;">
+          <ion-card  style="width: 150px;">
+           <img src="assets/images/defaultimage.png"  style="height: 100px; object-fit: cover;" alt="" srcset="">
+          
+        </ion-card>
+        <small class="mt-2 text-muted" style="line-height: 16px;">
+              title of the message there is no message for now
+            </small>       
+        </div>
+      </div>
+    </div>       
   </ion-list>
 </ion-content>

@@ -8,7 +8,7 @@
 
 <ion-content>
    <ion-list>
-  <div class="m-3">
+  <div class="m-2">
     <app-mywallet ></app-mywallet> 
    </div>
    <!-- <ion-item lines=none>
@@ -18,14 +18,14 @@
 
  <div class="slider">  
   <div class=" slide"  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
-    <div class="container-image">
-      <img src="assets/images/profileimage.jpg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+    <ion-card class="container-image">
+      <img src="assets/images/defaultimage.png"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
       <div class="bottom-left ion-text-start">
-         <small>
-          Lorem ipsum dolor sit amet consectetur 
+         <small class="text-bold ">
+          Fath is the key to success
        </small>
         </div>
-    </div>
+    </ion-card>
       </div>
     </div>
     <br>
@@ -38,7 +38,7 @@
         <p class="text-primary text-bold">Find church</p>
       </ion-label>
     </ion-item>
-    <div class="container-image" style="width: 100%;height: 200px;background-color: lightgrey;">
+    <div class="container-image" [routerLink]="['/location']" routerLinkActive="router-link-active"  style="width: 100%;height: 200px;background-color: lightgrey;">
     <img style="width: 100%;height: 200px; object-fit: cover;" src="assets/images/GoogleMapTA@3x.jpg"  alt="" srcset="">
     <div class="centered">
       <small class="text-dark">
@@ -62,7 +62,9 @@
 
      </ion-item>
    </ion-card> -->
-   <ion-item class="m-2" lines="none" style="
+   <ion-item class="m-2"
+   [routerLink]="['/giving']" 
+   lines="none" style="
 border: solid 1px#e0e0e0;
 margin: 10px;
 border-radius: 2px;
@@ -85,45 +87,16 @@ border-radius: 2px;
        style="height: 100px;"
        src="../../../assets/images/payment.svg" alt="" srcset="">  
   </ion-item>
-
    <ion-list class="my-card animate fast fadeIn">
     <!-- <ion-item lines=none>
       <p class="text-bold"> Top Post</p>
       <small class="text-primary" slot="end"> See more</small>
    </ion-item> -->
-    <ion-row > 
-      <ion-col size="2">
-          <ion-avatar>
-             <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
-          </ion-avatar>      
-      </ion-col>
-      <ion-col size="9">
-          <ion-label class="card-name " > 
-           <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
-           <small>Usa</small>  
-        </ion-label>
-        <!-- <small class="text-primary text-sm" slot="end" >Follow</small> -->
-       <div>
+
+        <app-celebrationcard></app-celebrationcard>
           <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
-          <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
-       </div>
-    <div class= "my-card-footer pt-2 pb-2">
-      <div class="animated fast fadeInDown">
-        <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
-          <small > 129 </small> 
-      </div>
-        <div class="animated  fadeInDown">
-          <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
-            <small >23</small>
-        </div>
-        <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
-          <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
-          <small > 12  </small>
-        </div>
-     </div>
-      </ion-col>
-  
-      </ion-row>
+      
+ 
 </ion-list>
 
 

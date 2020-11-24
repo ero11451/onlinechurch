@@ -12,7 +12,7 @@
       <small class="text-bold">Time line</small>  
     </ion-segment-button>  
     <ion-segment-button value="2">  
-      <small class="text-bold">Find friends</small>  
+      <small class="text-bold">Search</small>  
     </ion-segment-button>  
   </ion-segment>  
   <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
@@ -23,10 +23,10 @@
   <div class="slider" style="width: 350px;">  
     <div class=" slide "  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
       <div class="text-center">
-        <ion-avatar style="height: 50px;width: 50px;margin-left: 10px;border: rgb(9, 9, 175) 2px solid;">
-          <img src="assets/images/profileimage.jpg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+        <ion-avatar style="height: 50px;width: 50px;margin-left: 10px;border: rgb(120, 120, 253) 2px solid;">
+          <img src="assets/images/upload-icon.svg" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
         </ion-avatar>
-         <small> osamuyi</small>
+         <small>user name</small>
       </div>
       </div>
     </div>
@@ -41,9 +41,9 @@
          <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
          <small>2 days ago <strong class="text-dark">Usa</strong></small>  
       </ion-label>
-      <small class="text-primary text-sm" style="float: right;" >Follow</small>
+      <small class="text-primary text-sm" style="float: right;" >Following</small>
      <div>
-        <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset="">
+        <img src="assets/images/defaultimage.png"  class="post-image mt-2 mb-2" alt="" srcset="">
         <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
      </div>
   <div class= "my-card-footer pt-2 pb-2">
@@ -86,6 +86,7 @@
                 <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset="">
                 <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
              </div>
+             <!-- this is a function -->
           <div class= "my-card-footer pt-2 pb-2">
             <div class="animated fast fadeInDown">
               <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
@@ -110,7 +111,7 @@
     </ion-slide>  
     <ion-slide >
        <ion-list style="width: 100%;">
-      <ion-searchbar ></ion-searchbar>
+      <ion-searchbar  animated ></ion-searchbar>
         <ion-item>
         <ion-avatar slot="start">
         <img style="width: 60px;height: 60px;" src="assets/images/profileimage.jpg">

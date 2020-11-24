@@ -16,9 +16,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 import { environment } from 'src/environments/environment';
-import * as firebase from 'firebase';
+import { AngularFireModule } from '@angular/fire';
 
-firebase.default.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +27,7 @@ firebase.default.initializeApp(environment.firebaseConfig);
     HttpClientModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     MenuPageModule
   ],

@@ -30,12 +30,16 @@ export class AppComponent {
   sideMenu() {
     this.navigate =
     [
-
       {
-        title : 'Subscription',
-        url   : '/subscription', 
-        icon  : 'assets/images/wallet..jpg'  
+        title : 'Wallet',
+        url   : '/wallet',
+        icon  : 'assets/images/wallet.svg'
       },
+      // {
+      //   title : 'Subscription',
+      //   url   : '/subscription', 
+      //   icon  : 'assets/images/wallet..jpg'  
+      // },
       {
       icon: "assets/icon/bible.svg",
       title: 'Bible',

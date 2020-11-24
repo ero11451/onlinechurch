@@ -107,7 +107,7 @@ export class LocationPage implements OnInit {
         position: { lat: 6.332512242525205, lng: 5.622940689248757 },
         map,
         title: 'Click to zoom',
-        icon: 'https://i.imgur.com/hIoBt31.png',
+        icon:     "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         draggable: true
       });
 
@@ -121,8 +121,9 @@ export class LocationPage implements OnInit {
         console.log(marker.getPosition().lat());
         console.log(marker.getPosition().lng());
         infowindow.setPosition(event.latLng);
-        infowindow.setContent('<h2>Church Location</h2>' +
-        '<h3><a href="/tabs/home' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">Add here</a></h3>');
+        infowindow.setContent('<p>Church Location hq</p>' + '<p>phone:0907574875</p>' +
+        '<p>passtor:jack daniel</>p' +
+        '<h3><a href="/tabs/home' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">home</a></h3>');
         infowindow.open(map, marker);
       });
     }, (error) => {
