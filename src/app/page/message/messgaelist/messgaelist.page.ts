@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { DomSanitizer } from '@angular/platform-browser';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { Platform, PopoverController } from '@ionic/angular';
+import { Observable } from 'rxjs';
 import { MenuPage } from 'src/app/container/menu/menu.page';
+import { IonhelperService } from 'src/app/helper/ionhelper.service';
+import { YoutubeService } from '../../../allapi/youtube.service';
 
 @Component({
   selector: 'app-messgaelist',
@@ -9,10 +14,51 @@ import { MenuPage } from 'src/app/container/menu/menu.page';
 })
 export class MessgaelistPage implements OnInit {
 
-  constructor(private popoverController: PopoverController) { }
+  notNetwork: boolean;
+  channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
+  playlists: Observable<any>;
+  playlist: Observable<any>;
+  videos: Observable<any[]>;
+ playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET'
+ constructor(
+   private youtube: YoutubeVideoPlayer,
+   private ion: IonhelperService,
+   private list: YoutubeService,
+   public sanitizer: DomSanitizer,
+   private plt: Platform,
+   private popoverController: PopoverController
+   ) {
 
-  ngOnInit() {
+   this.sanitizer = sanitizer;
+   }
+
+ ngOnInit() {
+    this.getShow();
+   }
+
+ getShow(){
+     this.playlists = this.list.getPlaylistsForChannel(this.channelId);
+     this.playlists.subscribe(data => {
+       this.playlist = data.items;
+       this.notNetwork = false;
+       console.log('playlists: ', data.items );
+       }, err => {
+       console.log(err);
+       this.notNetwork = true;
+     });
   }
-  
 
-}
+
+  openVideo(video) {
+   console.log(video.id.videoId);
+   if (this.plt.is('cordova')) {
+     this.youtube.openVideo(video.id.videoId);
+   } else {
+     window.open(`https://www.youtube.com/watch?v=${video.id.videoId}`);
+   }
+  }
+
+ getlist(){
+   this.list.getPlaylistsForChannel(this.playlistId).subscribe(d => console.log('platelist', d))
+ }
+  }

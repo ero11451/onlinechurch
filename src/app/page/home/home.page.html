@@ -15,14 +15,16 @@
     <small class="text-bold"> Messages</small>
     <small class="text-primary" slot="end"> See more</small>
  </ion-item> -->
-
+<div class="text-center">
+  <ion-spinner color="primary" name="crescent" *ngIf="notNetwork"></ion-spinner>
+</div>
  <div class="slider">  
-  <div class=" slide"  *ngFor="let i of [1,2,3,4,4,4,44,4,4,4,7,9,09]" >
+  <div class=" slide"  *ngFor="let video of playlist " (click)=" openVideo(video)" >
     <ion-card class="container-image">
-      <img src="assets/images/defaultimage.png"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+      <img [src]="video.snippet.thumbnails.default.url"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
       <div class="bottom-left ion-text-start">
          <small class="text-bold ">
-          Fath is the key to success
+          {{ video.snippet.title }} 
        </small>
         </div>
     </ion-card>
@@ -34,8 +36,8 @@
         <img src="assets/icon/map.svg" />
       </ion-avatar>
       <ion-label class="ml-2">
-        <small class="text-muted" style="font-size: 10px;">Church name</small>
-        <p class="text-primary text-bold">Find church</p>
+        <small class="text-muted" style="font-size: 10px;"> Find church </small>
+        <p class="text-primary text-bold">Simply worship international  </p>
       </ion-label>
     </ion-item>
     <div class="container-image" [routerLink]="['/location']" routerLinkActive="router-link-active"  style="width: 100%;height: 200px;background-color: lightgrey;">
@@ -119,7 +121,7 @@ border-radius: 2px;
         </small>
       </ion-card-content>
     </ion-card>
-   <ion-row class="ion-padding">
+   <!-- <ion-row class="ion-padding">
      <ion-col  size="6" *ngFor="let item of list">
        <ion-card class=" service-card" (click)="togoPage(item.page)" class={{item.animation}}>
        <ion-item lines = none class=" ion-no-margin">
@@ -130,7 +132,7 @@ border-radius: 2px;
       </ion-item>   
        </ion-card>
      </ion-col>
-   </ion-row>
+   </ion-row> -->
  
    </ion-list>
    <ion-list class="my-card mt-1 animate fast fadeIn">

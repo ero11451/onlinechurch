@@ -8,12 +8,15 @@ import { MessgaelistPageRoutingModule } from './messgaelist-routing.module';
 
 import { MessgaelistPage } from './messgaelist.page';
 
+import {NgPipesModule} from 'ngx-pipes';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MessgaelistPageRoutingModule
+    MessgaelistPageRoutingModule,
+    NgPipesModule
   ],
   declarations: [MessgaelistPage]
 })

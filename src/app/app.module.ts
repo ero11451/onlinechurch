@@ -14,9 +14,16 @@ import { AppComponent } from './app.component';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
+
+import {NgPipesModule} from 'ngx-pipes';
+
+import * as firebase from 'firebase';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+
+
+firebase.default.initializeApp(environment.firebaseConfig);
 
 
 @NgModule({
@@ -27,14 +34,14 @@ import { AngularFireModule } from '@angular/fire';
     HttpClientModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    MenuPageModule
+    MenuPageModule,
+    NgPipesModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ImagePicker,
+    YoutubeVideoPlayer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

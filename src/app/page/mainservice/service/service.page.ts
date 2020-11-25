@@ -2,6 +2,13 @@ import { ServicemenuPage } from './../servicemenu/servicemenu.page';
 
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController, PopoverController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
+
+interface Live {
+  link: any;
+  title:any;
+}
 
 
 @Component({
@@ -12,22 +19,22 @@ import { ActionSheetController, ModalController, PopoverController } from '@ioni
 
 export class ServicePage implements OnInit {
   service = false
+ 
   constructor(
+
+    public sanitizer: DomSanitizer,
     private popoverController: PopoverController,
-    private modalController: ModalController, private actionSheetController: ActionSheetController) { }
+    private modalController: ModalController, private actionSheetController: ActionSheetController) { 
+
+    this.sanitizer = sanitizer;
+    }
 
   ngOnInit() {
+    this
   }
-  async menu() {
-     const popover = await this.popoverController.create({
-       component: ServicemenuPage,
-      //  event: '',
-       cssClass: 'popmenu',
-       translucent: false
-     });
-   
-     await popover.present();
-   
-  
+ 
+
+  getLink(link){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://youtube.com/embed/${link}`);
   }
 }

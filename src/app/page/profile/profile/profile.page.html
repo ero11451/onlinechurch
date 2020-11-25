@@ -16,90 +16,55 @@
 </ion-header>
 
 <ion-content>
-  <ion-row >
-    <ion-col size="4" class="text-center">
-      <ion-avatar class="profile-image ml-3 faster animated slideInLeft">
-        <img src="assets/images/profileimage.jpg"  alt="">
-      </ion-avatar>
-      </ion-col>
-    <ion-col size="7"  class="ion-no-padding ion-no-margin animated faster slideInLeft">
-      <div class="mt-2">
-          <p class='text-bold'>Ero osamuyi</p>
-          <small class="text-muted">erosam@gmail.com</small>
-        </div>
-    
-          <small 
-          class="btn-primary btn-sm btn pl-3 pr-3 mt-2"
-          [routerLink]="['/edit']" routerLinkActive="router-link-active" 
-          >Edit </small>
-    </ion-col>
-  </ion-row>
-  <br>
-  <ion-row  class="">
-    <ion-col size="4" class="text-center">
-      <div 
-       data-target="#my-post" data-toggle="collapse" aria-expanded="false" aria-controls="my-post" 
-      class="border-right">
-       <p class="text-primary text-bold">1</p>
-       <small class="text-muted">Post</small>
-      </div>
-    </ion-col>
-    <ion-col  class="text-center" size="4">
-      <div  [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="border-right">
-       <p class="text-primary text-bold">1</p>
-       <small class="text-muted">Followers</small>
-      </div>
-    </ion-col>
-    <ion-col  class="text-center" size="4">
-      <div [routerLink]="['/follow']" routerLinkActive="router-link-active"  class="ml-2">
-        <p class="text-primary text-bold">1</p>
-        <small class="text-muted">Following</small>
-      </div>
-   </ion-col>
-  </ion-row>
-<ion-list lines='none'>
-  <div class=" m-3">
-      <app-mywallet ></app-mywallet> 
-  </div>
+  <input id="slider" class="customSlider" type="checkbox">
+<label for="slider"></label>
 
-<ion-item>
-  <div>
-    <p class="text-bold">My bio</p>
-    <small class="text-muted">
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, earum.
-    </small>
-  </div>
-</ion-item>
-  <!-- <ion-item> 
-    <small class="text-bold">My detail</small>
-    <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
-  </ion-item>
--->
-
- <!-- <ion-item data-target="#my-post" data-toggle="collapse" aria-expanded="false" aria-controls="my-post" >
-  <small class="text-bold">My post</small>
-  <img class="icon" slot="end" src="assets/icon/down-arrow.svg" alt="">
-</ion-item> -->
-</ion-list>
-
-
-<ion-list id="my-post" class="my-card animate fast collapse fadeIn">
-  <!-- <ion-item lines=none>
-    <p class="text-bold"> Top Post</p>
-    <small class="text-primary" slot="end"> See more</small>
- </ion-item> -->
- <br>
+<div class="wrapper">
+	<div class="top-icons">
+		<i class="fas fa-long-arrow-alt-left"></i>
+		<i class="fas fa-ellipsis-v"></i>
+		<i class="far fa-heart"></i>
+	</div>
+	
+	<div class="profile">
+		<img src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixlib=rb-0.3.5&s=9358d797b2e1370884aa51b0ab94f706&auto=format&fit=crop&w=200&q=80%20500w" class="thumbnail">
+		<div class="check"><i class="fas fa-check"></i></div>
+		<p class="name">Ero osamuyi</p>
+		<p class="title">Pastor</p>
+		<small class="description mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam aliquid porro!</small>
+		<button type="button" class="btn mt-3">Edit</button>
+	</div>
+	
+	<div class="social-icons ">
+		<div class="icon">
+			<!-- <a href="/"><i class="fab fa-dribbble"></i></a> -->
+			<p>12.8k</p>
+			<small>Post</small>
+		</div>
+		
+		<div class="icon" [routerLink]="['/follow']" routerLinkActive="router-link-active" >
+			<!-- <a href="#"><i class="fab fa-behance"></i></a> -->
+			<p>12.8k</p>
+			<small>Followers</small>
+		</div>
+		
+		<div class="icon" [routerLink]="['/follow']" routerLinkActive="router-link-active" >
+			<!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+			<p>12.8k</p>
+			<small>Followers</small>
+		</div>
+	</div>
   <ion-row > 
     <ion-col size="2">
         <ion-avatar>
            <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
         </ion-avatar>      
     </ion-col>
-    <ion-col size="9">
+    <ion-col size="10">
        <div class="card-headr">
         <ion-label class="card-name " > 
             <p style="margin-bottom: -5px;color: black;font-weight: 600;">ero osamuyi</p>
-            <small>2 days ago</small>             
+            <small class="text-muted">2 days ago</small>             
         </ion-label>
          <small style="float: right;" class=" text-primary ">Delete</small>
          
@@ -108,22 +73,22 @@
         <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset="">
         <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
      </div>
-  <div class= "my-card-footer pt-2 pb-2">
-    <div class="animated fast fadeInDown">
-      <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
-        <small > 129 </small> 
-    </div>
-      <div class="animated  fadeInDown">
-        <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
-          <small >23</small>
-      </div>
-      <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
-        <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
-        <small > 12  </small>
-      </div>
-   </div>
+  <ion-row class= "my-card-footer pt-2 pb-2">
+    <ion-col size="4" class="animated fast fadeInDown">
+      <img  class="icon-ca" src="assets/icon/like.png" alt="" srcset="">
+        <small class="ml-2"> 129 </small> 
+    </ion-col>
+      <ion-col size="4" class="animated  fadeInDown">
+        <img class="icon-ca" src="assets/icon/dislike.png" alt="" srcset="">
+          <small class="ml-2">23</small>
+      </ion-col>
+      <ion-col size="4" class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
+        <img  class="icon-ca" src="assets/icon/live.svg" alt="" srcset="">
+        <small class="ml-2"> 12  </small>
+      </ion-col>
+    </ion-row>
     </ion-col>
 
     </ion-row>
-</ion-list>
+    </div>
 </ion-content>

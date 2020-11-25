@@ -3,11 +3,10 @@
 
   <ion-list class="container-image">
      <iframe 
-     gesture="media" 
      allow="encrypted-media"
      scrolling = no
      style="position: relative;"
-     src="https://www.youtube.com/embed/hua78YDRs34" 
+     [src]="getLink('oU7nOwXpAdA')" 
      width = "100%" 
      allowfullscreen 
      height = "100%" 
@@ -26,7 +25,9 @@
       </ion-col>
       <ion-col size="10"  >
        <div style="text-align: left;">
-         <ion-label color="light"> <small>ero osamuyi </small><small class="text-primary">lagos</small> </ion-label>
+         <ion-label > <small class="title">ero osamuyi </small>
+          <br>
+          <small class="text-muted">lagos</small> </ion-label>
          <br>
          <small class="content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quaerat.</small>
        </div>
