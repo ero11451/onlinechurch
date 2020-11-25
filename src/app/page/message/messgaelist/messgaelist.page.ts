@@ -15,11 +15,13 @@ import { YoutubeService } from '../../../allapi/youtube.service';
 export class MessgaelistPage implements OnInit {
 
   notNetwork: boolean;
-  channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
+  // channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
+  //  tsl channel id the one delow
+  channelId = 'UC2eJZ7eVkmzgOP8TMPLqaqA';
   playlists: Observable<any>;
   playlist: Observable<any>;
   videos: Observable<any[]>;
- playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET'
+   playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET'
  constructor(
    private youtube: YoutubeVideoPlayer,
    private ion: IonhelperService,

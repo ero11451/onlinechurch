@@ -21,7 +21,7 @@ import { ProfilePage } from './profile.page';
   declarations: [
     ProfilePage,
     UserDetailComponent,
-    MywalletComponent
+  
     ]
 })
 export class ProfilePageModule {}

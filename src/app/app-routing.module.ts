@@ -145,11 +145,7 @@ const routes: Routes = [
     path: 'follow',
     loadChildren: () => import('./page/profile/follow/follow.module').then( m => m.FollowPageModule)
   },
-  {
-    path: '**',
-    loadChildren: () => import('./page/profile/follow/follow.module').then( m => m.FollowPageModule)
-  },
-  
+
 ];
 @NgModule({
   imports: [

@@ -121,9 +121,9 @@ export class LocationPage implements OnInit {
         console.log(marker.getPosition().lat());
         console.log(marker.getPosition().lng());
         infowindow.setPosition(event.latLng);
-        infowindow.setContent('<p>Church Location hq</p>' + '<p>phone:0907574875</p>' +
+        infowindow.setContent('<div class ="p-2 pr-2">' + '<p>Church Location hq</p>' + '<p>phone:0907574875</p>' +
         '<p>passtor:jack daniel</>p' +
-        '<h3><a href="/tabs/home' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">home</a></h3>');
+        '<h3><a href="/tabs/home' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">home</a></h3>' + '</div>');
         infowindow.open(map, marker);
       });
     }, (error) => {

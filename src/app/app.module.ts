@@ -21,6 +21,8 @@ import {NgPipesModule} from 'ngx-pipes';
 
 import * as firebase from 'firebase';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 firebase.default.initializeApp(environment.firebaseConfig);
@@ -35,7 +37,12 @@ firebase.default.initializeApp(environment.firebaseConfig);
     IonicModule.forRoot(), 
     AppRoutingModule,
     MenuPageModule,
-    NgPipesModule
+    NgPipesModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,

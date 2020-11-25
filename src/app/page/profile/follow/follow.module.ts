@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { FollowPageRoutingModule } from './follow-routing.module';
 
 import { FollowPage } from './follow.page';
-import { HearderComponent } from 'src/app/container/hearder/hearder.component';
 
 @NgModule({
   imports: [
@@ -16,6 +15,6 @@ import { HearderComponent } from 'src/app/container/hearder/hearder.component';
     IonicModule,
     FollowPageRoutingModule
   ],
-  declarations: [FollowPage, HearderComponent]
+  declarations: [FollowPage, ]
 })
 export class FollowPageModule {}

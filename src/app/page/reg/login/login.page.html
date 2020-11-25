@@ -15,41 +15,61 @@
       <small>sign in to countinue</small>  
     </div>
   </ion-item>
-  
-  <ion-item class="m-3 ">
-    <ion-label position="floating" >
-     <small>UserName </small> </ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item class="m-3">
-    <ion-label  position="floating"> <small> Password</small> </ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <div class="text-center ">
-    <div class="buttons" [routerLink]="['/tabs/home']" routerLinkActive="router-link-active" >
-      <button  class="blob-btn" >
-        Login
-        <span class="blob-btn__inner">
-          <span class="blob-btn__blobs">
-            <span class="blob-btn__blob"></span>
-            <span class="blob-btn__blob"></span>
-            <span class="blob-btn__blob"></span>
-            <span class="blob-btn__blob"></span>
-          </span>
-        </span>
-      </button>
-    
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
-          <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
-        </filter>
-      </defs>
-    </svg>
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
+
+    <ion-item>
+      <ion-label position="floating" color="primary"> <small> Email</small> </ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message"
+          *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
     </div>
-  </div>
+
+    <ion-item>
+      <ion-label position="floating" color="primary"><small> Password</small></ion-label>
+      <ion-input type="password" formControlName="password"  required></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message"
+          *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+<br>
+    <div class="text-center ">
+      <div class="buttons" [routerLink]="['/tabs/home']" routerLinkActive="router-link-active" >
+        <button  class="blob-btn" [disabled]="!validations_form.valid">Login
+          <span class="blob-btn__inner">
+            <span class="blob-btn__blobs">
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+              <span class="blob-btn__blob"></span>
+            </span>
+          </span>
+        </button>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+      </div>
+    </div>
+    <div  class="error-message">{{errorMessage}}</div>
+  </form>
+  
   <br><br><br><br>
   <div class="text-center mt-3">
    <p class="ml-2">Don't Have an account?

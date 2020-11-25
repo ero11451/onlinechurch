@@ -1,5 +1,12 @@
-import { Injectable, Component } from '@angular/core';
-import { ModalController, PickerController, AlertController, PopoverController } from '@ionic/angular';
+import { Injectable } from '@angular/core';
+import {
+    ModalController,
+    AlertController,
+    LoadingController,
+    PickerController,
+    ToastController,
+    ActionSheetController,
+    PopoverController} from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -8,20 +15,66 @@ export class IonhelperService {
 
   constructor(
     private modalController: ModalController,
-    private pickerController: PickerController,
     private alertController: AlertController,
-    private popoverController: PopoverController,
-    
+    private loadingController: LoadingController,
+    private pickerController: PickerController,
+    private toastController: ToastController,
+    private actionSheetController: ActionSheetController,
+    private popoverController: PopoverController
     ) { }
-    
-  async presentModal(page,value, style) {
+
+  async ionModal(pages, props) {
     const modal = await this.modalController.create({
-    component: page,
-    cssClass: style,
-    componentProps: value
+    component: pages,
+    componentProps: props
     });
     await modal.present();
   }
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Albums',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Share',
+        icon: 'share',
+        handler: () => {
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+  async ionAlert(header, subHeader, message) {
+    const alert = await this.alertController.create({ header,subHeader,  message,  buttons: ['OK'] });
+    await alert.present();
+  }
+  async ionLoading(message, duration) {
+    const loading = await this.loadingController.create({
+      message,      duration,      spinner: 'circles'
+    });
+    await loading.present();
+  }
+
+ async presentToast(message, time, color) {
+   const toast = await this.toastController.create({
+     message, duration: time, color
+   });
+   toast.present();
+ }
+
   async presentPicker() {
     const picker = await this.pickerController.create({
     animated: true,
@@ -57,23 +110,53 @@ export class IonhelperService {
     });
     picker.present();
   }
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
-      buttons: ['OK']
+  async ionToast(message, duration, color) {
+    const toast = await this.toastController.create({ message, duration, color});
+    toast.present();
+  }
+  async presentModal(page , r, style) {
+    const modal = await this.modalController.create({
+    component: page,
+    componentProps: { value: 123 },
+    cssClass: style
     });
-
-    await alert.present();
+    await modal.present();
+  }
+  async networkActionSheet(text) {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Network',
+      buttons: [{
+        text: '',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Share',
+        icon: 'share',
+        handler: () => {
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
   }
 
-  async presentPopover(Component ,translucent:boolean, ev: any) {
+  async presentPopover(page, ev: any) {
     const popover = await this.popoverController.create({
-      component: Component,
+      component: page,
       event: ev,
-      translucent,
+      translucent: false
     });
+  
     await popover.present();
   }
 }

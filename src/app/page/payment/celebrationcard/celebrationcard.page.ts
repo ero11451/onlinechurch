@@ -11,5 +11,5 @@ export class CelebrationcardPage implements OnInit {
 
   ngOnInit() {
   }
-
+  customOptions 
 }
