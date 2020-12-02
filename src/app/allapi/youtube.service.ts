@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 
 export class YoutubeService {
 
-  apiKey = 'AIzaSyCfi_tdfQd4ZC0CLurRy2e5sqsQ0SiAvWY';
+  apiKey = 'AIzaSyBTWOgvG2ClfiW4jWDpmRbrdmNZtAFKKXU';
 
   constructor( private http: HttpClient) { }
 

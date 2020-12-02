@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthService } from '../../db/service/auth.service';
 
 @Component({
   selector: 'app-logout',
@@ -8,12 +9,16 @@ import { ModalController } from '@ionic/angular';
 })
 export class LogoutPage implements OnInit {
 
-  
-  constructor( private modalController: ModalController) { }
+  constructor( 
+    private auth : AuthService,
+    private modalController: ModalController) { }
 
   ngOnInit() {
   }
   close(){
-   this.modalController.dismiss()
+   this.modalController.dismiss();
+  }
+  logout(){
+    this.auth.SignOut();
   }
 }

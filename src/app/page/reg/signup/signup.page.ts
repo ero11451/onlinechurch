@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { AuthService } from 'src/app/db/auth.service';
+import { AuthService } from 'src/app/db/service/auth.service';
+import { IonhelperService } from '../../../helper/ionhelper.service';
+import { Router } from '@angular/router';
+import { NativeGeocoder, NativeGeocoderOptions, NativeGeocoderResult } from '@ionic-native/native-geocoder/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-signup',
@@ -10,12 +14,12 @@ import { AuthService } from 'src/app/db/auth.service';
 })
 export class SignupPage implements OnInit {
 
-
- 
   // tslint:disable-next-line: variable-name
   validations_form: FormGroup;
   errorMessage = '';
   successMessage = '';
+  userlocation;
+  usercountry;
 
   // tslint:disable-next-line: variable-name
   validation_messages = {
@@ -34,9 +38,13 @@ export class SignupPage implements OnInit {
   };
 
   constructor(
+    private nativeGeocoder: NativeGeocoder,
+    public geoLocation: Geolocation,
     private navCtrl: NavController,
     private authService: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private nav: Router,
+    private ion: IonhelperService
   ) { }
 
   ngOnInit() {
@@ -56,16 +64,20 @@ export class SignupPage implements OnInit {
     });
   }
 
-  tryRegister(value) {
-
-    this.authService.RegisterUser(value.email, value.password, value.username, 'assets/images/userIcon.svg')
+async  tryRegister(value) {
+    await this.getUserLocation();
+    this.ion.ionLoading('please wait', 1000);
+    this.authService.RegisterUser(value.email, value.password, value.username, this.usercountry, 'assets/images/userIcon.svg')
       .then(res => {
         console.log(res);
         this.errorMessage = '';
-        this.successMessage = "Your account has been created. Please log in.";
+        this.ion.ionToast('Your account has been created. Please log in.', 2000, 'primary');
+        // this.successMessage = ;
+        this.nav.navigate(['tabs/home'])
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
+        this.ion.ionToast(this.errorMessage, 2000, 'danger');
         this.successMessage = '';
       })
   }
@@ -74,5 +86,22 @@ export class SignupPage implements OnInit {
     this.navCtrl.navigateBack(page);
   }
 
-
+  getUserLocation(){
+    const options: NativeGeocoderOptions = {
+      useLocale: true,
+      maxResults: 5
+    };
+    this.geoLocation.getCurrentPosition().then(resp => {
+      this.nativeGeocoder.reverseGeocode(resp.coords.latitude, resp.coords.longitude, options)
+        .then((result: NativeGeocoderResult[]) => {
+          this.userlocation = result[0];
+          this.usercountry = result[0].countryName;
+        }, error => {
+          this.ion.ionToast('there was an error geting your location', 1000, 'denger');
+          console.log(error);
+        });
+    }, error => {
+      console.log('Error getting location', error);
+    })
+  }
 }

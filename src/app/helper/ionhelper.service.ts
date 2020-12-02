@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {
-    ModalController,
     AlertController,
     LoadingController,
     PickerController,
     ToastController,
     ActionSheetController,
-    PopoverController} from '@ionic/angular';
+    PopoverController,
+    ModalController} from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'

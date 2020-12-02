@@ -4,14 +4,13 @@ import { IonhelperService } from 'src/app/helper/ionhelper.service';
 import { NavController } from '@ionic/angular';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AuthService } from './../../../db/auth.service';
+import { AuthService } from 'src/app/db/service/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-   
 
 
   constructor(
@@ -55,7 +54,7 @@ export class LoginPage implements OnInit {
 
 
   loginUser(value) {
-    this.ion.ionLoading('please waiit' ,1000)
+    this.ion.ionLoading('please wait' , 1000);
     this.authService.SignIn(value.email, value.password)
       .then(res => {
         console.log(res);
@@ -63,12 +62,12 @@ export class LoginPage implements OnInit {
         this.afAuth.authState.subscribe(user => {
           this.ion.ionToast('welcome back', 3000 , '')
           console.log(user + 'user id will go some wort like' + user.uid);
-          return this.router.navigate(['dashboard', user.uid]);
+          return this.router.navigate(['tabs/home']);
         });
       }, err => {
         this.errorMessage = err.message;
-        this.ion.ionToast('there was an error', 3000, 'primary')
-      }).catch(err =>  this.ion.ionToast('there was an error', 3000, 'primary'))
+        this.ion.ionToast('there was an error', 3000, 'primary');
+      }).catch(err =>  this.ion.ionToast('there was an error', 3000, 'primary'));
   }
 
   goToRegisterPage() {

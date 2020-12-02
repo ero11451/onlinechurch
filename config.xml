@@ -14,7 +14,7 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="SplashReloadOnOrientationChange" value="true" />
     <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FazdeSplashScreen" value="true" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
@@ -22,9 +22,7 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
- 
-    <preference name="YouTubeDataApiKey" value="AIzaSyB_X-ToSHjkDFFTaIMOBq0YAnEmyJ-Csw8" />
-    <!-- <preference name="YouTubeDataApiKey" value="AIzaSyBguGGLaEvvXyW7xsSiJBJy2KthMFctRH4" /> -->
+    <preference name="YouTubeDataApiKey" value="AIzaSyBTWOgvG2ClfiW4jWDpmRbrdmNZtAFKKXU" />
     <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
             <application android:networkSecurityConfig="@xml/network_security_config" />
@@ -106,6 +104,6 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <preference name="android-minSdkVersion" value="22" />
-    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="(AIzaSyBguGGLaEvvXyW7xsSiJBJy2KthMFctRH4)" />
-    <preference name="GOOGLE_MAPS_IOS_API_KEY" value="(AIzaSyBguGGLaEvvXyW7xsSiJBJy2KthMFctRH4)" />
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyBTWOgvG2ClfiW4jWDpmRbrdmNZtAFKKXU" />
+    <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyBTWOgvG2ClfiW4jWDpmRbrdmNZtAFKKXU" />
 </widget>

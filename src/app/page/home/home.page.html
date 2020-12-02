@@ -31,8 +31,19 @@
       </div>
     </div>
     <br>
-    <ion-item lines=none>
-      <ion-avatar slot="start">
+    <div  class="count-down">
+        <p class="title mb-2 mt-2">Next Service will start </p>
+        <p class="timer">1:20 </p>
+        <!-- <p class="label mt-1 mb-3">Service wil start soon</p> -->
+         <button [routerLink]="['/tabs/service']" routerLinkActive="router-link-active"  class="btn btn-sm btn-primary m-2 mb-2 pl-2 pr-2">
+          Go live Now
+        </button>
+
+    </div>
+
+
+    <ion-item lines=none class="ion-no-padding">
+      <ion-avatar slot="start" class="ml-2">
         <img src="assets/icon/map.svg" />
       </ion-avatar>
       <ion-label class="ml-2">
@@ -40,7 +51,7 @@
         <p class="text-primary text-bold">Simply worship international  </p>
       </ion-label>
     </ion-item>
-    <div class="container-image" [routerLink]="['/location']" routerLinkActive="router-link-active"  style="width: 100%;height: 200px;background-color: lightgrey;">
+    <div class="container-image" [routerLink]="['/location']" routerLinkActive="router-link-active"  style="width: 95%;margin: auto; height: 200px;background-color: lightgrey;">
     <img style="width: 100%;height: 200px; object-fit: cover;" src="assets/images/GoogleMapTA@3x.jpg"  alt="" srcset="">
     <div class="centered">
       <small class="text-dark">
@@ -59,11 +70,46 @@
       
   </small>    
    </div>
-
- 
-
-     </ion-item>
+  </ion-item>
    </ion-card> -->
+
+
+   <ion-list class=" animate fast fadeIn">
+    <!-- <app-celebrationcard></app-celebrationcard> -->
+    <br>
+<ion-item lines='none'>
+  <ion-avatar>
+    <img src="assets/icon/devotion.svg" />
+  </ion-avatar>
+  <ion-label class="ml-2">
+    <small class="text-muted" style="font-size: 10px;"> Church </small>
+    <p class="text-primary text-bold">Devotional  </p>
+  </ion-label>
+</ion-item>
+    <div class="slider">  
+      <div class="  slide  mt-2 mb-2 " *ngFor="let item of [1, 1]">
+        <ion-card class="container-image " >
+          <img src="assets/images/youtubebanner.jpeg"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+         <div class="top-left ">
+          Devotional
+         </div>
+          <div class="bottom-left ion-text-start">
+             <small class="text-bold ">
+              living a life of destiny
+           </small>
+            </div>
+        </ion-card>
+          </div>
+        </div>
+</ion-list>
+
+
+
+
+
+
+
+
    <ion-item class="m-2"
    [routerLink]="['/giving']" 
    lines="none" style="
@@ -89,50 +135,9 @@ border-radius: 2px;
        style="height: 100px;"
        src="../../../assets/images/payment.svg" alt="" srcset="">  
   </ion-item>
-   <ion-list class="my-card animate fast fadeIn">
-    <!-- <ion-item lines=none>
-      <p class="text-bold"> Top Post</p>
-      <small class="text-primary" slot="end"> See more</small>
-   </ion-item> -->
-
-        <app-celebrationcard></app-celebrationcard>
-          <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
-      
- 
-</ion-list>
 
 
 
-    <ion-card class="m-3" [routerLink]="['/devotion']" routerLinkActive="router-link-active" >
-      <ion-card-header>
-        <ion-item lines="none">
-          <ion-label >
-            <small class="text-muted" style="font-size: 10px;">Daily Devotional</small>
-        <p class="text-primary text-bold">
-          living a life of destiny
-        </p>
-          </ion-label>
-            <small slot="end" style="font-size: 10px;">2/20/2020</small>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content class="pl-3 pr-3 pb-3">
-        <small>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, explicabo!
-        </small>
-      </ion-card-content>
-    </ion-card>
-   <!-- <ion-row class="ion-padding">
-     <ion-col  size="6" *ngFor="let item of list">
-       <ion-card class=" service-card" (click)="togoPage(item.page)" class={{item.animation}}>
-       <ion-item lines = none class=" ion-no-margin">
-        <img class="icon" src={{item.icon}}>
-        <div>
-            <small class="title"> {{item.title}}</small>
-        </div>
-      </ion-item>   
-       </ion-card>
-     </ion-col>
-   </ion-row> -->
  
    </ion-list>
    <ion-list class="my-card mt-1 animate fast fadeIn">
@@ -140,6 +145,8 @@ border-radius: 2px;
       <p class="text-bold"> Top Post</p>
       <small class="text-primary" slot="end"> See more</small>
    </ion-item> -->
+   <ion-card class="m-2">
+     
     <ion-row > 
       <ion-col size="2">
           <ion-avatar>
@@ -171,16 +178,26 @@ border-radius: 2px;
         </div>
      </div>
       </ion-col>
-  
       </ion-row>
+      </ion-card>
 </ion-list>
 
 <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
   <ion-refresher-content
+    color="primary"
     pullingIcon="arrow-dropdown"
     pullingText="Pull to refresh"
-    refreshingSpinner="bubbles"
+    refreshingSpinner= "crescent"
     refreshingText="Refreshing...">
   </ion-refresher-content>
 </ion-refresher>
+
+<!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content
+    color='primary'
+    loadingSpinner= "crescent"
+    loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll> -->
+
 </ion-content>

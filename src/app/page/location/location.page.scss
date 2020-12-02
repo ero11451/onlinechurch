@@ -3,3 +3,7 @@
     width: 100%;
     background-color: lightgray;
 }
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}

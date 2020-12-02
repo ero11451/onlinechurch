@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../db/auth-guard.service';
+import { AuthGuard } from '../db/service/auth-guard.service';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
-        path: 'profile',
+        path: 'profile/:userid',
         loadChildren: () => import('../page/profile/profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
@@ -25,7 +25,12 @@ const routes: Routes = [
         path: 'wallet',
         loadChildren: () => import('../page/payment/wallet/wallet.module').then(m => m.WalletPageModule),
       },
-      
+      {
+        path: 'noservice',
+        loadChildren: () => import('../page/mainservice/nosevice/nosevice.module').then(m => m.NosevicePageModule),
+      },
+
+
       {
         path: 'service',
         loadChildren: () => import('../page/mainservice/service/service.module').then(m => m.ServicePageModule)

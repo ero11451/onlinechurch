@@ -27,7 +27,7 @@
               },
               {
                 "glob": "**/*.svg",
-               "input": "node_modules/ionicons/dist/ionicons/svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               }
             ],
@@ -44,7 +44,6 @@
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.js"
-            
             ]
           },
           "configurations": {
@@ -106,7 +105,6 @@
             "karmaConfig": "karma.conf.js",
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-                            
             ],
             "scripts": [],
             "assets": [
@@ -137,7 +135,9 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -183,7 +183,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ionic/angular-toolkit"
+    "defaultCollection": "@ionic/angular-toolkit",
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

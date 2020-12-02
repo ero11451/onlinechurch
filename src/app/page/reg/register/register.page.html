@@ -3,10 +3,14 @@
    <div class="text-center logo">
      <img class="img-fluid " src="assets/icon/favicon.png" alt="">
    </div>
+    <ion-button (click)="getUserLocation()">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Click me
+    </ion-button>
 </ion-content>
 <ion-footer>
    
-  <div class="bottom-div">
+  <div class="bottom-div text-light">
     <h3 class="title mb-4">
       welcome
     </h3>
@@ -15,7 +19,7 @@
     </p>
     <div class="text-center mt-2" style="display: flex;align-content: center;">
          <ion-button
-          color="dark"
+          color="light"
           [routerLink]="['/login']" 
           routerLinkActive="router-link-active" 
           shape="round">SignIn</ion-button>

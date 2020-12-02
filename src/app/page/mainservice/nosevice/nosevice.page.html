@@ -1,0 +1,22 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>nosevice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div style="margin-top: 20%;" class="text-center">
+      <img src="assets/images/loading.svg" style="width: 50%;height: 50%;"  alt="" srcset="">
+      <div  class="count-down">
+        <p class="title mb-2 mt-2">Service wil start soon</p>
+        <p class="timer">1:20 </p>
+        <!-- <p class="label mt-1 mb-3">Service wil start soon</p> -->
+         <button [routerLink]="['/tabs/service']" routerLinkActive="router-link-active" 
+          class="btn btn-sm btn-primary m-2 mb-2 pl-2 pr-2">
+        Go live Now
+        </button>
+
+    </div>
+
+    </div>
+</ion-content>

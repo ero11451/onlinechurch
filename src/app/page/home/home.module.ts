@@ -10,8 +10,10 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { CelebrationcardComponent } from '../../container/celebrationcard/celebrationcard.component';
 
+
 @NgModule({
   imports: [
+
     CommonModule,
     FormsModule,
     IonicModule,

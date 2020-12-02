@@ -15,9 +15,9 @@ import { YoutubeService } from '../../../allapi/youtube.service';
 export class MessgaelistPage implements OnInit {
 
   notNetwork: boolean;
-  // channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
+  channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
   //  tsl channel id the one delow
-  channelId = 'UC2eJZ7eVkmzgOP8TMPLqaqA';
+  // channelId = 'UC2eJZ7eVkmzgOP8TMPLqaqA';
   playlists: Observable<any>;
   playlist: Observable<any>;
   videos: Observable<any[]>;
@@ -46,6 +46,7 @@ export class MessgaelistPage implements OnInit {
        console.log('playlists: ', data.items );
        }, err => {
        console.log(err);
+       this.ion.ionToast('there was an error', 1000, 'primary')
        this.notNetwork = true;
      });
   }
@@ -58,6 +59,15 @@ export class MessgaelistPage implements OnInit {
    } else {
      window.open(`https://www.youtube.com/watch?v=${video.id.videoId}`);
    }
+  }
+
+  doRefresh(event) {
+    console.log('Begin async operation');
+    this.getShow()
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
   }
 
  getlist(){

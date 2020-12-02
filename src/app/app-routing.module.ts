@@ -64,7 +64,7 @@ const routes: Routes = [
     loadChildren: () => import('./page/profile/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
   {
-    path: 'profile',
+    path: 'profile/:userid',
     loadChildren: () => import('./page/profile/profile/profile.module').then( m => m.ProfilePageModule)
   },
 
@@ -77,7 +77,7 @@ const routes: Routes = [
     loadChildren: () => import('./page/community/makepost/makepost.module').then( m => m.MakepostPageModule)
   },
   {
-    path: 'comment',
+    path: 'comment/:postid',
     loadChildren: () => import('./page/community/comment/comment.module').then( m => m.CommentPageModule)
   },
   {
@@ -119,7 +119,7 @@ const routes: Routes = [
   },
   {
     path: 'nosevice',
-    loadChildren: () => import('./page/nosevice/nosevice.module').then( m => m.NosevicePageModule)
+    loadChildren: () => import('./page/mainservice/nosevice/nosevice.module').then( m => m.NosevicePageModule)
   },
   {
     path: 'celebrationcard',
@@ -144,6 +144,14 @@ const routes: Routes = [
   {
     path: 'follow',
     loadChildren: () => import('./page/profile/follow/follow.module').then( m => m.FollowPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./page/community/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'nonetwork',
+    loadChildren: () => import('./page/nonetwork/nonetwork.module').then( m => m.NonetworkPageModule)
   },
 
 ];

@@ -1,21 +1,26 @@
 <ion-app>
   <ion-menu side="start" menuId="first" contentId="content">  
-    <!-- <ion-header class="ion-no-border " stty>  
-    <ion-thumbnail class="m-3">
-      <img src="assets/icon/favicon.png" />
-    </ion-thumbnail>
-   
-    </ion-header>   -->
+    <ion-header class="ion-no-border p-3" style="background-image: url(assets/icon/map.svg);">  
+    <ion-spinner name="crescent" *ngIf="!nodata"></ion-spinner>
+      <ion-avatar *ngIf="nodata" style="height: 50px;width: 50px;">
+      <img [src]= userImage/>
+    </ion-avatar>
+   <small class="text-bold" *ngIf="nodata">{{userName}}</small>
+    </ion-header>  
     <ion-content>  
       <ion-list *ngFor="let pages of navigate">  
         <ion-menu-toggle auto-hide="true">  
           <ion-item [routerLink]="pages.url" class="" lines=none routerDirection="forward">  
             <ion-img class="icon" [src]="pages.icon" slot="start"></ion-img>  
              {{pages.title}}    
-          </ion-item>  
+          </ion-item> 
+     
         </ion-menu-toggle>  
       </ion-list>  
-
+     <ion-item (click)="logOut()" class="" lines=none  >  
+            <ion-img class="icon" src="assets/icon/logout.svg" slot="start"></ion-img>  
+             logout
+          </ion-item>   
     </ion-content>  
     <!-- <ion-footer class="ion-no-border">
       <ion-toolbar>

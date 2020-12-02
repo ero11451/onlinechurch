@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, ModalController, PopoverController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 interface Live {
   link: any;
@@ -18,23 +19,26 @@ interface Live {
 })
 
 export class ServicePage implements OnInit {
-  service = false
- 
+  santiziLinke:any ;
+  link:string = 'b38HovDtblg';
+
   constructor(
 
     public sanitizer: DomSanitizer,
-    private popoverController: PopoverController,
-    private modalController: ModalController, private actionSheetController: ActionSheetController) { 
+    private afs: AngularFirestore,
+    ) {
 
     this.sanitizer = sanitizer;
+    this.getLink();
     }
 
   ngOnInit() {
-    this
   }
- 
 
-  getLink(link){
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://youtube.com/embed/${link}`);
+  retrieveUserDocumentFromID() {
+    return this.afs.doc<any>('users').valueChanges();
+  }
+  getLink(){
+      this.santiziLinke = this.sanitizer.bypassSecurityTrustResourceUrl(`https://youtube.com/embed/${this.link}`);
   }
 }

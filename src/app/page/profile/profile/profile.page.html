@@ -1,24 +1,22 @@
 
 <ion-header  class="ion-no-border ion-no-padding " no-border color="primary" >
-  <ion-item  lines="none"> 
-      <ion-avatar slot="start" style="height: 30px;width: 30px;">
-        <img src="assets/images/profileimage.jpg">
-        </ion-avatar> 
+  <ion-item  class="ion-no-border ion-no-padding " lines="none"> 
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+     
     <ion-label      class="name  animated fast fadeInLeft text-bold"> 
       <small style="margin-left: 8px; font-weight: bolder;" class="text-primary">
-        Hi john
+        Profile
       </small>
  </ion-label>
  
-   <!-- <ion-img class="hearder-icon" (click)="menu()"src="assets/images/about.svg"></ion-img> -->
+   <ion-img class="hearder-icon" slot="end" (click)="menu()"src="assets/images/about.svg"></ion-img>
    
    </ion-item>
 </ion-header>
 
 <ion-content>
-  <input id="slider" class="customSlider" type="checkbox">
-<label for="slider"></label>
-
 <div class="wrapper">
 	<div class="top-icons">
 		<i class="fas fa-long-arrow-alt-left"></i>
@@ -27,64 +25,103 @@
 	</div>
 	
 	<div class="profile">
-		<img src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixlib=rb-0.3.5&s=9358d797b2e1370884aa51b0ab94f706&auto=format&fit=crop&w=200&q=80%20500w" class="thumbnail">
+		<img [src]=userImage class="thumbnail">
 		<div class="check"><i class="fas fa-check"></i></div>
-		<p class="name">Ero osamuyi</p>
-		<p class="title">Pastor</p>
-		<small class="description mb-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam aliquid porro!</small>
-		<button [routerLink]="['/edit']" routerLinkActive="router-link-active"  type="button" class="btn mt-3">Edit</button>
-	</div>
+		<p class="name">{{userDisplayName}}</p>
+    <p class="title">{{status}}</p>
+    <div class="text-center text-muted">
+      <small>{{bio}}</small>
+   		 </div>
+      <div style="display: flex;justify-content: center;">
+           <button  *ngIf="isCurrentUser" [routerLink]="['/wallet']"  type="button" class="btn mt-3">Wallet</button>
+           <button  *ngIf="isCurrentUser" [routerLink]="['/edit']"  type="button" class="btn ml-1 mt-3">Edit</button>
+           <button  *ngIf="!isCurrentUser &&  !isFollowing"  (click)=" followUser()" type="button" class="btn mt-3">Follow</button>
+           <button  *ngIf="!isCurrentUser &&  isFollowing"  (click)=" followUser()" type="button" class="btn mt-3">Following</button>
+        
+      </div>
+  	</div>
 	
 	<div class="social-icons ">
 		<div class="icon">
 			<!-- <a href="/"><i class="fab fa-dribbble"></i></a> -->
-			<p>12.8k</p>
+			<p>{{postNumber}}</p>
 			<small>Post</small>
 		</div>
 		
 		<div class="icon" [routerLink]="['/follow']" routerLinkActive="router-link-active" >
 			<!-- <a href="#"><i class="fab fa-behance"></i></a> -->
-			<p>12.8k</p>
+			<p>{{followers}}</p>
 			<small>Followers</small>
 		</div>
 		
 		<div class="icon" [routerLink]="['/follow']" routerLinkActive="router-link-active" >
 			<!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-			<p>12.8k</p>
-			<small>Followers</small>
+			<p>{{following}}</p>
+			<small>Following</small>
 		</div>
-	</div>
-  <ion-row > 
+  </div>
+  <small class="text-bold">Follwers</small>
+  <div class="text-center p-2" >
+     <ion-spinner name="crescent"></ion-spinner>
+  </div>
+  <div class="slider" style="width: 350px;">  
+    <div class=" slide "  *ngFor="let user of followers" >
+      <div class="text-center">
+        <ion-avatar style="height: 50px;width: 50px;margin-left: 10px;border: rgb(89, 231, 7) 2px solid;">
+          <img src={{user.userImage}} alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+        </ion-avatar>
+         <small class="text-dark">{{user.displayName}}</small>
+      </div>
+      </div>
+    </div>
+    <small class="text-bold">Follwing</small>
+    <div class="text-center p-2" >
+       <ion-spinner name="crescent"></ion-spinner>
+    </div>
+    <div class="slider" style="width: 350px;">  
+      <div class=" slide "  *ngFor="let user of followers" >
+        <div class="text-center">
+          <ion-avatar style="height: 50px;width: 50px;margin-left: 10px;border: rgb(89, 231, 7) 2px solid;">
+            <img src={{user.userImage}} alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+          </ion-avatar>
+           <small class="text-dark">{{user.displayName}}</small>
+        </div>
+        </div>
+      </div>
+  
+    <small class="text-bold ">Post</small>
+    <br><br>
+  <ion-row *ngFor="let post of posts"> 
     <ion-col size="2">
         <ion-avatar>
-           <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
+           <img [src]="post.authorimage" alt="Snow" class="post-user-image">
         </ion-avatar>      
     </ion-col>
     <ion-col size="10">
        <div class="card-headr">
         <ion-label class="card-name " > 
-            <p style="margin-bottom: -5px;color: black;font-weight: 600;">ero osamuyi</p>
-            <small class="text-muted">2 days ago</small>             
+            <p style="margin-bottom: -10px;color: black;font-weight: 600;">{{post.author}}</p>
+            <small class="text-muted" style="font-size: 10px;">{{post.createdDate}}</small>             
         </ion-label>
-         <small style="float: right;" class=" text-primary ">Delete</small>
+         <small style="float: right;" class=" text-primary" (click)="getDetele(post.commentId)">Delete</small>
          
        </div>
        <div>
         <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
-        <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
+        <small class="mr-2 mt-3"> {{post.content}}</small>
      </div>
   <ion-row class= "my-card-footer pt-2 pb-2">
     <ion-col size="4" class="animated fast fadeInDown">
       <img  class="icon-ca" src="assets/icon/like.png" alt="" srcset="">
-        <small class="ml-2"> 129 </small> 
+        <small class="ml-2"> {{post.likes}} </small> 
     </ion-col>
       <ion-col size="4" class="animated  fadeInDown">
         <img class="icon-ca" src="assets/icon/dislike.png" alt="" srcset="">
-          <small class="ml-2">23</small>
+          <small class="ml-2">{{post.views}}</small>
       </ion-col>
       <ion-col size="4" class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
         <img  class="icon-ca" src="assets/icon/live.svg" alt="" srcset="">
-        <small class="ml-2"> 12  </small>
+        <small class="ml-2">  </small>
       </ion-col>
     </ion-row>
     </ion-col>

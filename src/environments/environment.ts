@@ -5,15 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyBguGGLaEvvXyW7xsSiJBJy2KthMFctRH4",
-    authDomain: "churchonline-286113.firebaseapp.com",
-    databaseURL: "https://churchonline-286113.firebaseio.com",
-    projectId: "churchonline-286113",
-    storageBucket: "churchonline-286113.appspot.com",
-    messagingSenderId: "816937459250",
-    appId: "1:816937459250:web:55796e5b0f51419e43e62b",
-    measurementId: "G-MDZB10Z83Y"
-
+    apiKey: "AIzaSyDrtdfVG0KYY5iHpQzmy7BY4qRMveMg1Os",
+    authDomain: "churchonline-17b23.firebaseapp.com",
+    databaseURL: "https://churchonline-17b23.firebaseio.com",
+    projectId: "churchonline-17b23",
+    storageBucket: "churchonline-17b23.appspot.com",
+    messagingSenderId: "217185734098",
+    appId: "1:217185734098:web:dd59f5784b914cff648c0b",
+    measurementId: "G-3YTK10K3NN"
   }
 };
 

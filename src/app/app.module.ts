@@ -19,11 +19,17 @@ import { AngularFireModule } from '@angular/fire';
 
 import {NgPipesModule} from 'ngx-pipes';
 
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
+
 import * as firebase from 'firebase';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { Network } from '@ionic-native/network/ngx';
 
 firebase.default.initializeApp(environment.firebaseConfig);
 
@@ -32,9 +38,10 @@ firebase.default.initializeApp(environment.firebaseConfig);
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+
     BrowserModule,
-    HttpClientModule, 
-    IonicModule.forRoot(), 
+    HttpClientModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     MenuPageModule,
     NgPipesModule,
@@ -43,13 +50,18 @@ firebase.default.initializeApp(environment.firebaseConfig);
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ImagePicker,
     YoutubeVideoPlayer,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Camera,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Geolocation,
+    NativeGeocoder,
+    Network
   ],
   bootstrap: [AppComponent]
 })

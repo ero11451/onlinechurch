@@ -232,3 +232,33 @@
 	 width: 100%;
 	object-fit: cover;
   }
+  .count-down{
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+    .title{
+      font-weight: 500;
+      font-size: small;
+      color: #0074e4;
+    }
+    .timer{
+       width: 20%;
+       padding: 4px;
+       font-size: small;
+       text-align: center;
+       background-color: lightblue;
+       border-radius: 5px;
+       margin: auto;
+       color: #0074e4;
+    }
+    .label{
+      font-size: small;
+
+    }
+  }
+
+
+
+
+
+

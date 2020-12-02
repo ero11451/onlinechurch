@@ -6,7 +6,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { IonhelperService } from '../helper/ionhelper.service';
+import { IonhelperService } from '../../helper/ionhelper.service';
 
 
 interface User {
@@ -14,6 +14,12 @@ interface User {
   email: string;
   displayName?: string;
   walletBallance?: number;
+  status: string;
+  userImage: string;
+  onlineStatus: boolean;
+  bio: string;
+  Followings?: number;
+  Followers?: number;
 }
 @Injectable({
   providedIn: 'root'
@@ -32,6 +38,8 @@ export class AuthService {
     public ngZone: NgZone,
     private ion: IonhelperService,
     private afs: AngularFirestore,
+
+    public afAuth: AngularFireAuth,
     ) {
       this.ngFireAuth.authState.subscribe(user => {
         if (user) {
@@ -49,11 +57,11 @@ export class AuthService {
   }
 
     // Register user with email/password
-  RegisterUser(useremail, password, username , image) {
+  RegisterUser(useremail, password, username , userContry, image) {
       this.ion.ionLoading(`please wait`, 200);
       return this.ngFireAuth.createUserWithEmailAndPassword(useremail, password)
       .then(user => {
-        console.log(user.user.uid)
+        console.log(user.user.uid);
         const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.user.uid}`);
         const data = {
           uid: user.user.uid,
@@ -62,6 +70,12 @@ export class AuthService {
           userImage: image,
           walletBallance: 0,
           totalViews: 0,
+          status: 'member',
+          onlineStatus: true,
+          location: userContry,
+          bio: '',
+          Followings: 0,
+          Followers: 0,
         };
         return userRef.set(data, { merge: true})
         .then(FormData =>
@@ -82,22 +96,13 @@ export class AuthService {
       );
      }
 
-   checkLoginState(){ }
+   checkLoginState(){ 
+    //  this.location.
+   }
 
-    // Store user in localStorage
-    // SetUserData(user) {
-    //   const userRef: AngularFirestoreDocument<any> = this.afStore.doc(`users/${user.uid}`);
-    //   const userData: User = {
-    //     uid: userRef.uid,
-    //     email: user.email,
-    //     displayName: user.name,
-    //     walletBallance: 0,
-    //   };
-    //   return userRef.set(userData, {
-    //     merge: true
-    //   });
-    // }
-
+    getAuthState() {
+      return this.afAuth.authState;
+    }
     // Sign-out
     SignOut() {
       return this.ngFireAuth.signOut().then(() => {

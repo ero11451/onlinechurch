@@ -39,10 +39,9 @@
 	 img{
 		margin-right: 5%;
 		color: #0074e4;
-		height: 15px;
-		width: 15px;
+		height: 20px;
+		width: 20px;
 	  }
-	  font-size: medium;
    
 	 } 
    .card-name{
@@ -80,5 +79,74 @@
 	object-fit: cover;
   }
   .small-text{
-	font-size: 10px;
+	font-size: 13px;
   }
+
+  
+  /* Custom Icon Segment MD */
+.md .custom-icon {
+	--indicator-color: lightgray;
+  }
+  
+  .md .segment-facebook {
+	--background-hover: rgba(59, 89, 153, 0.04);
+	--color-activated: #3b5999;
+	--color-checked: #3b5999;
+  }
+  
+  .md .segment-instagram {
+	--background-hover: rgba(228, 64, 95, 0.04);
+	--color-activated: #e4405f;
+	--color-checked: #e4405f;
+  }
+  
+  .md .segment-slack {
+	--background-hover: rgba(58, 175, 133, 0.04);
+	--color-activated: #3aaf85;
+	--color-checked: #3aaf85;
+  }
+  
+  /* Custom Icon Segment iOS */
+  .ios .custom-icon ion-segment-button {
+	--border-width: 0;
+  }
+  
+  .ios .segment-facebook {
+	--color: #3b5999;
+	--color-checked: #ffffff;
+	--background-hover: rgba(59, 89, 153, 0.1);
+	--background-activated: rgba(59, 89, 153, 0.16);
+	--background-checked: #3b5999;
+  }
+  
+  .ios .segment-instagram {
+	--color: #e4405f;
+	--color-checked: #ffffff;
+	--background-hover: rgba(228, 64, 95, 0.1);
+	--background-activated: rgba(228, 64, 95, 0.16);
+	--background-checked: #e4405f;
+  }
+  
+  .ios .segment-slack {
+	--color: #3aaf85;
+	--color-checked: #ffffff;
+	--background-hover: rgba(58, 175, 133, 0.1);
+	--background-activated: rgba(58, 175, 133, 0.16);
+	--background-checked: #3aaf85;
+  }
+  
+  .custom-icon ion-icon {
+	font-size: 44px;
+  }
+  ion-segment-button{
+	--indicator-box-shadow: transparent!important;
+	border-radius: 2.5rem !important;
+	padding: 0.7rem;
+	margin: 0;
+	--background:white;
+	--color:#2d2e87;
+	--background-checked: linear-gradient(to right, #2d2e87, #0083CB)!important;
+	--color-checked: white;
+	--indicator-color : transparent!important; /* this solution */
+
+	}
