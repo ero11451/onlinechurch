@@ -10,6 +10,7 @@ import { CommentService } from '../../../db/service/comment.service';
 import { FormBuilder, FormControl,  Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UserService } from 'src/app/db/service/user.service';
+import { AuthService } from '../../../db/service/auth.service';
 
 @Component({
   selector: 'app-comment',
@@ -20,11 +21,10 @@ export class CommentPage implements OnInit {
 // this is will show current user data
   userImage ;
   userName ;
-  userId ;
   commentTime = new Date();
   //
-  allComment
-  // 
+  allComment;
+  //
   postData: Post = new Post();
   postId;
   author: string;
@@ -42,24 +42,24 @@ export class CommentPage implements OnInit {
   };
   private unsubscribe$ = new Subject<void>();
   constructor(
-    private commentSer : CommentService,
+    private commentSer: CommentService,
     private auth: AngularFireAuth,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private userSer: UserService,
+    private userSer: AuthService,
     private blogService: AllpostService) {
   if (this.route.snapshot.params['postid']) {
   this.postId = this.route.snapshot.paramMap.get('postid');
-  console.log(this.postId)
+  console.log(this.postId);
   }
   this.validations_form = this.formBuilder.group({
     comment: new FormControl('', Validators.compose([
       Validators.required,
     ])),
-   
   });
   }
   ngOnInit() {
+  this.getUser();
   this.blogService.getPostbyId(this.postId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
@@ -78,26 +78,31 @@ export class CommentPage implements OnInit {
   this.unsubscribe$.next();
   this.unsubscribe$.complete();
   }
-  async makeComment(value ){
-    await this.getUser();
+
+  // comment, postid, authorName, authorImage, createdData)
+   makeComment(value ){
     this.commentSer.saveComment(
       value.comment,
       this.postId,
-      this.userId,
+      this.userName,
       this.userImage,
       this.commentTime
       );
   }
+
   getUser(){
-    this.auth.authState.subscribe(user => {
-      this.userSer.retrieveUserDocumentFromID(user.uid).subscribe(
-        d => {
-        console.log(d);
-        this.userImage = d.userImage;
-        this.userName = d.displayName;
-        this.userId = d.uid;
-          });
-     });
+      this.userSer.getCurrentUseData().pipe(takeUntil(this.unsubscribe$))
+      .subscribe(
+      (result: any) => {
+        console.log(result);
+      }
+      );
+      // .subscribe(
+      //   d => {
+      //   console.log('this is the detail of who wants to make the commet', d);
+      //   this.userImage = d.userImage;
+      //   this.userName = d.displayName;
+      //     });
   }
   getComment(){
     this.commentSer.getAllCommentsForBlog(this.postId).subscribe(d => {

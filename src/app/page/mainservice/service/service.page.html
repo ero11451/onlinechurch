@@ -14,7 +14,7 @@
 <!-- wahala for who get ubuntu -->
    </div>
    <div class="bottom ">
-     <ion-row *ngFor="let post of posts">
+     <ion-row class="mb-3" *ngFor="let post of posts">
        <ion-col size="2">
        <ion-avatar style="height: 40px;width: 40px;margin-left: 8px;">
          <img src="{{post.authorimage}}" />
@@ -22,11 +22,10 @@
       </ion-col>
       <ion-col size="10"  >
        <div style="text-align: left;">
-         <ion-label> 
-           <small class="title">{{post.author}} </small>
-           <small class="text-muted">{{post.authorLocation}}</small> 
-        </ion-label>
-           <small class="content">{{post.content}}</small>
+        
+           <p class="title">{{post.author}} </p>
+           <p class="text-muted">{{post.authorLocation}}</p>
+           <p class="content">{{post.content}}</p>
        </div>
       </ion-col>
      </ion-row>

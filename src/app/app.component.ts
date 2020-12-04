@@ -63,7 +63,7 @@ export class AppComponent {
       {
         title : 'Subscription',
         url   : '/subscription', 
-        icon  : 'assets/images/wallet..jpg'  
+        icon  : 'assets/icon/subcription.svg'  
       },
       {
       icon: "assets/icon/bible.svg",
@@ -81,7 +81,7 @@ export class AppComponent {
     },
     {
       icon: "assets/icon/settings.svg",
-      title: 'setting',
+      title: 'Setting',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
       url:'/setting'

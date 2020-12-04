@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/images/youtubebanner.jpeg" style="width: 100%;height: 120px;object-fit: cover;" alt="" srcset="">
+  <!-- <img src="assets/images/youtubebanner.jpeg" style="width: 100%;height: 120px;object-fit: cover;" alt="" srcset=""> -->
  <ion-list>
   <ion-item lines='none'>
      <p class="font-weight-bold text-dark">
@@ -30,6 +30,7 @@
   <div classs="ion-padding" class="slider">
     <div  class="slide" *ngFor="let video of playlist" (click)=" openVideo(video)" >
       <div   style="width: 150px;">
+        
         <ion-card  style="width: 150px">
          <img [src]="video.snippet.thumbnails.default.url"  style="width: 100%; height: 100px; object-fit: cover;" alt="" srcset="">
         
@@ -43,15 +44,20 @@
 </ion-list>
 
   <ion-list>
-    <ion-item lines='none'>
-       <p class="font-weight-bold text-dark">
+       <p class="font-weight-bold ml-2 text-dark">
         Spiritual
        </p>     
-    </ion-item>
 
-  <div class="ion-padding" class="slider">
+  <div class="slider">
     <div  class="slide" *ngFor="let item of [1,1,1,1,1,1,1]">
-      <div [routerLink]="['/subscription']"  style="width: 150px;">
+      
+      <div class="container-image "> 
+        <img src="assets/images/defaultimage.png" alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+        <div class="centered">
+          <ion-icon name="play"></ion-icon>
+         </div>
+      </div>
+      <!-- <div [routerLink]="['/subscription']"  style="width: 150px;">
         <ion-card  style="width: 150px;">
          <img src="assets/images/defaultimage.png"  style="height: 100px; object-fit: cover;" alt="" srcset="">
         
@@ -59,7 +65,7 @@
       <small class="mt-2 text-dark" style="line-height: 16px;">
         title of the message there is no message for now
           </small>       
-      </div>
+      </div> -->
     </div>
   </div>    
   </ion-list>

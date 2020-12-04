@@ -47,12 +47,12 @@
     <div class="row-middle">
       <span class="profile-location mt-1 text-small">
         <i class="fas fa-map-marker-alt"></i>
-        {{post.createdDate | timeAgo }} 
+        {{post.createdDate  }} 
       </span>
     
     </div>
     <div class="row-bottom">
-      <span class="followers-count">
+      <span class="followers-count" [routerLink]="[ '/comment', post.commentId ]">
         comment
   <!--       <span class="count-meta">10K</span> -->
       </span>

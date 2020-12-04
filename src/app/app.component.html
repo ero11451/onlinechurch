@@ -3,7 +3,7 @@
     <ion-header class="ion-no-border p-3" style="background-image: url(assets/icon/map.svg);">  
     <ion-spinner name="crescent" *ngIf="!nodata"></ion-spinner>
       <ion-thumbnail *ngIf="nodata" style="height: 50px;width: 50px;">
-      <img *ngIf="userImage" src= {{userImage}}/>
+      <img *ngIf="userImage" [src]= userImage/>
     </ion-thumbnail>
    <small class="text-bold" *ngIf="nodata">{{userName}}</small>
     </ion-header>  
@@ -12,14 +12,17 @@
         <ion-menu-toggle auto-hide="true">  
           <ion-item [routerLink]="pages.url" class="" lines=none routerDirection="forward">  
             <ion-img class="icon" [src]="pages.icon" slot="start"></ion-img>  
-             {{pages.title}}    
+            <small class="ml-2 text-bold">
+             {{pages.title}}  
+            </small>  
           </ion-item> 
      
         </ion-menu-toggle>  
       </ion-list>  
      <ion-item (click)="logOut()" class="" lines=none  >  
             <ion-img class="icon" src="assets/icon/logout.svg" slot="start"></ion-img>  
-             logout
+            <small class="ml-2"> Logout</small>
+            
           </ion-item>   
     </ion-content>  
     <!-- <ion-footer class="ion-no-border">

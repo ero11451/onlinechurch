@@ -87,16 +87,25 @@
   </ion-label>
 </ion-item>
     <div class="slider">  
-      <div class="  slide  mt-2 mb-2 " *ngFor="let item of [1, 1]">
-        <ion-card class="container-image " >
+      <div class="  slide  mt-2 mb-2 "[routerLink]="['/devotion']"  style="width: 250px;" *ngFor="let item of [1, 1]">
+        <ion-card class="container-image" style="width:250px" >
           <img src="assets/images/youtubebanner.jpeg"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
          <div class="top-left ">
-          Devotional
+           
+             <img style="height: 30px;width: 30px;border-radius: 30px; border: #e0e0e0 1px solid;"  src="assets/images/youtubebanner.jpeg"  />
+           
+           <small class="ml-2 text-bold">Devotional Name    </small>
+         </div>
+         <div class="top-right">
+            <small class="text-muted">
+             today
+           </small>
          </div>
           <div class="bottom-left ion-text-start">
              <small class="text-bold ">
-              living a life of destiny
+              Faith is the key to your success
            </small>
+         
             </div>
         </ion-card>
           </div>

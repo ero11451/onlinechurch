@@ -16,9 +16,9 @@ export class CommentService {
 
   saveComment(comment, postid, authorName, authorImage, createdData) {
   this.db.collection<Comments>('comment').add({
-    commentId: '',
+    // commentId: '',
     blogId: postid,
-    authorName: authorName,
+    authorName,
     authorImage,
     // commentedBy: string;
     content: comment,
@@ -27,7 +27,7 @@ export class CommentService {
   })
   }
   getAllCommentsForBlog(blogId: string): Observable<Comments[]> {
-  const comments = this.db.collection<Comments>('comments',
+  const comments = this.db.collection<Comments>('comment',
   ref => ref.where('blogId', '==', blogId).orderBy('commentDate',
  'desc')).snapshotChanges().pipe(
   map(actions => {

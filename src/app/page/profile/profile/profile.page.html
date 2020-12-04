@@ -57,7 +57,12 @@
 		</div>
   </div>
 
-    <small class="text-">Follwing</small>
+    <small class="text-bold">Following</small>
+    <div class="text-muted text-center"*ngIf="following == 0" >
+       <img src="assets/icon/sad-face.svg" 
+       style="width:30px; height: 30px" alt="" srcset=""><br>
+      <small class="text-muted"  >NO Following</small>
+    </div>
     <section class="stories">
       <div class="stories__single"   *ngFor="let user of userFollowing" >
         <div class="stories__single__img-holder">
@@ -68,7 +73,12 @@
     </section>
    
 
-    <small class="">Follwers</small>
+    <small class="text-bold">Followers</small>
+    <div class="text-muted text-center"*ngIf="followers == 0" >
+      <img src="assets/icon/sad-face.svg" 
+      style="width:30px; height: 30px" alt="" srcset=""><br>
+     <small class="text-muted"  >NO Followers</small>
+   </div>
       <section class="stories">
         <div class="stories__single"   *ngFor="let user of userFollowers" >
           <div class="stories__single__img-holder">
@@ -78,8 +88,13 @@
         </div>
       </section>
      
-    <small class=" ">Post</small>
+    <small class="text-bold">Post</small>
     <br><br>
+    <div class="text-muted text-center"*ngIf="!posts" >
+      <img src="assets/icon/sad-face.svg" 
+      style="width:30px; height: 30px" alt="" srcset="">
+     <small class="text-muted"  >No post made</small>
+   </div>
   <ion-row *ngFor="let post of posts"> 
     <ion-col size="2">
         <ion-avatar>
@@ -99,7 +114,9 @@
         <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
         <small class="mr-2 mt-3"> {{post.content}}</small>
      </div>
-  <ion-row class= "my-card-footer pt-2 pb-2">
+       <small [routerLink]="['/post', post.commentId]"
+        routerLinkActive="router-link-active"  class=" mt-2 text-primary">View post</small>
+  <!-- <ion-row class= "my-card-footer pt-2 pb-2">
     <ion-col size="4" class="animated fast fadeInDown">
       <img  class="icon-ca" src="assets/icon/like.png" alt="" srcset="">
         <small class="ml-2"> {{post.likes}} </small> 
@@ -112,7 +129,7 @@
         <img  class="icon-ca" src="assets/icon/live.svg" alt="" srcset="">
         <small class="ml-2">  </small>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
     </ion-col>
 
     </ion-row>

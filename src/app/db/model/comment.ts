@@ -1,5 +1,5 @@
 export class Comments {
-    commentId: string;
+    // commentId: string;
     blogId: string;
     authorName: string;
     authorImage: string;

@@ -123,7 +123,7 @@ export class LocationPage implements OnInit {
         infowindow.setPosition(event.latLng);
         infowindow.setContent('<div class ="p-2 pr-2">' + '<p>Church Location hq</p>' + '<p>phone:0907574875</p>' +
         '<p>passtor:jack daniel</>p' +
-        '<h3><a href="/tabs/home' + marker.getPosition().lat() + '/' + marker.getPosition().lng()  + '">home</a></h3>' + '</div>');
+        '<small><a  + marker.getPosition().lat() ' + '/' + marker.getPosition().lng()  + '">home</a></small>' + '</div>');
         infowindow.open(map, marker);
       });
     }, (error) => {
