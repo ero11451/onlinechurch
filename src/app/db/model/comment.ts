@@ -1,9 +1,9 @@
 export class Comments {
     commentId: string;
     blogId: string;
-    email: string;
-    commentorimage: string;
-    commentedBy: string;
+    authorName: string;
+    authorImage: string;
+    // commentedBy: string;
     content: string;
     commentDate: any;
     }

@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../db/service/auth.service';
 import { UserService } from '../../../db/service/user.service';
 import { AllpostService } from '../../../db/service/post.service';
+import { size } from 'lodash';
+
 
 @Component({
   selector: 'app-profile',
@@ -40,26 +42,33 @@ export class ProfilePage implements OnInit {
   userid: string;
   following?: any;
   followers?: any;
-  Followers?: number;
+  userFollowers: any;
+  userFollowing: any;
   isFollowing: boolean;
   currentuid;
   isLoggedIn: boolean;
+
   ngOnInit() {
     this.userid = this.activatedRoute.snapshot.params.userid;
     console.log('user id ', this.userid);
+    // console.log('followes', this.followers , 'following', this.following)
     this.getUserData();
     this.getpost();
+    this.getFollowData();
   }
+
   getFollowData() {
     this.follow.getFollowers(this.userid).subscribe(
       followers => {
-        this.followers = followers;
-        // this.userFollowers = followers;
+        this.followers = followers.length;
+        this.userFollowers = followers;
+        console.log(followers);
       });
     this.follow.getFollowing(this.userid).subscribe(
       following => {
-        this.following = following;
-        // this.userFollowing = following;
+        this.following = following.length;
+        console.log(following);
+        this.userFollowing = following;
       });
   }
 
@@ -73,7 +82,7 @@ export class ProfilePage implements OnInit {
     }
   }
   menu(){
-    this.menuController.open()
+    this.menuController.open();
   }
 
 getUserData(){
@@ -94,10 +103,12 @@ getpost(){
     this.postNumber = d.length;
   });
 }
+
 getDetele(postid){
-  this.postSer.deletePost(postid)
+  this.postSer.deletePost(postid);
 }
-  checkCurrentUser() {
+
+checkCurrentUser() {
     this.auth.getAuthState().subscribe(
       user => {
         if (user) {

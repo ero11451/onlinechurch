@@ -45,7 +45,7 @@ const routes: Routes = [
   },
   {
     path: 'messgaelist',
-    loadChildren: () => import('./page/message/messgaelist/messgaelist.module').then( m => m.MessgaelistPageModule)
+    loadChildren: () => import('./page/message/messgaedetail/messgaedetail.module').then( m => m.MessgaedetailPageModule)
   },
   {
     path: 'message',

@@ -45,23 +45,9 @@ export class ServiceService {
       return comments;
       }
 
-    getAllMyComment(): Observable<ServiceComment[]> {
-      const blogs = this.db.collection<ServiceComment>('serviceComment', ref =>
-     ref.orderBy('createdDate', 'desc'))
-      .snapshotChanges().pipe(
-      map(actions => {
-      return actions.map(
-      c => ({
-      postId: c.payload.doc.id,
-      ...c.payload.doc.data()
-      }));
-      }));
-      return blogs;
-      }
 
-
-getAllCommentsForService(serviceId: string): Observable<ServiceComment[]> {
-     const comments = this.db.collection<ServiceComment>('serviceComment',
+   getAllCommentsForService(serviceId: string): Observable<ServiceComment[]> {
+     const comments = this.db.collection<ServiceComment>('seriveComment',
      ref => ref.where('serviceId', '==', serviceId).orderBy('createdDate',
          'desc')).snapshotChanges().pipe(
           map(actions => {

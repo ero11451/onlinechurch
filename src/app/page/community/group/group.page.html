@@ -1,36 +1,78 @@
 <ion-header class="ion-no-border">
-
+  <ion-toolbar>
+    <!-- <ion-title>
+      <small class="te">Community</small>
+    </ion-title>
+    <ion-icon slot="end" class="mr-2" name="search"></ion-icon> -->
+  </ion-toolbar>
 </ion-header>
 <ion-content>
-  <br><br>
-  
-  <!-- <ion-segment    (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="primary">  
-    <ion-segment-button  class="segment-slack" value="0">  
-      <small class="text-bold">Home</small>  
-    </ion-segment-button>  
-    <ion-segment-button  class="segment-instagram" value="1">  
-      <small class="text-bold">friends</small>  
-    </ion-segment-button>  
-    <ion-segment-button  class="segment-instagram"  value="2">  
-      <small class="text-bold">Search</small>  
-    </ion-segment-button>  
-  </ion-segment>  
-  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">  
-    <ion-slide> -->
 
+      <ion-item lines='none' class="ion-no-padding ion-no-margin">
+        
+         <p class="text-bold ml-3 text-dark"slot="start">
+           Community
+         </p>
+        <small slot="end"  >
+            <ion-icon color="primary" [routerLink]="['/search']" name='search' >  </ion-icon>
+       
+        </small>
+    
+      </ion-item>
+      <section class="stories">
+        <div class="stories__single"   *ngFor="let user of onlineUsers"  >
+          <div [routerLink]="['/tabs/profile', user.uid]" routerLinkActive="router-link-active"  class="stories__single__img-holder">
+            <div class="stories__single__img-holder__inner" style="background-image: url({{user.userImage}});"></div>
+          </div>
+          <p class="stories__single__description">{{user.displayName | shorten: 8: '..'}}.</p>
+        </div>
+      </section>
+<br>
+   <div class="twitter-card m-2 " *ngFor="let post of allPost">
+    <div class="row-top">
+      <div class="user-wrapper">
+         <span class="user-image" style="  background-image: url({{post.authorimage}}  )"></span>
+         <div class="profile-user">
+             <span class="user"> {{post.author}}</span>
+             <span class="username">@{{post.author | trim }}</span>
+         </div>
+      </div>
+       <!-- <span class="follow ">View</span> -->
+    </div>
+    <!-- <img src={{post.photo}} class="post-image" alt="" srcset=""> -->
+    <small class="profile-bio">
+      {{post.content}}.</small>
+
+    <img src={{post.photo}}  *ngIf="post.photo"  class="post-image" alt="" srcset="">
+    <div class="row-middle">
+      <span class="profile-location mt-1 text-small">
+        <i class="fas fa-map-marker-alt"></i>
+        {{post.createdDate | timeAgo }} 
+      </span>
+    
+    </div>
+    <div class="row-bottom">
+      <span class="followers-count">
+        comment
+  <!--       <span class="count-meta">10K</span> -->
+      </span>
+    
+      
+    </div>
+  </div>
+
+
+     
   
 <ion-list class="my-card animate fast fadeIn">
 
-  <ion-item lines="none">
-  
-      <h5 class="text-bold text-primary"slot="start">
+      <!-- <h6 class="text-bold ml-2 text-primary"slot="start">
         Community
-      </h5>
+      </h6> -->
     <!-- <small slot="end" routerLinkActive="router-link-active" >
           <ion-icon name="search"></ion-icon>
     </small> -->
-  </ion-item>
-  <ion-searchbar  [routerLink]="['/search']"style="border-radius: 20px !important;" id="nav-search" type="text"  placeholder="Search users"  >  </ion-searchbar>
+ 
   <!-- <div class="slider" style="width: 350px;">  
     <div class=" slide "  *ngFor="let user of onlineUsers" >
       <div class="text-center">
@@ -38,11 +80,19 @@
           <img src={{user.userImage}} alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
         </ion-avatar>
          <small class="text-dark">{{user.displayName}}</small>
-      </div>
+      </div><ion-item class="ion-no-padding ion-no-margin">
+   <ion-label>
+    <h6 class="text-bold ml-2 text-primary"slot="start">
+      Community
+    </h6>
+   </ion-label>
+   <ion-icon slot="end" [routerLink]="['/search']" name='search' >  </ion-icon>
+
+ </ion-item>
       </div>
     </div> -->
     
-  <div class="m-2"  *ngFor="let post of allPost"> 
+  <!-- <div class="m-2"  *ngFor="let post of allPost" > 
     <ion-item size="2" lines="none" class="ion-no-padding ion-no-margin">
         <ion-avatar>
            <img src={{post.authorimage}}  alt="Snow">
@@ -74,7 +124,7 @@
           <small> Comment  </small>
         </div>
      </div>
-    </div>
+    </div> -->
 </ion-list>
     <!-- </ion-slide>  
     <ion-slide> -->

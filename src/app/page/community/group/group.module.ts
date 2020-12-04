@@ -8,13 +8,16 @@ import { GroupPageRoutingModule } from './group-routing.module';
 
 import { GroupPage } from './group.page';
 import { SearchPage } from '../search/search.page';
+import {NgPipesModule} from 'ngx-pipes';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GroupPageRoutingModule
+    GroupPageRoutingModule,
+    NgPipesModule
   ],
   declarations: [GroupPage , SearchPage]
 })

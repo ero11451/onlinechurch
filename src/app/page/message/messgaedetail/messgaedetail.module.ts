@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { MessgaedetailPageRoutingModule } from './messgaedetail-routing.module';
 
 import { MessgaedetailPage } from './messgaedetail.page';
+import { NgPipesModule } from 'ngx-pipes';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MessgaedetailPageRoutingModule
+    MessgaedetailPageRoutingModule,
+    NgPipesModule
   ],
   declarations: [MessgaedetailPage]
 })

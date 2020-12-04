@@ -2,9 +2,9 @@
   <ion-menu side="start" menuId="first" contentId="content">  
     <ion-header class="ion-no-border p-3" style="background-image: url(assets/icon/map.svg);">  
     <ion-spinner name="crescent" *ngIf="!nodata"></ion-spinner>
-      <ion-avatar *ngIf="nodata" style="height: 50px;width: 50px;">
-      <img [src]= userImage/>
-    </ion-avatar>
+      <ion-thumbnail *ngIf="nodata" style="height: 50px;width: 50px;">
+      <img *ngIf="userImage" src= {{userImage}}/>
+    </ion-thumbnail>
    <small class="text-bold" *ngIf="nodata">{{userName}}</small>
     </ion-header>  
     <ion-content>  

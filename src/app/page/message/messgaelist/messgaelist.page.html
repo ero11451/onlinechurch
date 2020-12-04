@@ -19,8 +19,10 @@
   <ion-item lines='none'>
      <p class="font-weight-bold text-dark">
       Popular
-  </p>     
-
+  </p>      
+<small class="text-primary" slot="end" [routerLink]="['/messgaelist']" routerLinkActive="router-link-active" >
+  See All
+</small>
   </ion-item>
   <div class="text-center">
     <ion-spinner color="primary" name="crescent" *ngIf="notNetwork"></ion-spinner>

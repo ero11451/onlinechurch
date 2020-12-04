@@ -7,6 +7,7 @@ import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { IonhelperService } from '../../helper/ionhelper.service';
+import { UserService } from './user.service';
 
 
 interface User {
@@ -38,7 +39,7 @@ export class AuthService {
     public ngZone: NgZone,
     private ion: IonhelperService,
     private afs: AngularFirestore,
-
+    private userSer:  UserService,
     public afAuth: AngularFireAuth,
     ) {
       this.ngFireAuth.authState.subscribe(user => {
@@ -72,7 +73,7 @@ export class AuthService {
           totalViews: 0,
           status: 'member',
           onlineStatus: true,
-          location: userContry,
+          location: userContry || '',
           bio: '',
           Followings: 0,
           Followers: 0,
@@ -103,9 +104,14 @@ export class AuthService {
     getAuthState() {
       return this.afAuth.authState;
     }
+    getCurrentUseData(){
+      // return this.afAuth.authState.subscribe(data => {
+       return this.userSer.retrieveUserDocumentFromID(this.userData.uid);
+      // });/
+    }
     // Sign-out
     SignOut() {
-      return this.ngFireAuth.signOut().then(() => {
+         this.ngFireAuth.signOut().then(() => {
         this.router.navigate(['/ilogin']);
       });
     }

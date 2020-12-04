@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,10 +9,22 @@ import { Comments } from '../model/comment';
   providedIn: 'root'
 })
 export class CommentService {
-  constructor(private db: AngularFirestore) { }
-  saveComment(comment: Comments) {
-  const commentData = JSON.parse(JSON.stringify(comment));
-  return this.db.collection('comments').add(commentData);
+  constructor(
+    private db: AngularFirestore,
+    private auth: AngularFireAuth,
+    ) { }
+
+  saveComment(comment, postid, authorName, authorImage, createdData) {
+  this.db.collection<Comments>('comment').add({
+    commentId: '',
+    blogId: postid,
+    authorName: authorName,
+    authorImage,
+    // commentedBy: string;
+    content: comment,
+    commentDate: createdData,
+
+  })
   }
   getAllCommentsForBlog(blogId: string): Observable<Comments[]> {
   const comments = this.db.collection<Comments>('comments',
@@ -26,9 +39,10 @@ export class CommentService {
   }));
   return comments;
   }
+
   deleteAllCommentForBlog(blogId: string) {
   const commentsToDelete = this.db.collection('comments', ref =>
- ref.where('blogId', '==', blogId)).snapshotChanges();
+  ref.where('blogId', '==', blogId)).snapshotChanges();
   commentsToDelete.forEach(
   commentList => {
   commentList.forEach(comment => {

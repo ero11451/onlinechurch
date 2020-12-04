@@ -61,7 +61,8 @@ firebase.default.initializeApp(environment.firebaseConfig);
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Geolocation,
     NativeGeocoder,
-    Network
+    Network,
+  
   ],
   bootstrap: [AppComponent]
 })

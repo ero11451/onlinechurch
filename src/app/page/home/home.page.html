@@ -140,47 +140,40 @@ border-radius: 2px;
 
  
    </ion-list>
-   <ion-list class="my-card mt-1 animate fast fadeIn">
+   
     <!-- <ion-item lines=none>
       <p class="text-bold"> Top Post</p>
       <small class="text-primary" slot="end"> See more</small>
    </ion-item> -->
-   <ion-card class="m-2">
-     
-    <ion-row > 
-      <ion-col size="2">
-          <ion-avatar>
-             <img src="assets/images/profileimage.jpg" alt="Snow" class="post-user-image">
-          </ion-avatar>      
-      </ion-col>
-      <ion-col size="9">
-          <ion-label class="card-name " > 
-           <p style="margin-bottom: -5px;color: black;font-weight: 600;">Ofure muyi</p>
-           <small>Usa</small>  
-        </ion-label>
-        <!-- <small class="text-primary text-sm" slot="end" >Follow</small> -->
-       <div>
-          <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
-          <small class="mr-2 mt-3"> consectetur adipiscing elit. Duis ut urna neque.   Lorem ipsum dolor sit, amet consectetur adipis </small>
-       </div>
-    <div class= "my-card-footer pt-2 pb-2">
-      <div class="animated fast fadeInDown">
-        <img  class="icon" src="assets/icon/like.png" alt="" srcset="">
-          <small > 129 </small> 
+   <div class="twitter-card m-2">
+    <div class="row-top">
+      <div class="user-wrapper">
+         <span class="user-image"></span>
+         <div class="profile-user">
+             <span class="user">Jane Doe</span>
+             <span class="username">@JaneDoe_</span>
+         </div>
       </div>
-        <div class="animated  fadeInDown">
-          <img class="icon" src="assets/icon/dislike.png" alt="" srcset="">
-            <small >23</small>
-        </div>
-        <div class="animated faster fadeInDown"[routerLink]="[ '/comment' ]">
-          <img  class="icon" src="assets/icon/live.svg" alt="" srcset="">
-          <small > 12  </small>
-        </div>
-     </div>
-      </ion-col>
-      </ion-row>
-      </ion-card>
-</ion-list>
+       <span class="follow ">Follow</span>
+    </div>
+    <p class="profile-bio">Geek, Chef, Connector of Awesomeness, Information Addict, Part-time dictator, full time foodie. I walk faster when I see a creepy van.</p>
+    <div class="row-middle">
+      <span class="profile-location">
+        <i class="fas fa-map-marker-alt"></i>
+        London, United Kingdom
+      </span>
+    
+    </div>
+    <div class="row-bottom">
+      <span class="followers-count">
+        Testimony
+  <!--       <span class="count-meta">10K</span> -->
+      </span>
+    
+      
+    </div>
+  </div>
+
 
 <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
   <ion-refresher-content

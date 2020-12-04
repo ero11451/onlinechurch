@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { ServicePageRoutingModule } from './service-routing.module';
 
 import { ServicePage } from './service.page';
+import { NgPipesModule } from 'ngx-pipes';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ServicePage } from './service.page';
     FormsModule,
     IonicModule,
     ServicePageRoutingModule,
+    NgPipesModule
   ],
   declarations: [ServicePage ,]
 })

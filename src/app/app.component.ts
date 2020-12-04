@@ -77,14 +77,14 @@ export class AppComponent {
       title: 'Gift card',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
-      url: 'celebrationcard'
+      url: '/celebrationcard'
     },
     {
       icon: "assets/icon/settings.svg",
       title: 'setting',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
-      url:'setting'
+      url:'/setting'
     },
     // {
     //   icon: "assets/icon/market.svg",
@@ -98,21 +98,21 @@ export class AppComponent {
       title: 'Fine Church',
       subtitle: 'Meet and get igroup',
       animation:'animate__animated animate__bounceIn animate__faster',
-      url:'location'
+      url: '/location'
     },
     {
       icon:"assets/icon/devotion.svg",
       title:'Devotional',
       subtitle:'Meet and get in ',
       animation:'animate__animated animate__bounceIn animate__faster',
-      url:'devotion'
+      url: '/devotion'
     },
     {
       icon: "assets/icon/giving.svg",
       title: 'Giving',
       subtitle: 'Meet and get in oup',
       animation: 'animate__animated animate__bounceIn animate__fast',
-      url:'giving'
+      url: '/giving'
     },
     // {
     //   icon: "assets/icon/logout.svg",
@@ -131,7 +131,7 @@ export class AppComponent {
       this.user.retrieveUserDocumentFromID(user.uid).subscribe(
         d => {
         console.log(d);
-        this.userImage = d.displayImage;
+        this.userImage = d.userImage;
         this.userName = d.displayName;
         this.userId = d.uid;
       }

@@ -42,7 +42,7 @@ export class HearderComponent implements OnInit {
   }
 
   navProfile(){
-    this.nav.navigate(['profile', this.userId])
+    this.nav.navigate(['tabs/profile', this.userId])
   }
   open(){
     this.menuController.open()
