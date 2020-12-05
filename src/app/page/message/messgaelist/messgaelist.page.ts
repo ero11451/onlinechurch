@@ -16,19 +16,21 @@ export class MessgaelistPage implements OnInit {
 
   notNetwork: boolean;
   channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
+  SwimChannelId = 'UCftSxR1o6FH9YMCYPSuEquQ';
   //  tsl channel id the one delow
   // channelId = 'UC2eJZ7eVkmzgOP8TMPLqaqA';
   playlists: Observable<any>;
   playlist: Observable<any>;
+  SwimPlayLists: Observable<any>;
+  SwimPlayList: Observable<any>;
   videos: Observable<any[]>;
-   playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET'
+  // playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET';
  constructor(
    private youtube: YoutubeVideoPlayer,
    private ion: IonhelperService,
    private list: YoutubeService,
    public sanitizer: DomSanitizer,
    private plt: Platform,
-   private popoverController: PopoverController
    ) {
 
    this.sanitizer = sanitizer;
@@ -36,6 +38,7 @@ export class MessgaelistPage implements OnInit {
 
  ngOnInit() {
     this.getShow();
+    this.getSwimList();
    }
 
  getShow(){
@@ -43,7 +46,7 @@ export class MessgaelistPage implements OnInit {
      this.playlists.subscribe(data => {
        this.playlist = data.items;
        this.notNetwork = false;
-       console.log('playlists: ', data.items );
+       console.log(' playlists', data.items );
        }, err => {
        console.log(err);
        this.ion.ionToast('there was an error', 1000, 'primary')
@@ -51,6 +54,18 @@ export class MessgaelistPage implements OnInit {
      });
   }
 
+  getSwimList(){
+    this.SwimPlayLists = this.list.getPlaylistsForChannel(this.SwimChannelId);
+    this.SwimPlayLists.subscribe(data => {
+      this.SwimPlayList = data.items;
+      this.notNetwork = false;
+      console.log('swim playlists: ', data.items );
+      }, err => {
+      console.log(err);
+      this.ion.ionToast('there was an error', 1000, 'primary')
+      this.notNetwork = true;
+    });
+  }
 
   openVideo(video) {
    console.log(video.id.videoId);
@@ -70,7 +85,7 @@ export class MessgaelistPage implements OnInit {
     }, 2000);
   }
 
- getlist(){
-   this.list.getPlaylistsForChannel(this.playlistId).subscribe(d => console.log('platelist', d))
- }
+//  getlist(){
+//    this.list.getPlaylistsForChannel(this.playlistId).subscribe(d => console.log('platelist', d))
+//  }
   }

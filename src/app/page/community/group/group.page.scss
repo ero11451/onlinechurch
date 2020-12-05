@@ -214,7 +214,7 @@
 
 .profile-bio{
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .row-middle{
@@ -223,9 +223,10 @@
 }
 
 .profile-location{
-  font-size: var(--font-small);
+  font-size: 10px;
   color: lightgray;
   margin-bottom: 10px;
+
 }
 
 .profile-location > i, .profile-website > i {
@@ -265,7 +266,7 @@
 }
 
 .followers-count, .following-count, .likes-count{
-  color: var(--grey);
+  color: rgba(6, 6, 177, 0.801);
 }
 
 .count-meta{

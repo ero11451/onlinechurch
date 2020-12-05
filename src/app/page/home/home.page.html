@@ -75,7 +75,7 @@
 
 
    <ion-list class=" animate fast fadeIn">
-    <!-- <app-celebrationcard></app-celebrationcard> -->
+    <app-celebrationcard></app-celebrationcard>
     <br>
 <ion-item lines='none'>
   <ion-avatar>
@@ -112,14 +112,7 @@
         </div>
 </ion-list>
 
-
-
-
-
-
-
-
-   <ion-item class="m-2"
+  <ion-item class="m-2"
    [routerLink]="['/giving']" 
    lines="none" style="
 border: solid 1px#e0e0e0;
@@ -129,7 +122,6 @@ border-radius: 2px;
   <div class="mt-3 mb-3">
       <small class="text-muted ">Give</small>
       <p class="bold mb-1 mt-1" >Online payment</p>
-    
       <button
        routerLink="/feature-profile" 
        routerLinkActive="active"
@@ -144,17 +136,13 @@ border-radius: 2px;
        style="height: 100px;"
        src="../../../assets/images/payment.svg" alt="" srcset="">  
   </ion-item>
-
-
-
- 
    </ion-list>
-   
+
     <!-- <ion-item lines=none>
       <p class="text-bold"> Top Post</p>
       <small class="text-primary" slot="end"> See more</small>
    </ion-item> -->
-   <div class="twitter-card m-2">
+    <div class="twitter-card m-2">
     <div class="row-top">
       <div class="user-wrapper">
          <span class="user-image"></span>
@@ -163,10 +151,11 @@ border-radius: 2px;
              <span class="username">@JaneDoe_</span>
          </div>
       </div>
-       <span class="follow ">Follow</span>
+       <span class="follow ">Testimony</span>
     </div>
-    <p class="profile-bio">Geek, Chef, Connector of Awesomeness, Information Addict, Part-time dictator, full time foodie. I walk faster when I see a creepy van.</p>
-    <div class="row-middle">
+    <small class="profile-bio">Geek, Chef, Connector of Awesomeness, Information Addict, Part-time dictator, 
+      full time foodie. I walk faster when I see a creepy van.</small>
+    <!-- <div class="row-middle">
       <span class="profile-location">
         <i class="fas fa-map-marker-alt"></i>
         London, United Kingdom
@@ -176,12 +165,29 @@ border-radius: 2px;
     <div class="row-bottom">
       <span class="followers-count">
         Testimony
-  <!--       <span class="count-meta">10K</span> -->
+       <span class="count-meta">10K</span> -
       </span>
-    
-      
-    </div>
+    </div> -->
   </div>
+ aler
+  <div class="slider">  
+    <div class="  slide  mt-2 mb-2 "[routerLink]="['/devotion']"  style="width: 150px;" *ngFor="let item of [1, 1]">
+      <ion-card [routerLink]="['/productdetail']" routerLinkActive="router-link-active"  class="product-card">
+        <ion-item lines="none" class="ion-no-padding ion-no-margin">
+          <small class="off">30%</small>
+          <small slot="end"> <ion-icon  name="heart"></ion-icon></small>
+          
+        </ion-item>
+        <img class="productimage" src="assets/images/defaultimage.png"  alt="" srcset="">
+      <div class="text-left p-2">
+            <p class="title ">men's shoes fashion</p>
+           <p class="price">N24409</p> 
+  
+        </div>
+
+        </ion-card>
+        </div>
+      </div>
 
 
 <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">

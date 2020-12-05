@@ -46,7 +46,7 @@ export class CommentPage implements OnInit {
     private auth: AngularFireAuth,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private userSer: AuthService,
+    private userSer: UserService,
     private blogService: AllpostService) {
   if (this.route.snapshot.params['postid']) {
   this.postId = this.route.snapshot.paramMap.get('postid');
@@ -57,6 +57,7 @@ export class CommentPage implements OnInit {
       Validators.required,
     ])),
   });
+  this.getComment()
   }
   ngOnInit() {
   this.getUser();
@@ -90,19 +91,16 @@ export class CommentPage implements OnInit {
       );
   }
 
+
   getUser(){
-      this.userSer.getCurrentUseData().pipe(takeUntil(this.unsubscribe$))
-      .subscribe(
-      (result: any) => {
-        console.log(result);
-      }
-      );
-      // .subscribe(
-      //   d => {
-      //   console.log('this is the detail of who wants to make the commet', d);
-      //   this.userImage = d.userImage;
-      //   this.userName = d.displayName;
-      //     });
+    this.auth.authState.subscribe(user => {
+      this.userSer.retrieveUserDocumentFromID(user.uid).subscribe(
+        d => {
+        console.log(d);
+        this.userImage = d.userImage;
+        this.userName = d.displayName;
+      })
+     });
   }
   getComment(){
     this.commentSer.getAllCommentsForBlog(this.postId).subscribe(d => {
