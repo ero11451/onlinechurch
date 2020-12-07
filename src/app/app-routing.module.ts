@@ -44,7 +44,7 @@ const routes: Routes = [
     loadChildren: () => import('./page/payment/giving/giving.module').then( m => m.GivingPageModule)
   },
   {
-    path: 'messgaelist',
+    path: 'messgaelist/:channelId',
     loadChildren: () => import('./page/message/messgaedetail/messgaedetail.module').then( m => m.MessgaedetailPageModule)
   },
   {

@@ -13,6 +13,7 @@ import { AuthService } from '../../../db/service/auth.service';
 import { UserService } from '../../../db/service/user.service';
 import { AllpostService } from '../../../db/service/post.service';
 import { size } from 'lodash';
+import { UploadfileComponent } from '../../../container/uploadfile/uploadfile.component';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class ProfilePage implements OnInit {
     private menuController: MenuController,
     private auth: AuthService,
     private activatedRoute: ActivatedRoute,
-    private postSer: AllpostService
+    private postSer: AllpostService,
+    private ion: IonhelperService
   ) {
     this.checkCurrentUser();
    }
@@ -131,5 +133,8 @@ checkCurrentUser() {
 
         }
     });
+  }
+  uploadFile(){
+    this.ion.presentModal(UploadfileComponent, this.currentuid, 'bottom-model');
   }
 }

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { MenuPage } from 'src/app/container/menu/menu.page';
 import { IonhelperService } from 'src/app/helper/ionhelper.service';
 import { YoutubeService } from '../../../allapi/youtube.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messgaelist',
@@ -31,6 +32,7 @@ export class MessgaelistPage implements OnInit {
    private list: YoutubeService,
    public sanitizer: DomSanitizer,
    private plt: Platform,
+   private router: Router
    ) {
 
    this.sanitizer = sanitizer;
@@ -83,6 +85,10 @@ export class MessgaelistPage implements OnInit {
       console.log('Async operation has ended');
       event.target.complete();
     }, 2000);
+  }
+
+  navTo(channelId){
+   this.router.navigate(['messgaelist', channelId]);
   }
 
 //  getlist(){

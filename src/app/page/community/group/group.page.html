@@ -19,6 +19,7 @@
         </small>
     
       </ion-item>
+       
       <section class="stories">
         <div class="stories__single"   *ngFor="let user of onlineUsers"  >
           <div [routerLink]="['/tabs/profile', user.uid]" routerLinkActive="router-link-active"  class="stories__single__img-holder">
@@ -27,6 +28,17 @@
           <p class="stories__single__description">{{user.displayName | shorten: 8: '..'}}.</p>
         </div>
       </section>
+      <div *ngIf="allPost == 0 " class="text-center">
+        <img src="assets/icon/sad-face.svg" style="
+        height: 150px;
+        width: 150px;
+        margin-top: 70px;
+        " alt="" srcset="">
+         <p class="mt-4 text-muted">can not get post right now</p>
+         <small class="text-primary">Check your network</small>
+        <!-- <ion-spinner name="crescent" color="primary"></ion-spinner> -->
+      </div>
+
 <br>
    <div class="twitter-card m-2 " *ngFor="let post of allPost">
     <div class="row-top">

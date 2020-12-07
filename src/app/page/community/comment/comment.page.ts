@@ -99,12 +99,13 @@ export class CommentPage implements OnInit {
         console.log(d);
         this.userImage = d.userImage;
         this.userName = d.displayName;
-      })
+      });
      });
   }
   getComment(){
     this.commentSer.getAllCommentsForBlog(this.postId).subscribe(d => {
       this.allComment = d;
+      console.log(d);
     });
   }
 }

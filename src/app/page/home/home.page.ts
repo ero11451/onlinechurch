@@ -8,7 +8,8 @@ import { IonhelperService } from 'src/app/helper/ionhelper.service';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { DomSanitizer } from '@angular/platform-browser';
 import { YoutubeService } from 'src/app/allapi/youtube.service';
-import { NetworkService } from '../../helper/network.service';
+import { ConnectionStatus, NetworkService } from '../../helper/network.service';
+import { AllpostService } from 'src/app/db/service/post.service';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,8 @@ export class HomePage implements OnInit {
   playlist: Observable<any>;
   videos: Observable<any[]>;
   playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET';
+  testimonies;
+  testimoniesNumber;
 
   constructor(
     private youtube: YoutubeVideoPlayer,
@@ -31,15 +34,22 @@ export class HomePage implements OnInit {
     public sanitizer: DomSanitizer,
     private plt: Platform,
     public navCtrl: NavController,
-    private networkSer: NetworkService
-  
+    private networkSer: NetworkService,
+    private blogService: AllpostService
     ) { }
 
  
   ngOnInit() {
-    this.networkSer.status
-    .subscribe(net => console.log('this is will show network strt', net));
+    this.networkSer.onNetworkChange();
+    // .subscribe(d => console.log('network status', d))
     this.getShow();
+    this.getTestimony();
+
+    this.networkSer.onNetworkChange().subscribe((status: ConnectionStatus) => {
+      if (status == ConnectionStatus.Online) {
+        console.log('you are online')
+      }
+    });
    }
 
  getShow(){
@@ -65,11 +75,18 @@ export class HomePage implements OnInit {
    }
   }
 
-
+getTestimony(){
+  this.blogService.getApprovedPost().subscribe(post => {
+    this.testimonies = post
+    this.testimoniesNumber = post.length
+  }
+  );
+}
 
  doRefresh(event) {
    console.log('Begin async operation');
-   this.getShow()
+   this.getShow();
+   this.getTestimony();
    setTimeout(() => {
      console.log('Async operation has ended');
      event.target.complete();

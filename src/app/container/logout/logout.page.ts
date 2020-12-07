@@ -18,7 +18,7 @@ export class LogoutPage implements OnInit {
   close(){
    this.modalController.dismiss();
   }
-  logout(){
-    this.auth.SignOut();
+ logout(){
+   this.modalController.dismiss().then(d => this.auth.SignOut());
   }
 }

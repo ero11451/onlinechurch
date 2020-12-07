@@ -34,11 +34,11 @@
       <ion-label position="floating" color="primary"><small> Password</small></ion-label>
       <ion-input type="password" formControlName="password"  required></ion-input>
     </ion-item>
-
+    <div  class="text-danger text-small">{{errorMessage}}</div>
 <br>
     <div class="text-center ">
       <div class="buttons"   >
-        <button  class="blob-btn" type="submit" [disabled]="!validations_form.valid">Login
+        <button  class="blob-btn" type="submit" >Login
           <span class="blob-btn__inner">
             <span class="blob-btn__blobs">
               <span class="blob-btn__blob"></span>
@@ -60,7 +60,6 @@
       </svg>
       </div>
     </div>
-    <div  class="error-message">{{errorMessage}}</div>
   </form>
   
   <br><br><br>

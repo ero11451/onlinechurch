@@ -39,7 +39,7 @@ export class AuthService {
     public ngZone: NgZone,
     private ion: IonhelperService,
     private afs: AngularFirestore,
-    private userSer:  UserService,
+    private userSer: UserService,
     public afAuth: AngularFireAuth,
     ) {
       this.ngFireAuth.authState.subscribe(user => {
@@ -112,7 +112,45 @@ export class AuthService {
     // Sign-out
     SignOut() {
          this.ngFireAuth.signOut().then(() => {
-        this.router.navigate(['/ilogin']);
+        this.router.navigate(['/login']);
       });
     }
+
+  userObs: Observable<any>;
+
+  updateUserData(user) {
+
+    // check if user already exists
+    this.userCollection = this.afs.collection('users', ref => ref.where('uid', '==', user.uid));
+    this.userObs = this.userCollection.valueChanges();
+    this.userObs.forEach( userobj => {
+      console.log('Existing User logged in- ', userobj[0].userName);
+    })
+    .then(
+      (success) => {
+        this.router.navigateByUrl('/login');
+      })
+    .catch (
+      (err) => {
+        // setup user data in firestore on login
+          console.log('New User login.\nSetting up user in database.');
+          const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+
+          const data: User = {
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            status: '',
+            Followings: 0,
+            Followers: 0,
+            userImage: user.displayimage,
+            onlineStatus: user.onlineStatus,
+            bio: user.bio
+            // joinDate: firebase.default.firestore.FieldValue.serverTimestamp()
+          };
+
+          return userRef.set(data, { merge: true });
+        });
+  }
+
 }

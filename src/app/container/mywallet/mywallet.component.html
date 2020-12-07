@@ -1,11 +1,12 @@
 
- <ion-card>
- <ion-item lines="none" class="wallet-card animate__animated animate__bounceIn animate__faster"> 
+ <ion-item lines="none" class="wallet-card 
+ animate__animated animate__fadeIn animate__faster" > 
   <img class="img-fluid " slot="start" src="assets/images/wallet1.svg" alt="" srcset="">
  <ion-label class="ml-2 mt-1">
       <small class="text-muted text-bold ">Wallet Balance</small>
       <p class="text-bold text-primary"> ₦00.00</p>  
    </ion-label>
-   <button class="btn btn-primary btn-sm pl-2 pr-2 p-1" [routerLink]="['/founding']" routerLinkActive="router-link-active"  slot="end" type="button">Fund wallet</button>
+   <button class="btn btn-primary btn-sm p-1 pl-2 pr-2 p-1"
+    [routerLink]="['/founding']" 
+     slot="end" type="button">Found wallet</button>
  </ion-item>  
- </ion-card>

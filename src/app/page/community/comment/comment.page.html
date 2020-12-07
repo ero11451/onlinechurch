@@ -52,21 +52,18 @@
 <ion-list class="m-2">
   <small class="mt-2 mb-3 ml-1 text-muted">Comments</small>
   
-  <ion-row class="mt-3 ml-2" *ngFor="let comment of allComment">
-    <ion-col size="2">
-      <ion-avatar style="height: 40px;width: 40px;">
-      <img  [src]=comment.authImage />
-    </ion-avatar>     
-    </ion-col>
-     <ion-col size="9">
-    
-       <p style="color: #0074e4;" class=" mr-1" >{{comment.authorName}}</p>
+  <ion-item class="mt-3 " *ngFor="let comment of allComment">
+     <ion-avatar style="height: 30px; width: 30px;">
+      <img  src={{comment.authorImage}} />
+  </ion-avatar>
+    <div>
+         <p style="color: #0074e4;" class=" mr-1" >{{comment.authorName}}</p>
        <small  class="mr-2">
        {{comment.content}}
-       </small>
-    
-     </ion-col>
-  </ion-row>
+       </small>    
+    </div>
+
+    </ion-item>
 </ion-list>
 
 </ion-content>

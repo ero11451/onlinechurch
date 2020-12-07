@@ -32,10 +32,14 @@ export class HearderComponent implements OnInit {
 
       this.user.retrieveUserDocumentFromID(user.uid).subscribe(
         d => {
-        console.log(d);
-        this.userImage = d.userImage;
-        this.userName = d.displayName;
-        this.userId = d.uid;
+        if (d) {
+          console.log(d);
+          this.userImage = d.userImage || '';
+          this.userName = d.displayName;
+          this.userId = d.uid;
+        }else{
+          this.nodata = true;
+        }
       }
       )
     });

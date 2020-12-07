@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../db/service/auth-guard.service';
 import { TabsPage } from './tabs.page';
+import { RoutnetworkguardService } from '../helper/routnetworkguard.service';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
 
       {
         path: 'service',
-        loadChildren: () => import('../page/mainservice/service/service.module').then(m => m.ServicePageModule)
+        loadChildren: () => import('../page/mainservice/service/service.module').then(m => m.ServicePageModule),
+        // canActivate: [AuthGuard, RoutnetworkguardService],
       },
       {
         path: 'community',

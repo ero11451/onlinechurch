@@ -291,7 +291,7 @@
 
 
 .twitter-card{
-  width: 95%;
+  width: 320px;
   height: auto;
   border: 1px solid var(--light-grey);
   border-radius: 6px;
@@ -310,11 +310,10 @@
 }
 
 .user-image{
-  background-image: url("https://bit.ly/2NIfSbx");
   background-position: center;
   background-size: cover;
-  height: 40px; 
-  width: 40px;
+  height: 30px; 
+  width: 30px;
   border-radius: 50%;
   margin-right: 15px;
 }
@@ -344,19 +343,20 @@
 }
 
 .user{
-  font-size: var(--font-large);
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
   // margin-bottom: 5px;
 }
 
 .username{
-  font-size: var(--font-small);
+  font-size: 12px;
   color: lightgrey;
 }
 
 .profile-bio{
   width: 100%;
   margin-bottom: 1rem;
+  font: 300;
 }
 
 .row-middle{

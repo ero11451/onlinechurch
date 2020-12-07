@@ -6,7 +6,10 @@
   padding: 2% 0% 2% 0%;
   border-radius: 4px;
   box-shadow: 1px 2px #b9b9bd;
-  
+  --ion-item-background: linear-gradient(2deg, #fefeff 29%, #f8f9fe 96%);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+
   ion-icon{
       font-size: 40px;
   }

@@ -20,7 +20,7 @@
      <p class="font-weight-bold ml-2 text-dark">
       Popular
   </p>      
-<small class="text-primary" slot="end" [routerLink]="['/messgaelist']" routerLinkActive="router-link-active" >
+<small class="text-primary" slot="end" (click)="navTo('UC1M_QPZPhVNtBS8tMO885eQ')" >
   See All
 </small>
   </ion-item>
@@ -48,7 +48,9 @@
         <p slot="start" class="font-weight-bold ml-2 text-dark">
          Messages
        </p>   
-       <small class="text-primary" slot="end">See all</small>
+       <small class="text-primary" 
+       (click)="navTo('UCftSxR1o6FH9YMCYPSuEquQ')" 
+       slot="end">See all</small>
     </ion-item>
       
 

@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
      <ion-buttons slot="start">
-       <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+       <ion-back-button defaultHref=""></ion-back-button>
      </ion-buttons>
     <ion-title> <small>Edit</small> </ion-title>
   </ion-toolbar>
@@ -9,29 +9,36 @@
 
 <ion-content>
   <ion-list class="ion-padding">
-    <div style="text-align: center;">
-
-      <img style="height: 100px;width: 100px;" src="assets//images//upload-icon.svg" alt="" srcset=""><br>
-      <button class="btn btn-primary" type="button">Upload image</button>
-    </div>
-    <ion-item>
-    <ion-label position="floating"><small>Full Name </small> </ion-label>
-    <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-    <ion-label position="floating"> <small>Password</small> </ion-label>
-    <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-    <ion-label position="floating"><small>Email</small> </ion-label>
-    <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-    <ion-label position="floating"><small>Phone</small></ion-label>
-    <ion-input></ion-input>
-    </ion-item>
+      
+  <form   #blogForm="ngForm" (ngSubmit)="blogForm.form.valid && saveBlogPost()" accept-charset="UTF-8" novalidate>
+  
     
-    <br>
-    <ion-button expand="full" >Update</ion-button>
+    <ion-item >
+      <ion-input name="Display name" [(ngModel)]="userData.displayName"
+        clearInput 
+       class="title " placeholder="User name"[(ngModel)]="displayName"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-textarea name="bio" [(ngModel)]="userData.bio"
+       clearInput 
+       class="title " placeholder="Your bio"></ion-textarea>
+    </ion-item>
+    <!-- <ion-item  >
+      <ion-input name="Phone number" [(ngModel)]="userData.phoneNumber"
+         clearInput 
+         class="title " placeholder="Phone Number"></ion-input>
+    </ion-item>
+    <ion-item lines=none no-padding class="darklist">
+      <ion-input name="Gender" [(ngModel)]="userData.gender"
+       clearInput 
+       class="title " placeholder="Gender"></ion-input>
+    </ion-item> -->
+ 
+    <button class="btn btn-primary btn-sm p-2 mt-2 btn-block btn-outline"
+    (click)="  saveBlogPost()"
+    [disabled]="!blogForm.valid" type="submit"
+    type="button">Post</button>
+ 
+</form>
   </ion-list>
 </ion-content>

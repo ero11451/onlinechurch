@@ -70,4 +70,10 @@ export class GroupPage implements OnInit {
     console.log();
     this.postService.addLike(post.commentId, {likes: post.likes + 1});
   }
+   // tslint:disable-next-line: use-lifecycle-interface
+   ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+    }
+  
 }

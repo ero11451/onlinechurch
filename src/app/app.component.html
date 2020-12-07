@@ -2,10 +2,13 @@
   <ion-menu side="start" menuId="first" contentId="content">  
     <ion-header class="ion-no-border p-3" style="background-image: url(assets/icon/map.svg);">  
     <ion-spinner name="crescent" *ngIf="!nodata"></ion-spinner>
-      <ion-thumbnail *ngIf="nodata" style="height: 50px;width: 50px;">
+      <ion-thumbnail *ngIf="nodata" style="height: 50px;width: 50px; border-radius: 15px;">
       <img *ngIf="userImage" [src]= userImage/>
     </ion-thumbnail>
-   <small class="text-bold" *ngIf="nodata">{{userName}}</small>
+   <small 
+   class="text-bold" 
+   [routerLink]="['/tabs/profile',userId]" 
+   *ngIf="nodata">{{userName}}</small>
     </ion-header>  
     <ion-content>  
       <ion-list *ngFor="let pages of navigate">  

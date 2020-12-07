@@ -21,7 +21,7 @@
 
 	
 	<div class="profile">
-		<img [src]=userImage class="thumbnail">
+		<img [src]=userImage (click)="uploadFile()" class="thumbnail">
 		<!-- <div class="check"><i class="fas fa-check"></i></div> -->
 		<p class="name">{{userDisplayName}}</p>
     <p class="title">{{status}}</p>
@@ -114,7 +114,7 @@
         <!-- <img src="assets/images/profileimage.jpg"  class="post-image mt-2 mb-2" alt="" srcset=""> -->
         <small class="mr-2 mt-3"> {{post.content}}</small>
      </div>
-       <small [routerLink]="['/post', post.commentId]"
+       <small [routerLink]="['/comment', post.commentId]"
         routerLinkActive="router-link-active"  class=" mt-2 text-primary">View post</small>
   <!-- <ion-row class= "my-card-footer pt-2 pb-2">
     <ion-col size="4" class="animated fast fadeInDown">

@@ -64,8 +64,10 @@ export class SignupPage implements OnInit {
     });
   }
 
-async  tryRegister(value) {
-    await this.getUserLocation();
+tryRegister(value) {
+    this.getUserLocation();
+    // tslint:disable-next-line: no-bitwise
+    if (value.email & value.password & value.username) {
     this.ion.ionLoading('please wait', 1000);
     this.authService.RegisterUser(value.email, value.password, value.username, this.usercountry, 'assets/images/userIcon.svg')
       .then(res => {
@@ -80,6 +82,9 @@ async  tryRegister(value) {
         this.ion.ionToast(this.errorMessage, 2000, 'danger');
         this.successMessage = '';
       })
+    }else{
+        this.ion.ionToast('please check your input',2000,'primary')
+      }
   }
 
   goLoginPage(page) {

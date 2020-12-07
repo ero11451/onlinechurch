@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { Platform, PopoverController } from '@ionic/angular';
 import { Observable } from 'rxjs';
@@ -15,7 +16,7 @@ export class MessgaedetailPage implements OnInit {
 
 
   notNetwork: boolean;
-  channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
+  channelId: string;
   //  tsl channel id the one delow
   // channelId = 'UC2eJZ7eVkmzgOP8TMPLqaqA';
   playlists: Observable<any>;
@@ -28,7 +29,12 @@ export class MessgaedetailPage implements OnInit {
    private list: YoutubeService,
    public sanitizer: DomSanitizer,
    private plt: Platform,
+   private route: ActivatedRoute,
    ) {
+    if (this.route.snapshot.params.channelId) {
+      this.channelId = this.route.snapshot.paramMap.get('channelId');
+      console.log(this.channelId);
+      }
 
    this.sanitizer = sanitizer;
    }
