@@ -9,6 +9,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { CelebrationcardComponent } from '../../container/celebrationcard/celebrationcard.component';
+import { NgPipesModule } from 'ngx-pipes';
+import { HearderComponent } from 'src/app/container/hearder/hearder.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { CelebrationcardComponent } from '../../container/celebrationcard/celebr
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    NgPipesModule,
+    // HearderComponent
   ],
   declarations: [HomePage, MywalletComponent, CelebrationcardComponent]
 })

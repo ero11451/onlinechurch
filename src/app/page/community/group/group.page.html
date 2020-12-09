@@ -1,11 +1,4 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <!-- <ion-title>
-      <small class="te">Community</small>
-    </ion-title>
-    <ion-icon slot="end" class="mr-2" name="search"></ion-icon> -->
-  </ion-toolbar>
-</ion-header>
+
 <ion-content>
 
       <ion-item lines='none' class="ion-no-padding ion-no-margin">
@@ -19,15 +12,32 @@
         </small>
     
       </ion-item>
-       
+      <div style="background-color: rgba(0, 0, 255, 0.048);">
+        <div 
+ style="
+ background:white;
+ height: 15px; 
+ /* margin-top: 5px; */
+ border-radius: 0px 0px 10px 10px;">
+   
+ </div>
       <section class="stories">
-        <div class="stories__single"   *ngFor="let user of onlineUsers"  >
+        <div class="stories__single mt-3 mb-3"   *ngFor="let user of onlineUsers"  >
           <div [routerLink]="['/tabs/profile', user.uid]" routerLinkActive="router-link-active"  class="stories__single__img-holder">
             <div class="stories__single__img-holder__inner" style="background-image: url({{user.userImage}});"></div>
           </div>
           <p class="stories__single__description">{{user.displayName | shorten: 8: '..'}}.</p>
         </div>
       </section>
+      <div 
+ style="
+ background:white;
+ height: 15px; 
+ /* margin-top: 5px; */
+ border-radius: 15px 15px 0px 0px;">
+   
+ </div>
+      </div>
       <div *ngIf="allPost == 0 " class="text-center">
         <img src="assets/icon/sad-face.svg" style="
         height: 150px;
@@ -38,9 +48,10 @@
          <small class="text-primary">Check your network</small>
         <!-- <ion-spinner name="crescent" color="primary"></ion-spinner> -->
       </div>
+<div>
 
-<br>
-   <div class="twitter-card m-2 " *ngFor="let post of allPost">
+
+   <div class="twitter-card  " *ngFor="let post of allPost">
     <div class="row-top">
       <div class="user-wrapper">
          <span class="user-image" style="  background-image: url({{post.authorimage}}  )"></span>
@@ -51,11 +62,14 @@
       </div>
        <!-- <span class="follow ">View</span> -->
     </div>
-    <!-- <img src={{post.photo}} class="post-image" alt="" srcset=""> -->
+    
+    <img src={{post.photo}}  *ngIf="post.photo"  class="post-image" alt="" srcset="">
+    <!-- <div class="row-middle mt-2 mb-2">
+      <ion-icon  style="zoom:1.0;"  name="heart-outline"></ion-icon>  
+    </div> -->
     <small class="profile-bio">
       {{post.content}}.</small>
 
-    <img src={{post.photo}}  *ngIf="post.photo"  class="post-image" alt="" srcset="">
     <div class="row-middle">
       <span class="profile-location mt-1 text-small">
         <i class="fas fa-map-marker-alt"></i>
@@ -64,6 +78,9 @@
     
     </div>
     <div class="row-bottom">
+      <ion-avatar style="height: 20px;width: 20px;">
+        <img [src]="currentUserImage" />
+      </ion-avatar>
       <span class="followers-count" [routerLink]="[ '/comment', post.commentId ]">
         comment
   <!--       <span class="count-meta">10K</span> -->
@@ -72,7 +89,7 @@
       
     </div>
   </div>
-
+</div>
 
      
   

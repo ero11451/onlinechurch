@@ -66,14 +66,14 @@ export class AppComponent {
         icon  : 'assets/icon/subcription.svg'  
       },
       {
-      icon: "assets/icon/bible.svg",
+      icon: "assets/homeicon/bible.svg",
       title: 'Bible',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
       url:'bible'
     }, 
     {
-      icon: "assets/icon/gift-card.svg",
+      icon: "assets/homeicon/gift-card.svg",
       title: 'Gift card',
       subtitle: 'Read and study the word of God at any time ',
       animation: 'animate__animated animate__bounceIn animate__faster',
@@ -94,21 +94,21 @@ export class AppComponent {
     //   url:'market'
     // },
     {
-      icon: "assets/icon/map.svg",
+      icon: "assets/homeicon/location.svg",
       title: 'Fine Church',
       subtitle: 'Meet and get igroup',
       animation:'animate__animated animate__bounceIn animate__faster',
       url: '/location'
     },
     {
-      icon:"assets/icon/devotion.svg",
+      icon:"assets/homeicon/devotional.svg",
       title:'Devotional',
       subtitle:'Meet and get in ',
       animation:'animate__animated animate__bounceIn animate__faster',
       url: '/devotion'
     },
     {
-      icon: "assets/icon/giving.svg",
+      icon: "assets/homeicon/homegiveicon.svg",
       title: 'Giving',
       subtitle: 'Meet and get in oup',
       animation: 'animate__animated animate__bounceIn animate__fast',
@@ -131,7 +131,7 @@ export class AppComponent {
       this.user.retrieveUserDocumentFromID(user.uid).subscribe(
         d => {
         console.log(d);
-        this.userImage = d.userImage;
+        this.userImage = d.userImage || '';
         this.userName = d.displayName;
         this.userId = d.uid;
       }

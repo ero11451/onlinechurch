@@ -1,15 +1,17 @@
 import { Router } from '@angular/router';
 import { LocationPage } from './../location/location.page';
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, ModalController, NavController, Platform, PopoverController } from '@ionic/angular';
+import { ActionSheetController, MenuController, ModalController, NavController, Platform, PopoverController } from '@ionic/angular';
 import { MenuPage } from 'src/app/container/menu/menu.page';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IonhelperService } from 'src/app/helper/ionhelper.service';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 import { DomSanitizer } from '@angular/platform-browser';
 import { YoutubeService } from 'src/app/allapi/youtube.service';
 import { ConnectionStatus, NetworkService } from '../../helper/network.service';
 import { AllpostService } from 'src/app/db/service/post.service';
+import { UserService } from 'src/app/db/service/user.service';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +19,7 @@ import { AllpostService } from 'src/app/db/service/post.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  onlineUsers;
   notNetwork: boolean;
   channelId = 'UC1M_QPZPhVNtBS8tMO885eQ';
   playlists: Observable<any>;
@@ -26,7 +28,9 @@ export class HomePage implements OnInit {
   playlistId = 'PLNG2aD8yvXdi7znHBfzPy3Y4gmp0Ga1ET';
   testimonies;
   testimoniesNumber;
+  navigate: any;
 
+  private unsubscribe$ = new Subject<void>();
   constructor(
     private youtube: YoutubeVideoPlayer,
     private ion: IonhelperService,
@@ -35,11 +39,24 @@ export class HomePage implements OnInit {
     private plt: Platform,
     public navCtrl: NavController,
     private networkSer: NetworkService,
-    private blogService: AllpostService
+    private blogService: AllpostService,
+    private menuController: MenuController,
+    private users: UserService,
     ) { }
-
  
+    menu(){
+      this.menuController.open()
+    }
+    getUserOnline() {
+      this.users.getOnlineUsers().
+      pipe(takeUntil(this.unsubscribe$))
+      .subscribe(result => {
+      this.onlineUsers = result;
+      });
+    }
   ngOnInit() {
+    this.getUserOnline();
+    this.sideMenu()
     this.networkSer.onNetworkChange();
     // .subscribe(d => console.log('network status', d))
     this.getShow();
@@ -106,4 +123,56 @@ getTestimony(){
 
   }, 300);
 }
+
+
+sideMenu() {
+  this.navigate =
+  [
+    {
+      title : 'Wallet',
+      url   : '/wallet',
+      icon  : 'assets/images/wallet.svg'
+    },
+    {
+    icon: "assets/homeicon/bible.svg",
+    title: 'Bible',
+    subtitle: 'Read and study the word of God at any time ',
+    animation: 'animate__animated animate__bounceIn animate__faster',
+    url:'/bible'
+  }, 
+  {
+    icon: "assets/homeicon/gift-card.svg",
+    title: 'Gift card',
+    subtitle: 'Read and study the word of God at any time ',
+    animation: 'animate__animated animate__bounceIn animate__faster',
+    url: '/celebrationcard'
+  },
+ 
+
+  {
+    icon: "assets/homeicon/location.svg",
+    title: 'Fine Church',
+    subtitle: 'Meet and get igroup',
+    animation:'animate__animated animate__bounceIn animate__faster',
+    url: '/location'
+  },
+  {
+    icon:"assets/homeicon/devotional.svg",
+    title:'Devotional',
+    subtitle:'Meet and get in ',
+    animation:'animate__animated animate__bounceIn animate__faster',
+    url: '/devotion'
+  },
+  {
+    icon: "assets/homeicon/homegiveicon.svg",
+    title: 'Giving',
+    subtitle: 'Meet and get in oup',
+    animation: 'animate__animated animate__bounceIn animate__fast',
+    url: '/giving'
+  },
+ 
+  ];
+}
+
+
 }

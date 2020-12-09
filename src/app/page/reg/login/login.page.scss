@@ -13,7 +13,16 @@
       }
       
 }
+.input{
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px #dbdbe2;
+  width: 90%;
+  margin: auto;
+  // --ion-item-background: linear-gradient(2deg, #fefeff 29%, #f8f9fe 96%);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  --background:none
 
+}
 
 // button
 *, *:before, *:after {
@@ -22,16 +31,23 @@
   padding: 0;
 }
 
-
+.back-btn{
+        margin-left: 5px;
+        color: #0d6efd;;
+        width: 40px;
+        height: 40px;
+        background-color: #b2cef7;;
+        border-radius: 3px;
+}
 
 .buttons {
   margin-bottom: -180px;
-  margin-top: 50px;
+  // margin-top: 20px;
   text-align: center;
   border-radius:30px;
 }
 
-$cyan: #0505A9;
+$cyan: #0d6efd;
 $dark: #FFFFFF;
 $borderW: 2px;
 

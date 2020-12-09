@@ -52,18 +52,22 @@
 <ion-list class="m-2">
   <small class="mt-2 mb-3 ml-1 text-muted">Comments</small>
   
-  <ion-item class="mt-3 " *ngFor="let comment of allComment">
-     <ion-avatar style="height: 30px; width: 30px;">
-      <img  src={{comment.authorImage}} />
-  </ion-avatar>
-    <div>
-         <p style="color: #0074e4;" class=" mr-1" >{{comment.authorName}}</p>
-       <small  class="mr-2">
-       {{comment.content}}
-       </small>    
-    </div>
-
-    </ion-item>
+  <ion-row class="mt-3 " *ngFor="let comment of allComment">
+    <ion-col size="1">
+      <ion-avatar style="height: 30px; width: 30px;">
+       <img  src={{comment.authorImage}} />
+   </ion-avatar>
+      
+    </ion-col>
+    <ion-col size="11">
+      <div class="ml-2">
+        <p style="color: #0074e4;" class=" mr-1" >{{comment.authorName}}</p>
+      <small  class="mr-2">
+      {{comment.content}}
+      </small>    
+   </div>  
+    </ion-col>
+    </ion-row>
 </ion-list>
 
 </ion-content>
@@ -74,7 +78,7 @@
     <ion-item>
       <ion-label position="floating">Make a comment</ion-label>
       <ion-textarea formControlName="comment"  required></ion-textarea>
-      <button   slot="end" [disabled]="!validations_form.valid">
+      <button class="btn"   slot="end" [disabled]="!validations_form.valid">
       <ion-icon name="send" type="submit"
      class="mt-3"  ></ion-icon>
 

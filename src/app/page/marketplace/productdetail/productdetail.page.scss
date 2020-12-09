@@ -164,3 +164,14 @@ body {
               transform: scale(1); } }
   
   /*# sourceMappingURL=style.css.map */
+
+  .buy-btn{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    background-color: #0D6EFD;
+    padding: 5%;
+    color: white;
+    border-radius: 40px 0px 0px 0px;
+}

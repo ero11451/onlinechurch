@@ -1,122 +1,121 @@
-
-<ion-header  class="ion-no-border  " no-border color="primary" >
-  <ion-item  lines="none">  
-  
-   </ion-item>
+<!-- <app-header></app-header> -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Header</ion-title>
+  </ion-toolbar>
 </ion-header>
-
-
 <ion-content>
-   <ion-list>
-  <div class="m-2">
-    <app-mywallet ></app-mywallet> 
-   </div>
-   <!-- <ion-item lines=none>
-    <small class="text-bold"> Messages</small>
-    <small class="text-primary" slot="end"> See more</small>
- </ion-item> -->
-<div class="text-center">
-  <ion-spinner color="primary" name="crescent" *ngIf="notNetwork"></ion-spinner>
-</div>
- <div class="slider">  
-  <div class=" slide animate__backInRight animate__animated animate__faster"  *ngFor="let video of playlist " (click)=" openVideo(video)" >
-    <ion-card class="container-image">
-      <img [src]="video.snippet.thumbnails.default.url"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
-      <div class="bottom-left ion-text-start">
-         <small class="text-bold ">
-          {{ video.snippet.title }} 
-       </small>
+
+  <!-- <ion-item lines="none">
+    <small class="text-bold ml-3">Hi Muyi</small>
+    <div slot="end" class="mr-3">
+      <img src="assets/images/about.svg" 
+      (click)="menu()"
+      style="height: 20px; width: 25px;" alt="" srcset="">
+    </div>    
+
+  </ion-item> -->
+
+  <div>
+    <!-- <div class="alert alert-primary text-center" style="width: 30%;" role="alert">
+      community
+    </div> -->
+    <section class="stories">
+      <div class="stories__single"   *ngFor="let user of onlineUsers"  >
+        <div [routerLink]="['/tabs/profile', user.uid]" routerLinkActive="router-link-active"  class="stories__single__img-holder">
+          <div class="stories__single__img-holder__inner" style="background-image: url({{user.userImage}});"></div>
         </div>
-    </ion-card>
+        <p class="stories__single__description">{{user.displayName | shorten: 8: '..'}}.</p>
       </div>
-    </div>
+    </section>
     <br>
-    <div  class="count-down m-3
-    animate__animated animate__fadeIn animate__fast" >
-        <p class="title mb-2 mt-2">Next Service will start </p>
-        <p class="timer">1:20 </p>
-        <!-- <p class="label mt-1 mb-3">Service wil start soon</p> -->
-         <button 
-          [routerLink]="['/tabs/service']"
-          class="btn btn-sm btn-primary m-2 mb-2 pl-3 pr-3">
-          Go live Now
-        </button>
-
-    </div>
+  </div>
+  <div 
+  style="
+  background:#0D6EFD;
+  height: 20px; 
+  margin-top: 5px;
+  border-radius: 15px 15px 0px 0px;"> 
+  </div>
 
 
-    <ion-item lines=none class="ion-no-padding 
-    animate__animated animate__fadeIn animate__faster" >
-      <ion-avatar slot="start" class="ml-2">
-        <img src="assets/icon/map.svg" />
-      </ion-avatar>
-      <ion-label class="ml-2">
-        <small class="text-muted" style="font-size: 10px;"> Find church </small>
-        <p class="text-primary text-bold">Simply worship international  </p>
-      </ion-label>
-    </ion-item>
-    <div class="container-image" [routerLink]="['/location']" routerLinkActive="router-link-active"  style="width: 95%;margin: auto; height: 200px;background-color: lightgrey;">
-    <img style="width: 100%;height: 200px; object-fit: cover;" src="assets/images/GoogleMapTA@3x.jpg"  alt="" srcset="">
-    <div class="centered">
-      <small class="text-dark">
-         see map 
-    </small>
-     </div>
-    </div>
-   <!--   <ion-card class='m-2'>
-     <ion-item lines="none">
-<div>
-    <small>ero osamuyi</small>
-   <p>Happy birthday</p>
-  <small>
-  Keep close to Nature's heart... and break clear away, once in awhile,
-   and Wash your spirit clean.
-      
-  </small>    
-   </div>
-  </ion-item>
-   </ion-card> -->
-
-
-   <ion-list class=" animate fast fadeIn">
-    <app-celebrationcard></app-celebrationcard>
-    <br>
-<ion-item lines='none'>
-  <ion-avatar>
-    <img src="assets/icon/devotion.svg" />
-  </ion-avatar>
-  <ion-label class="ml-2">
-    <small class="text-muted" style="font-size: 10px;"> Church </small>
-    <p class="text-primary text-bold">Devotional  </p>
-  </ion-label>
+    <div   style="background: #0D6EFD;" color="primary" >
+<ion-item lines='none' style=" --ion-item-background:#0D6EFD;">
+  <div slot="start">
+    
+    <small class="text-light">Next Service will start </small>
+    <p class="text-bold text-light">
+       1:20
+    </p>
+    
+  </div>
+  <button slot="end" class="btn btn-dark btn-sm p-1 mb-2 mt-2 mb-2 pl-2 pr-2"> Go live now</button>
 </ion-item>
-    <div class="slider">  
-      <div class="  slide  mt-2 mb-2 "[routerLink]="['/devotion']"  style="width: 250px;" *ngFor="let item of [1, 1]">
-        <ion-card class="container-image" style="width:250px" >
-          <img src="assets/images/youtubebanner.jpeg"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
-         <div class="top-left ">
-           
-             <img style="height: 30px;width: 30px;border-radius: 30px; border: #e0e0e0 1px solid;"  src="assets/images/youtubebanner.jpeg"  />
-           
-           <small class="ml-2 text-bold">Devotional Name    </small>
-         </div>
-         <div class="top-right">
-            <small class="text-muted">
-             today
-           </small>
-         </div>
-          <div class="bottom-left ion-text-start">
-             <small class="text-bold ">
-              Faith is the key to your success
-           </small>
-         
-            </div>
-        </ion-card>
-          </div>
-        </div>
-</ion-list>
+<br>
+ <div 
+ style="
+ background:white;
+ height: 15px; 
+ /* margin-top: 5px; */
+ border-radius: 15px 15px 0px 0px;">
+   
+ </div>
+</div>
 
-  <ion-item class="m-2"
+  
+
+<ion-item lines=none>
+  <small class="text-bold"> Trending</small>
+  <small class="text-primary" [routerLink]="['/tabs/messsage']" routerLinkActive="router-link-active"  slot="end"> See more</small>
+</ion-item>
+<div class="text-center">
+<ion-spinner color="primary" name="crescent" *ngIf="notNetwork"></ion-spinner>
+</div>
+<div class="slider">  
+<div class=" slide animate__backInRight animate__animated animate__faster"  *ngFor="let video of playlist " (click)=" openVideo(video)" >
+  <ion-card class="container-image">
+    <img [src]="video.snippet.thumbnails.default.url"  alt="Snow" style="width:100%;height: 100%;object-fit: cover;">
+    <div class="bottom-left ion-text-start">
+       <small class="text-bold ">
+        {{ video.snippet.title | shorten: 20: '..' }} 
+     </small>
+      </div>
+  </ion-card>
+    </div>
+    <div 
+    style="
+    background:#0D6EFD;
+    height: 15px; 
+    /* margin-top: 5px; */
+    border-radius: 15px 15px 0px 0px;"> 
+    </div> 
+  </div>
+<br>
+  <div   style="background:#0D6EFD;"no-border color="primary" >
+  <br>
+<ion-item lines='none' style=" --ion-item-background:#0D6EFD;">
+  <div slot="start">
+    <small class="text-light">Wallet Ballance</small>
+    <p class="text-bold text-light"> 00.00 </p>
+  </div>
+  <button slot="end" class="btn btn-dark btn-sm p-1 mb-2 mt-2 mb-2 pl-2 pr-2"> Found wallet</button>
+   
+</ion-item>
+<br>
+ <div 
+ style="
+ background:white;
+ height: 15px; 
+ /* margin-top: 5px; */
+ border-radius: 15px 5px 0px 0px;">
+   
+ </div>
+</div>
+    <!-- <app-celebrationcard></app-celebrationcard> -->
+    
+
+
+  <!-- <ion-item class="m-2" 
    [routerLink]="['/giving']" 
    lines="none" style="
 border: solid 1px#e0e0e0;
@@ -139,25 +138,18 @@ border-radius: 2px;
        class="img-fluid rounded "
        style="height: 100px;"
        src="../../../assets/images/payment.svg" alt="" srcset="">  
-  </ion-item>
-   </ion-list>
+  </ion-item> -->
+  
 
     <!-- <ion-item lines=none>
       <p class="text-bold"> Top Post</p>
       <small class="text-primary" slot="end"> See more</small>
    </ion-item> -->
-   <div 
-   [routerLink]="['/tabs/community']"
-   style="border-radius: 0px 20px 20px 0px;width: 40%;" 
-   class="alert text-center mt-2 mb-2 pt-2 pb-2
-   alert-primary" role="alert">
-
-   Community
-  </div>
-  <div class="text-center">
+   
+  <!-- <div class="text-center">
   <ion-spinner color="primary" name="crescent" *ngIf="testimonies == 0"></ion-spinner>
-  </div>
-   <div class="slider">  
+  </div> -->
+   <!-- <div class="slider">  
     <div class=" slide"  *ngFor="let testimony of testimonies"  >
       <div class="twitter-card">
         <div class="row-top">
@@ -177,35 +169,31 @@ border-radius: 2px;
         </small>
       </div>
         </div>
-      </div>
+      </div> -->
 
 
-  <div 
-   [routerLink]="['/tabs/market']"
-   style="border-radius: 0px 20px 20px 0px;width: 35%;" 
-   class="alert text-center mt-4 mb-2 pt-2 pb-2
-   alert-primary" role="alert">
-
-   Church Store
-  </div>
-  <div class="slider">  
-    <div class="  slide  mt-2 mb-2" style="width:150px;" *ngFor="let item of [1, 1]">
-      <ion-card [routerLink]="['/productdetail']"  class="product-card">
-        <ion-item lines="none" class="ion-no-padding ion-no-margin">
-          <small class="off">30%</small>
-          <small slot="end"> <ion-icon  name="heart"></ion-icon></small>
-          
-        </ion-item>
-        <img class="productimage" src="assets/images/defaultimage.png"  alt="" srcset="">
-      <div class="text-left p-2">
-            <p class="title ">men's shoes fashion</p>
-           <p class="price">N24409</p> 
+<!-- <div> -->
+  <br>
+<div>
+  <p class="text-primary ml-3">Upcoming Programe</p>
+  <ion-card class="m-3" style="height: 200px;">
+  <img src="assets/homeicon/churchprograme.jpg" alt="" srcset="">
+  </ion-card>
+</div>
   
-        </div>
+<br>
+  <ion-row >
+    <ion-col *ngFor="let main of navigate" size="4" >
+      <ion-card [routerLink]="main.url"  routerLinkActive="router-link-active"  class="my-card">
+        <img src="{{main.icon}}" alt="" srcset="">
+        <small class="text-muted mb-4">{{main.title }}</small>
+      </ion-card>
+    </ion-col>
+   
+  </ion-row>
+  <br>
 
-        </ion-card>
-        </div>
-      </div>
+ 
 
 
 <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">

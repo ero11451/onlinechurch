@@ -34,17 +34,19 @@
     <ion-slide>
       <ion-row class="ion-margin">
     
-        <ion-col size="6" *ngFor="let item of [1,1,1,1,1,1]">
+        <ion-col size="6" >
           <ion-card [routerLink]="['/productdetail']" routerLinkActive="router-link-active"  class="product-card">
           <ion-item lines="none" class="ion-no-padding ion-no-margin">
             <small class="off">30%</small>
             <small slot="end"> <ion-icon  name="heart"></ion-icon></small>
             
           </ion-item>
-          <img class="productimage" src="assets/images/defaultimage.png"  alt="" srcset="">
+
+          <img class="productimage" src="assets/storeImages/chruchbook.jpg" />
+          <!-- <img class="productimage" src="assets/images/defaultimage.png"  alt="" srcset=""> -->
         <div class="text-left p-2">
-              <p class="title ">men's shoes fashion</p>
-             <p class="price">N24409</p> 
+              <p class="title ">The Salutation of The Angels </p>
+             <p class="price">$10</p> 
     
           </div>
 

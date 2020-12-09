@@ -2,6 +2,62 @@
     padding: 0px;
     margin: 0px;
 }
+.my-card{
+  text-align: center;
+  align-content: center;
+  margin: 10px;
+  padding-bottom: 10px;
+  img{
+    height: 40px;
+    width: 40px;
+    display:block;
+    margin: 10% 0px 0px 30%;
+    text-align: center;
+    align-self: center;
+
+  }
+  small{
+    margin: 5px;
+  }
+}
+
+
+.stories {
+	// margin-bottom: -10px;
+	margin-top: 14px;
+	padding: 0 10px;
+	white-space: nowrap;
+	overflow-x: auto;
+	// @include hide-scrollbar;
+	&__single {   
+    
+	  display: inline-block;   
+	  &__img-holder {           
+		display: inline-block;    
+		border-radius: 50%;
+		border: 1px solid rgb(201, 34, 34);
+		padding: 3px;
+		position: relative;
+		left: 50%;
+		transform: translatex(-50%);
+		margin-right: 12px;
+		&__inner {
+		  border-radius: 50%;
+		  border: 1px solid rgb(57, 44, 241);
+		  width: 50px;
+		  height: 50px;          
+		  background: center / cover no-repeat;        
+		}
+	  }
+	  &__description {
+		text-align: center;     
+		font-size: 14px;
+		margin-top: 2px;
+		color: darkgray;
+	  }
+	}
+  }
+  
 .text-bold{
   font-weight: bold;
 }
@@ -17,44 +73,6 @@
         height: 30px;
         width: 30px;
     }
-}
-.hearder-icon{
-  height: 20px;
-  width: 20px;
-}
-.banner{
-  .service-card{
-    padding: 3%;
-    margin: 3%;
-    border-radius: 4px;
-    box-shadow: 1px 2px #b9b9bd;
-    ion-icon{
-        font-size: 40px;
-    }
-    .subtitle{
-        color: rgb(100, 100, 241);
-    }
-    .title{
-        color: rgb(24, 24, 196);
-        font-weight: bold;
-        font-size: 15px;
-    }
-
-    img{
-        height: 40px;
-        width: 40px;
-    }
-}
-.no-data-img{
-    height: 80%;
-    width: 80%;
-    
-}
-  width: auto;
-  margin: 2%;
-  background-color: lightgray;
-  height: 15%;
-  text-align: center;
 }
 
 
@@ -112,8 +130,8 @@
   position: relative;
   text-align: center;
   color: white;
-  height: 180px;
-  width: 140px;
+  height: 150px;
+  width: 120px;
   object-fit: cover;
   background-color: black;
   border-radius: 5px;
@@ -452,3 +470,7 @@
 .bg{
  background: lightslategray !important;
 }
+
+
+
+// header bg

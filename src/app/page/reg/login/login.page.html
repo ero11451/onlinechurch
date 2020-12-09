@@ -1,15 +1,17 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-      <ion-back-button defaultHref="signup" slot="start"></ion-back-button>
+      <ion-back-button
+       class="back-btn"
+       defaultHref="signup" slot="start"></ion-back-button>
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>  
 <ion-list >
+  <div lines="none" class="mt-2 text-center">
+    <img src="assets/images/loginImage.svg" style="height: 250px;width: 250px;" alt="logo">
+  </div>
   <ion-item lines="none" class="mt-3">
-    <img src="assets/icon/favicon.png" alt="logo">
-  </ion-item>
-  <ion-item lines="none" class="mt-4">
     <div>
       <p class="text-bold">Welcome Back</p> 
       <small>sign in to countinue</small>  
@@ -17,7 +19,7 @@
   </ion-item>
   <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
 
-    <ion-item>
+    <ion-item class="input" >
       <ion-label position="floating" color="primary"> <small> Email</small> </ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
@@ -30,12 +32,20 @@
       </ng-container>
     </div>
 
-    <ion-item>
+    <ion-item class="input mt-3" >
       <ion-label position="floating" color="primary"><small> Password</small></ion-label>
       <ion-input type="password" formControlName="password"  required></ion-input>
     </ion-item>
     <div  class="text-danger text-small">{{errorMessage}}</div>
-<br>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message"
+          *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <br>
     <div class="text-center ">
       <div class="buttons"   >
         <button  class="blob-btn" type="submit" >Login
@@ -61,19 +71,16 @@
       </div>
     </div>
   </form>
-  
-  <br><br><br>
-  <div class="text-center mt-3">
-   <p class="ml-2">Don't Have an account?
-     <strong [routerLink]="['/signup']" routerLinkActive="router-link-active"  class="text-primary">Sign up</strong></p>  
-  </div>
+<br><br>
   </ion-list>
-  <div class="validation-errors">
-    <ng-container *ngFor="let validation of validation_messages.password">
-      <div class="error-message"
-        *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
-        {{ validation.message }}
-      </div>
-    </ng-container>
-  </div>
+  <br><br><br>
 </ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+
+    <div class="text-center mt-1">
+      <p class="ml-2">Don't Have an account?
+        <strong [routerLink]="['/signup']" routerLinkActive="router-link-active"  class="text-primary">Sign up</strong></p>  
+     </div>
+  </ion-toolbar>
+</ion-footer>
