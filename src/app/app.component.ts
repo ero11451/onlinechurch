@@ -9,6 +9,7 @@ import { LoginPage } from './page/reg/login/login.page';
 import { LogoutPage } from './container/logout/logout.page';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UserService } from './db/service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,7 @@ export class AppComponent {
     private ion: IonhelperService,
     private auth: AngularFireAuth,
     private user: UserService,
-
+    private nav : Router,
     private menuController: MenuController
   ) {
     this.initializeApp();
@@ -51,8 +52,8 @@ export class AppComponent {
     });
     this.splashScreen.hide();
   }
-
   sideMenu() {
+    console.log('this will get the user ui' , this.userId)
     this.navigate =
     [
       {
@@ -60,11 +61,21 @@ export class AppComponent {
         url   : '/wallet',
         icon  : 'assets/images/wallet.svg'
       },
+      // {
+      //   title : 'Chat',
+      //   url   : `tabs/chat/${this.userId}`,
+      //   icon  : 'assets/homeicon/chat.svg'
+      // },
       {
-        title : 'Subscription',
-        url   : '/subscription', 
-        icon  : 'assets/icon/subcription.svg'  
+        title : 'Community',
+        url   : '/tabs/community',
+        icon  : 'assets/homeicon/community.svg'
       },
+      // {
+      //   title : 'Subscription',
+      //   url   : '/subscription', 
+      //   icon  : 'assets/icon/subcription.svg'  
+      // },
       {
       icon: "assets/homeicon/bible.svg",
       title: 'Bible',
@@ -130,7 +141,7 @@ export class AppComponent {
 
       this.user.retrieveUserDocumentFromID(user.uid).subscribe(
         d => {
-        console.log(d);
+        console.log('this is form the app.ts page',d);
         this.userImage = d.userImage || '';
         this.userName = d.displayName;
         this.userId = d.uid;
@@ -138,7 +149,10 @@ export class AppComponent {
       )
     });
   }
-
+  async chat(){
+    // await this.menuController.close()
+    this.nav.navigate(['tabs/chat',this.userId])
+  }
  async logOut(){
     await this.menuController.close()
     this.ion.presentModal(LogoutPage, '', 'bottom-model')

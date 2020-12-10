@@ -4,12 +4,36 @@
     <ion-content>  
 
       <ion-menu-toggle auto-hide="false">
-      <div class="p-2 mt-2 text-center" style="position: absolute;">
-        <ion-avatar>
-          <img [src]="userImage" />
-        </ion-avatar>
-        <p class="mt-2">{{userName}} yser</p>
-        <!-- <small></small> -->
+      <div class="p-3 mt-3 " style="position: absolute;">
+        
+        <div class="ml-2 mb-2">
+          <ion-avatar *ngIf="userImage">
+            <img [src]="userImage" />
+          </ion-avatar>
+          <p class="text-bold mt-1 ml-1">{{userName}} </p>
+        </div>
+        <div   class="links" (click)="chat()">  
+          <img class="icon" src='assets/homeicon/chat.svg' slot="start">
+          <small class="ml-3 mt-2 text-bold">
+            Chat
+          </small>  
+        </div> 
+        <div  *ngFor="let pages of navigate" >  
+          <div  [routerLink]="pages.url" class="links" lines=none routerDirection="forward">  
+            <ion-img class="icon" [src]="pages.icon" slot="start"></ion-img>  
+            <small class="ml-3 mt-2 text-bold">
+             {{pages.title}}  
+            </small>  
+          </div> 
+      </div>
+      <div   class="links" (click)="logOut()">  
+        <img class="icon" src="assets/icon/logout.svg" slot="start">
+        <small class="ml-3 mt-2 text-bold">
+          Logout
+        </small>  
+      </div> 
+   
+
       </div>
       
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" version="1.1">
@@ -114,23 +138,7 @@
         </animateMotion>
       
       </svg>
-<div class="list">
 
-        <div  *ngFor="let pages of navigate" >  
-          <div  [routerLink]="pages.url" class="links" lines=none routerDirection="forward">  
-            <ion-img class="icon" [src]="pages.icon" slot="start"></ion-img>  
-            <small class="ml-3 mt-2 text-bold">
-             {{pages.title}}  
-            </small>  
-          </div> 
-      </div>
-      <div   class="links" (click)="logOut()">  
-        <img class="icon" src="assets/icon/logout.svg" slot="start">
-        <small class="ml-3 mt-2 text-bold">
-          Logout
-        </small>  
-      </div> 
-</div>
 </ion-menu-toggle>
     </ion-content>  
     

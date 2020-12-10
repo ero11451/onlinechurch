@@ -36,7 +36,7 @@
         
       </div>
   	</div>
-	
+	<button class="btn btn-primary" [routerLink]="['/chat-view']" routerLinkActive="router-link-active" >message</button>
 	<div class="social-icons ">
 		<div class="icon">
 			<!-- <a href="/"><i class="fab fa-dribbble"></i></a> -->
@@ -107,7 +107,7 @@
             <p style="margin-bottom: -10px;color: black;font-weight: 600;">{{post.author}}</p>
             <small class="text-muted" style="font-size: 10px;">{{post.createdDate}}</small>             
         </ion-label>
-         <small style="float: right;" class=" text-primary" (click)="getDetele(post.commentId)">Delete</small>
+         <small style="float: right;" class=" text-primary"  *ngIf="isCurrentUser" (click)="getDetele(post.commentId)">Delete</small>
          
        </div>
        <div>

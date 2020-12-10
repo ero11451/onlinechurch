@@ -1,4 +1,4 @@
-import { MywalletComponent } from './../../container/mywallet/mywallet.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +23,6 @@ import { HearderComponent } from 'src/app/container/hearder/hearder.component';
     NgPipesModule,
     // HearderComponent
   ],
-  declarations: [HomePage, MywalletComponent, CelebrationcardComponent]
+  declarations: [HomePage,  CelebrationcardComponent]
 })
 export class HomePageModule {}

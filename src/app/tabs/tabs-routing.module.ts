@@ -30,6 +30,10 @@ const routes: Routes = [
         path: 'noservice',
         loadChildren: () => import('../page/mainservice/nosevice/nosevice.module').then(m => m.NosevicePageModule),
       },
+      {
+        path: 'chat/:uid',
+        loadChildren: () => import('../page/mainchat/chatlist/chatlist.module').then(m => m.ChatlistPageModule),
+      },
 
 
       {

@@ -17,9 +17,7 @@
   </ion-item> -->
 
   <div>
-    <!-- <div class="alert alert-primary text-center" style="width: 30%;" role="alert">
-      community
-    </div> -->
+   
     <section class="stories">
       <div class="stories__single"   *ngFor="let user of onlineUsers"  >
         <div [routerLink]="['/tabs/profile', user.uid]" routerLinkActive="router-link-active"  class="stories__single__img-holder">
@@ -29,6 +27,13 @@
       </div>
     </section>
     <br>
+  </div>
+  <div class="text-center">
+    <div
+    [routerLink]="['/tabs/community']" routerLinkActive="router-link-active" 
+    class="alert alert-primary p-1 text-center" style="width: 40%;margin: auto;margin-bottom: 15px;" role="alert">
+     Join community
+    </div>
   </div>
   <div 
   style="
@@ -45,11 +50,13 @@
     
     <small class="text-light">Next Service will start </small>
     <p class="text-bold text-light">
-       1:20
+      Today 1:20
     </p>
     
   </div>
-  <button slot="end" class="btn btn-dark btn-sm p-1 mb-2 mt-2 mb-2 pl-2 pr-2"> Go live now</button>
+  <button slot="end" 
+  [routerLink]="['/tabs/service']" routerLinkActive="router-link-active" 
+  class="btn btn-dark btn-sm p-1 mb-2 mt-2 mb-2 pl-2 pr-2"> Attend Serve</button>
 </ion-item>
 <br>
  <div 
@@ -107,7 +114,7 @@
  background:white;
  height: 15px; 
  /* margin-top: 5px; */
- border-radius: 15px 5px 0px 0px;">
+ border-radius: 15px 15px 0px 0px;">
    
  </div>
 </div>

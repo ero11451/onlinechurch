@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class=" ">
+  <div class="pl-3 pr-3">
+  <h3 class="text-bold text-dark ">
+    Chat
+  </h3>
+  
+    <ion-item  lines=none class="mt-2 search"  lines='none'>
+      <ion-icon slot="start" class="text-muted" name="search"></ion-icon>
+      
+      <p class="text-muted ml-2">Search</p>
+    </ion-item>
+  <ion-item lines="none"   class="ion-no-padding ion-no-margin">
+    <p class="text-dark" slot="start"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      Follower
+    </p>
+    <p slot="end" class="collapsed text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Following
+    </p>
+  </ion-item> 
+  <div class="accordion" id="accordionExample">
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <section class="stories">
+        <div class="stories__single"   *ngFor="let user of userFollowers"  >
+          <div [routerLink]="['/tabs/profile']" routerLinkActive="router-link-active"  class="stories__single__img-holder">
+            <div class="stories__single__img-holder__inner" style="background-image: url({{user.userImage}})"></div>
+          </div>
+          <p class="stories__single__description">{{user.userName}}.</p>
+        </div>
+      </section>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <section class="stories">
+        <div class="stories__single"  *ngFor="let user of  userFollowing"   >
+          <div [routerLink]="['/tabs/profile']" routerLinkActive="router-link-active"  class="stories__single__img-holder">
+            <div class="stories__single__img-holder__inner" style="background-image: url({{user.userImage}});"></div>
+          </div>
+          <p class="stories__single__description">{{user.userName}}..</p>
+        </div>
+      </section>
+    </div>
+</div> 
+</div>
+<!-- <br> -->
+<div style="background:white;height: 20px;width: 100%; border-radius: 15px 15px 0px 0px;"></div>
+</div>
+
+<div class="text-center" *ngIf="users == 0">
+   <img src="assets/icon/sad-face.svg" style="height: 100px;width: 100px;" alt="" srcset="">
+   <p>There is no chat found </p>
+</div>
+<div *ngFor="let user of users">
+    <ion-item lines="none"  (click)="openChat(user.key) ">
+      <ion-avatar *ngIf="!user.picture" slot="start">
+        <img src="/assets/img/user-default.png">
+      </ion-avatar>
+      <ion-avatar *ngIf="user.picture" slot="start">
+        <img src="{{user.picture}}">
+      </ion-avatar>
+    <ion-label class="ml-2 mt-1">
+      <p class="text-bold " style="margin-bottom: -5px;color: black;">{{user.name}}</p>
+      <small class="text-primary">{{user.email}} </small>
+    </ion-label>
+  </ion-item>
+</div>
+
+
+
+
+
+</ion-content>

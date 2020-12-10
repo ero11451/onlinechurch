@@ -1,7 +1,21 @@
 *{
     padding: 0px;
     margin: 0px;
+  
 }
+b
+.back-btn  {
+    margin-left: 5px;
+    color: #0d6efd;;
+    width: 40px;
+    height: 40px;
+    background-color: #b2cef7;;
+    border-radius: 3px;
+  }
+  .bg-dark{
+    // --background: rgba(0, 0, 0, 0.151) !important;
+    // color: white;
+  }
 .top-box{
     margin: 2%;
     
@@ -26,3 +40,59 @@
 }
 
 
+.container-image {
+  position: relative;
+  text-align: center;
+  
+  height: 180px;
+  width: 90%;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: auto;
+  img {
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5 ;
+  }
+  img:hover {
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 0.2 ;
+  }
+  
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+}

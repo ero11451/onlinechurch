@@ -130,7 +130,6 @@ checkCurrentUser() {
           }
         } else {
           this.isLoggedIn = false;
-
         }
     });
   }

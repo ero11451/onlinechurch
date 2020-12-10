@@ -151,7 +151,7 @@ sideMenu() {
 
   {
     icon: "assets/homeicon/location.svg",
-    title: 'Fine Church',
+    title: 'Find Church',
     subtitle: 'Meet and get igroup',
     animation:'animate__animated animate__bounceIn animate__faster',
     url: '/location'

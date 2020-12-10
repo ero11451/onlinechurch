@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border" >
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/home"></ion-back-button>
@@ -9,36 +9,27 @@
 
 <ion-content>
 
-   <ion-list class="m-2">
-    <p  style="margin-bottom: -2px;font-size: 40px; font-weight: bolder;width:70%;">
-     Get a celebration card
-    </p>
-    <small class="text-bold text-muted w-80">Buy a celebration card for that special person</small>
-    <br><br>
-    <div>
-        <app-mywallet></app-mywallet>
-     </div>
-     <ion-item>
-     <ion-label position="floating"> <small>  username</small></ion-label>
-     <ion-input></ion-input>
-     </ion-item>
-       <ion-item>
-      <ion-label> <small> Type of card </small>  </ion-label>
-      <ion-select value="Happy birthday" [interfaceOptions]="customOptions" interface="action-sheet" placeholder="Select">
-        <ion-select-option value="birthday">Happy birthday</ion-select-option>
-        <ion-select-option value="Thankyou">Thank you</ion-select-option>
-      </ion-select>
+  <img src="assets/images/celebrationbanner.jpg" alt="" srcset="">
+  <div class="alert alert-danger m-2" role="alert">
+   <p class="alert-link">How is that speciale person you would like to celebrate</p> 
+  </div>
+  <ion-list class="bottom-div">
+    <ion-item>
+      <ion-label position="floating">person's name</ion-label>
+      <ion-input  type="text"></ion-input>
     </ion-item>
-     
-      <ion-item>
-        <ion-label position="floating"> <small>  message</small></ion-label>
-        <ion-textarea></ion-textarea>
-        </ion-item>
-    </ion-list>
+    <ion-item>
+      <ion-label position="floating">message for user</ion-label>
+      <ion-input  type="text"></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-<ion-button expand="full" class="m-2" >Submit</ion-button>
-
+<ion-button 
+class="ion-padding ion-margin"
+expand="full" color="danger" 
+shape="round"  >Submit</ion-button>
+<br>
   </ion-toolbar>
 </ion-footer>

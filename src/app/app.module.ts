@@ -30,6 +30,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { Network } from '@ionic-native/network/ngx';
+import { ServicesModule } from './page/mainchat/services/services.module';
 
 firebase.default.initializeApp(environment.firebaseConfig);
 
@@ -50,7 +51,7 @@ firebase.default.initializeApp(environment.firebaseConfig);
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-
+    ServicesModule,
   ],
   providers: [
     StatusBar,

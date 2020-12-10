@@ -153,6 +153,14 @@ const routes: Routes = [
     path: 'nonetwork',
     loadChildren: () => import('./page/nonetwork/nonetwork.module').then( m => m.NonetworkPageModule)
   },
+  {
+    path: 'chatlist',
+    loadChildren: () => import('./page/mainchat/chatlist/chatlist.module').then( m => m.ChatlistPageModule)
+  },
+  {
+    path: 'chat-view',
+    loadChildren: () => import('./page/mainchat/chat-view/chat-view.module').then( m => m.ChatViewPageModule)
+  },
 
 ];
 @NgModule({
